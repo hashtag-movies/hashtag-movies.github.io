@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>HTML Contact Form Submission</title> <link rel="stylesheet" href="./style.css">
+<style>
+div.container {
+    background-image: linear-gradient(to top right,navy, purple);
+    padding-top: 8px;
+    padding-bottom:23px;
+    width:;
+}
+
+se {
+   
+padding: 30px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #2d2d2d;
+    color: black;
+    border-radius: 4px;
+}
+ Button {
+    float: right;
+    padding: 7px 35px;
+    border-radius: 60px;
+margin-top:px;
+    display: inline-block;
+    background-image: linear-gradient(to top right,navy, purple);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.06),
+              0 2px 10px 0 rgba(0,0,0,0.07);
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+/* ///// inputs /////*/
+
+input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+    font-size: 0.75em;
+    color: #999;
+    top: -5px;
+    -webkit-transition: all 0.225s ease;
+    transition: all 0.225s ease;
+}
+
+.styled-input {
+    float: left;
+    width: 293px;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px){
+    .styled-input {
+        width:60%;
+    }
+}
+
+.styled-input label {
+    color: #999;
+    padding: 1.3rem 30px 1rem 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.styled-input.wide { 
+    width: 650px;
+    max-width: 100%;
+}
+select,
+input,
+textarea {
+    padding: 30px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #0000;
+    color: grey;
+    border-radius: 4px;
+
+
+textarea {
+    width: 100%;
+    min-height: 6em;
+}
+
+.input-container {
+    width: 650px;
+    max-width: 10%;
+    margin: 20px auto 25px auto;
+}
+
+ button {
+    float: right;
+    padding: 7px 35px;
+    border-radius: 60px;
+    display: inline-block;
+    background-image: linear-gradient(to top right,navy, purple);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.06),
+              0 2px 10px 0 rgba(0,0,0,0.07);
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+
+
+@media (max-width: 768px) {
+    .submit-btn {
+        width:100%;
+        float: none;
+        text-align:center;
+    }
+}
+
+input[type=checkbox] + label {
+  color: #ccc;
+  font-style: italic;
+} 
+
+input[type=checkbox]:checked + label {
+  color: #f00;
+  font-style: normal;
+}
+</style>
+</head>
+
+<body align="center">
+
+<div class="container">
+
+<h1>Feedback Form</h1>
+
+<form action="https://formsubmit.co/hashtagmoviemk@gmail.com" method="POST" >
+<input type="text" name="Name" placeholder="Full Name" required><br>
+
+<input type="email" name="Email" placeholder="Email" required>
+<br>
+<select name="Country">
+
+<option>Country</option>
+
+<option>🇦🇫Afghanistan</option> <option>🇦🇱Albania</option> 
+<button type="submit">Send</button>
+<option>🇩🇿Algeria</option>
+
+<option>🇦🇩Andorra</option>
+
+<option>🇦🇴Angola</option>
+
+<option>🇦🇮Anguilla</option>
+
+<option>🇦🇬Antigua & Barbuda</option>
+
+<option>🇦🇷Argentina</option>
+
+<option>Armenia</option>
+
+<option>Australia</option>
+
+<option>Austria</option>
+
+<option>Azerbaijan</option>
+
+<option>Bahamas</option>
+
+<option>Bahrain</option>
+
+<option>Bangladesh</option>
+
+<option>Barbados</option>
+
+<option>Belarus</option>
+
+<option>Belgium</option>
+
+<option>Belize</option>
+
+<option>Benin</option>
+
+<option>Bermuda</option>
+
+<option>Bhutan</option>
+
+<option>Bolivia</option>
+
+<option>Bosnia & Herzegovina</option>
+
+<option>Botswana</option>
+
+<option>Brazil</option>
+
+<option>Brunei Darussalam</option>
+
+<option>Bulgaria</option>
+
+<option>Burkina Faso
+
+<option>Burundi</option>
+
+<option>Cambodia</option>
+
+<option>Cameroon</option>
+
+<option>Canada</option>
+
+<option>Cape Verde</option>
+
+<option>Cayman Islands</option>
+
+<option>Central African Republic</option>
+
+<option> Chad</option>
+
+<option>Chile</option>
+
+<option>China</option>
+
+<option>China - Hong Kong / Macau</option>
+
+<option>Colombia Comoros</option>
+
+<option>Congo</option>
+
+<option>Congo, Democratic Republic of (DRC)</option>
+
+<option>Costa Rica</option>
+
+<option>Croatia</option>
+
+<option>Cuba</option>
+
+<option>Cyprus</option>
+
+<option>Czech Republic</option>
+
+<option>Denmark</option>
+
+<option>Djibouti</option>
+
+<option>Dominica</option>
+
+<option>Dominican Republic</option>
+
+<option>Ecuador</option>
+
+<option>Egypt</option>
+
+<option>El Salvador</option>
+
+<option>Equatorial Guinea</option>
+
+<option>Eritrea</option>
+
+<option>Estonia</option>
+
+<option>Eswatini</option>
+
+<option>Ethiopia</option>
+
+<option>Fiji</option>
+
+<option>Finland</option>
+
+<option>France</option>
+
+<option>French Guiana</option>
+
+<option>Gabon</option>
+
+<option>Gambia, Republic of The</option>
+
+<option>Georgia</option>
+
+<option>Germany</option>
+
+<option>Ghana</option>
+
+<option>Great Britain</option>
+
+<option>Greece</option>
+
+<option>Grenada Guadeloupe</option>
+
+<option>Guatemala</option>
+
+<option>Guinea</option>
+
+<option>Guinea-Bissau</option>
+
+<option>Guyana</option>
+
+<option>Haiti</option>
+
+<option>Honduras</option>
+
+<option>Hungary</option>
+
+<option>Iceland</option>
+
+<option>India</option>
+
+<option>Indonesia</option>
+
+<option>Iran</option>
+
+<option>Iraq</option>
+
+<option>Israel and the Occupied Territories</option>
+
+<option>Italy</option>
+
+<option>Ivory Coast (Cote d'Ivoire)</option>
+
+<option>Jamaica</option>
+
+<option>Japan</option>
+
+<option>Jordan</option>
+
+<option>Kazakhstan</option>
+
+<option>Kenya</option>
+
+<option>Korea, Democratic Republic of (North Korea)</option>
+
+<option>Korea, Republic of (South Korea)</option>
+
+<option>Kosovo</option>
+
+<option>Kuwait</option>
+
+<option>Kyrgyz Republic (Kyrgyzstan)</option>
+
+<option>Laos</option>
+
+<option>Latvia</option>
+
+<option>Lebanon</option>
+
+<option>Lesotho</option>
+
+<option>Liberia</option>
+
+<option>Libya</option>
+
+<option>Liechtenstein</option>
+
+<option>Lithuania</option>
+
+<option>Luxembourg</option>
+
+<option>Madagascar</option>
+
+<option>Malawi</option>
+
+<option>Malaysia</option>
+
+<option>Maldives</option>
+
+<option>Mali</option>
+
+<option>Malta</option>
+
+<option>Martinique</option>
+
+<option>Mauritania</option>
+
+<option>Mauritius</option>
+
+<option>Mayotte</option>
+
+<option>Mexico</option>
+
+<option>Moldova, Republic of</option>
+
+<option>Monaco</option>
+
+<option>Mongolia</option>
+
+<option>Montenegro</option>
+
+<option>Montserrat</option>
+
+<option>Morocco</option>
+
+<option>Mozambique</option>
+
+<option>Myanmar/Burma</option>
+
+<option>Namibia</option>
+
+<option>Nepal</option>
+
+<option>Netherlands</option>
+
+<option>New Zealand</option>
+
+<option>Nicaragua</option>
+
+<option>Niger</option>
+
+<option>Nigeria</option>
+
+<option>North Macedonia, Republic of</option>
+
+<option>Norway</option>
+
+<option>Oman</option>
+
+<option>Pacific Islands</option>
+
+<option>Pakistan</option>
+
+<option>Panama</option>
+
+<option>Papua New Guinea</option>
+
+<option>Paraguay</option>
+
+<option>Peru</option>
+
+<option>Philippines</option>
+
+<option>Poland</option>
+
+<option>Portugal</option>
+
+<option>Puerto Rico</option>
+
+<option>Qatar</option>
+
+<option>Reunion</option>
+
+<option>Romania</option>
+
+<option>Russian Federation</option>
+
+<option>Rwanda</option>
+
+<option>Saint Kitts and Nevis</option>
+
+<option>Saint Lucia</option>
+
+<option>Saint Vincent and the Grenadines</option>
+
+<option>Samoa</option>
+
+<option>Sao Tome and Principe</option>
+
+<option>Saudi Arabia</option>
+
+<option>Senegal</option>
+
+<option>Serbia</option>
+
+<option>Seychelles</option>
+
+<option>Sierra Leone</option>
+
+<option>Singapore</option>
+
+<option>Slovak Republic (Slovakia)</option>
+
+<option>Slovenia</option>
+
+<option>Solomon Islands</option>
+
+<option>Somalia</option>
+
+<option>South Africa</option>
+
+<option>South Sudan</option>
+
+<option>Spain</option>
+
+<option>Sri Lanka</option>
+
+<option>Sudan</option>
+
+<option>Suriname</option>
+
+<option>Sweden</option>
+
+<option>Switzerland</option>
+
+<option>Syria</option>
+
+<option>Tajikistan</option>
+
+<option>Tanzania</option>
+
+<option>Thailand</option>
+
+<option>Timor Leste</option>
+
+<option>Togo</option>
+
+<option>Trinidad & Tobago</option>
+
+<option>Tunisia</option>
+
+<option>Türkiye (Turkey)</option>
+
+<option>Turkmenistan</option>
+
+<option>Turks & Caicos Islands</option>
+
+<option>Uganda</option>
+
+<option>Ukraine</option>
+
+<option>United Arab Emirates</option>
+
+<option>United States of America (USA)</option>
+
+<option>Uruguay</option>
+
+<option>Uzbekistan</option>
+
+<option>Venezuela</option>
+
+<option>Vietnam</option>
+
+<option>Virgin Islands (UK)</option>
+
+<option>Virgin Islands (US)</option>
+
+<option>Yemen</option>
+
+<option>Zambia</option>
+
+<option>Zimbabwe</option>
+
+</select>
+<br>
+<textarea name="Message" placeholder="Message" required></textarea>
+
+<Button type="submit">Send</button>
+
+</form>
+
+</div>
+
+</body>
+
+</Html>
