@@ -1,3 +1,106 @@
+doctype! html>
+    <html>
+        <head>
+            
+<title>Hashtag</title>
+<style>
+	body {
+-ms-overflow-style: none; 
+  scrollbar-width: none; 
+  overflow-x: scroll; 
+		
+	}
+	body::-webkit-scrollbar {
+  display: none;
+	}
+        img[id="sitelogo"] {
+        height: 50px;
+        width: 50px;
+		animation: shine 2s infinite;
+	
+    }
+        table[id="sitelogo"] {
+            width: 95%;
+            height: 95px;
+            
+        }
+        
+    input[type=search] {
+        width: 200px;
+        padding: 8px 20px 8px 45px;
+        border: #ffffff solid 2px;
+        font-size: 18px;
+        border-radius: 25px;
+        background-position: 2% 50%;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-color: #070000;
+        transition: 0.5s all ease-in-out;
+        filter: brightness(150%);
+        font-weight: bold;
+        text-align: center;
+    }
+
+    input[type=search]:focus,
+    input[type=search]:not(:placeholder-shown) {
+        width: 80%;
+        background-color: #fff;
+        filter: brightness(100%);
+        align-self: center;
+        align-items: center;
+        align-content: center;
+
+    }
+	div.back {
+background-color: black; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, navy , black);
+
+		
+	}
+</style>
+        </head>
+        <body bgcolor="black">
+		<div class="back">
+            <table align="center" id="sitelogo">
+                <tr>
+                    <td style="width: 100px;">
+            <div align="left">
+                <img src="Images/icon_png-removebg-preview.png" id="sitelogo">
+            </div>
+                    </td>
+                    <td>
+            <div align="right">
+<input placeholder=" Search...." type="search" list="input" onchange="window.location.href=this.value;">
+<datalist id="input" >
+    <option value="Badboy.html">Badboy</option>
+    <option value="Azam.html">Azam</option>
+    <option value="Aseq.html">Aseq</option>
+    <option value="Ajmer92.html">Ajmer 92</option>
+    <option value="Afwaah.html">Afwaah</option>
+	    <option value="8A_M_Metro.html">Afwaah</option>
+</datalist>
+            </div>
+                    </td>
+                </tr>
+        </table>
+
+<script>
+    if(performance.navigation.type == 2){
+        location.reload(true);
+    }
+</script>
+		</div>
+        </body>
+    </html>
+</doctype>
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
