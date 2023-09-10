@@ -77,7 +77,7 @@ background-color: black; /* For browsers that do not support gradients */
                     </td>
                     <td>
             <div align="right">
-<input placeholder=" Search...." type="search" list="input" onchange="window.location.href=this.value;" name="search">
+<input placeholder=" Search...." type="search" list="input" onchange="window.location.href=this.value;" name="txtSearchBox">
 <datalist id="input" >
     <option value="Badboy.html">Badboy</option>
     <option value="Azam.html">Azam</option>
@@ -96,15 +96,18 @@ background-color: black; /* For browsers that do not support gradients */
     if(performance.navigation.type == 2){
         location.reload(true);
     }
-	const search = document.querySelector('[name="search"]');
+	 $("#txtSearchBox").keypress(function (e) {
+             var code = e.keyCode ? e.keyCode : e.which;
+             if (code.toString() == 13) {
+                QLSearch(); // call the function to redirect to another page
+                 return false;
+             }
+     });
 
-search.addEventListener('keyup', (e) => {
-    if (e.code === 'Enter') {
-        const url = 'index.html';
-
-        window.location.href = url;
-    }
-});
+// Function that redirect the user to another page
+function QLSearch() {
+          window.location = "index.html";
+}
 </script>
 			 <div class="scrollmenu1">
       <a href="index.html">Home</a>
