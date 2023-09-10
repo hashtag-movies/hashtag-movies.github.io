@@ -8,7 +8,7 @@
 -ms-overflow-style: none; 
   scrollbar-width: 0; 
   overflow-x: scroll; 
-		
+  background: transparent;		
 	}
 	body::-webkit-scrollbar {
   display: none;
@@ -24,7 +24,14 @@
             height: 95px;
             
         }
-        
+        .disable-scrollbars::-webkit-scrollbar {
+  background: transparent; /* Chrome/Safari/Webkit */
+  width: 0px;
+}
+	::-webkit-scrollbar {
+  background: transparent; /* Chrome/Safari/Webkit */
+  width: 0px;
+}
     input[type=search] {
         width: 200px;
         padding: 8px 20px 8px 45px;
@@ -447,6 +454,12 @@ background-color: black; /* For browsers that do not support gradients */
 <meta name="viewport" content="width=30, initial-scale=1">
 <style>
 div.scrollmenu {
+  background: transparent; /* Chrome/Safari/Webkit */
+}
+	.disable-scrollbars::-webkit-scrollbar {
+  background: transparent; /* Chrome/Safari/Webkit */
+  width: 0px;
+}
   background-color: ;
   overflow: hidden;
   white-space: nowrap;
