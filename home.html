@@ -28,7 +28,83 @@ $("#txtSearchBox").keypress(function (e) {
 }
 </script>
 <style>
+body {
+-ms-overflow-style: none; 
+  scrollbar-width: 0; 
+  overflow-x: scroll; 
+  background: transparent;		
+	}
+	body::-webkit-scrollbar {
+  display: none;
+	}
+        img[id="sitelogo"] {
+        height: 50px;
+        width: 50px;
+		animation: shine 2s infinite;
 	
+    }
+        table[id="sitelogo"] {
+            width: 95%;
+            height: 95px;
+            
+        }
+        .disable-scrollbars::-webkit-scrollbar {
+  background: transparent; /* Chrome/Safari/Webkit */
+  width: 0px;
+}
+	::-webkit-scrollbar {
+  background: transparent; /* Chrome/Safari/Webkit */
+  width: 0px;
+}
+    input[type=search] {
+        width: 200px;
+        padding: 8px 20px 8px 45px;
+        border: #ffffff solid 2px;
+        font-size: 18px;
+        border-radius: 25px;
+        background-position: 2% 50%;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-color: #070000;
+        transition: 0.5s all ease-in-out;
+        filter: brightness(150%);
+        font-weight: bold;
+        text-align: center;
+    }
+
+    input[type=search]:focus,
+    input[type=search]:not(:placeholder-shown) {
+        width: 80%;
+        background-color: #fff;
+        filter: brightness(100%);
+        align-self: center;
+        align-items: center;
+        align-content: center;
+
+    }
+	div.back {
+background-color: black; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom, navy , black);
+
+		
+		}
+	div.scrollmenu1 {
+          
+          overflow: auto;
+          white-space: nowrap;
+        }
+  
+        div.scrollmenu1 a {
+          display: inline-block;
+          color: white;
+          text-align: center;
+          padding: 14px;
+          text-decoration: none;
+        }
+  
+        div.scrollmenu1 a:hover {
+          background-color: ;
+		}
 
 
 </style>
