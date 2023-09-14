@@ -3,6 +3,23 @@
         <head>
             
 <title>Hashtag</title>
+		<script>
+			$('img[data-enlargable]').addClass('img-enlargable').click(function(){
+    var src = $(this).attr('src');
+    $('<div>').css({
+        background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
+        backgroundSize: 'contain',
+        width:'100%', height:'100%',
+        position:'fixed',
+        zIndex:'10000',
+        top:'0', left:'0',
+        cursor: 'zoom-out'
+    }).click(function(){
+        $(this).remove();
+    }).appendTo('body');
+});
+			
+		</script>
 <style>
 	body {
 -ms-overflow-style: none; 
@@ -250,7 +267,8 @@ h5 {
 <h5>Screenshots:</h5>
 
 <div class="scroll-container">
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/nDXwsxw/Nick-Fury-Secret-Invasion.jpg" alt="Nick-Fury-Secret-Invasion" border="0"></a>
+<img data-enlargable width="100" 
+	src="https://i.ibb.co/nDXwsxw/Nick-Fury-Secret-Invasion.jpg" alt="Nick-Fury-Secret-Invasion" border="0">
 <a href="https://ibb.co/kh8mFw6"><img src="https://i.ibb.co/FBwHtyq/Secret-Invasion-D23-Trailer-1.png" alt="Secret-Invasion-D23-Trailer-1" border="0"></a>
 <a href="https://ibb.co/r6VbR7F"><img src="https://i.ibb.co/Lt3QXkY/Secret-Invasion-D23-Trailer-2.png" alt="Secret-Invasion-D23-Trailer-2" border="0"></a>
 <a href="https://ibb.co/vHpJrTr"><img src="https://i.ibb.co/ZV5hwFw/Secret-Invasion-D23-Trailer-3.png" alt="Secret-Invasion-D23-Trailer-3" border="0"></a>
