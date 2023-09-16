@@ -27,7 +27,11 @@
     $('.gallery_pics').toggleClass('fullscreen');
   });
 });	
-			
+		$(document).ready(function() {
+  $('.gallery_pics').click(function(e) {
+    $('.gallery_pics').toggleClass('fullscreen');
+  });
+});	
 		</script>
 <style>
 	body {
@@ -208,6 +212,42 @@ h5 {
  font-size:30px;
  margin-left:10px;
 		}
+	.gallery_pics_holder {
+  border: px solid green;
+  width: 100%;
+  text-align: center;
+  height: 350px;
+  display: table;
+}
+.gallery_pics {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  text-align: center;
+  background-color: #3C0;
+}
+.gallery_pics img {
+  width: 100%;
+  height: 100%;
+}
+.gallery_pics:hover {
+  cursor: pointer;
+}
+.gallery_pics.fullscreen img {
+  width: 100%;
+  height: 100%;
+}
+.gallery_pics.fullscreen {
+  z-index: 9999;
+  position: fixed;
+  margin: 0 auto;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  background-color: #0FF;
+	}
 </style>
         </head>
         <body bgcolor="black">
