@@ -22,16 +22,8 @@
     moreText.style.display = "inline";
   }
 }
-	$(document).ready(function() {
-  $('.gallery_pics').click(function(e) {
-    $('.gallery_pics').toggleClass('fullscreen');
-  });
-});	
-		$(document).ready(function() {
-  $('.gallery_pics').click(function(e) {
-    $('.gallery_pics').toggleClass('fullscreen');
-  });
-});	
+	
+		
 		</script>
 <style>
 	body {
@@ -161,42 +153,7 @@ margin-left:10px;
   color:white;/* White text */
 
 }
-	.gallery_pics_holder {
-  border: px solid green;
-  width: 100%;
-  text-align: center;
-  height: 350px;
-  display: table;
-}
-.gallery_pics {
-  display: inline-block;
-  width: 300px;
-  height: 300px;
-  margin: 10px;
-  text-align: center;
-  background-color: #3C0;
-}
-.gallery_pics img {
-  width: 100%;
-  height: 100%;
-}
-.gallery_pics:hover {
-  cursor: pointer;
-}
-.gallery_pics.fullscreen img {
-  width: 100%;
-  height: 100%;
-}
-.gallery_pics.fullscreen {
-  z-index: 9999;
-  position: fixed;
-  margin: 0 auto;
-  width: 90%;
-  height: 90%;
-  top: 5%;
-  left: 5%;
-  background-color: #0FF;
-	}
+	
 	div.scroll-container {
   backgroun-image: linear-gradient(to top right,navy, black);
   overflow: auto;
@@ -212,42 +169,7 @@ h5 {
  font-size:30px;
  margin-left:10px;
 		}
-	.gallery_pics_holder {
-  border: px solid green;
-  width: 100%;
-  text-align: center;
-  height: 350px;
-  display: table;
-}
-.gallery_pics {
-  display: inline-block;
-  width: 300px;
-  height: 300px;
-  margin: 10px;
-  text-align: center;
-  background-color: #3C0;
-}
-.gallery_pics img {
-  width: 100%;
-  height: 100%;
-}
-.gallery_pics:hover {
-  cursor: pointer;
-}
-.gallery_pics.fullscreen img {
-  width: 100%;
-  height: 100%;
-}
-.gallery_pics.fullscreen {
-  z-index: 9999;
-  position: fixed;
-  margin: 0 auto;
-  width: 90%;
-  height: 90%;
-  top: 5%;
-  left: 5%;
-  background-color: #0FF;
-	}
+	
 </style>
         </head>
         <body bgcolor="black">
@@ -327,9 +249,55 @@ h5 {
         </body>
     </html>
 </doctype>
-
+<!doctype html>
+    <html>
+        <head>
+<script>
+	$(document).ready(function() {
+  $('.gallery_pics').click(function(e) {
+    $('.gallery_pics').toggleClass('fullscreen');
+  });
+});	
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	
+	<style>
+		.gallery_pics_holder {
+  border: px solid green;
+  width: 100%;
+  text-align: center;
+  height: 350px;
+  display: table;
+}
+.gallery_pics {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  text-align: center;
+  background-color: #3C0;
+}
+.gallery_pics img {
+  width: 100%;
+  height: 100%;
+}
+.gallery_pics:hover {
+  cursor: pointer;
+}
+.gallery_pics.fullscreen img {
+  width: 100%;
+  height: 100%;
+}
+.gallery_pics.fullscreen {
+  z-index: 9999;
+  position: fixed;
+  margin: 0 auto;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  background-color: #0FF;
+}
+	</style>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <div class="gallery_pics_holder">
@@ -414,7 +382,10 @@ h5 {
     <img src="images/after0.jpg" width="300px" height="300px" alt="">
   </div>
   <!--gallery_header-->
-</div>
+</body>
+	</html>
+	</doctype>
+
 
 
 
