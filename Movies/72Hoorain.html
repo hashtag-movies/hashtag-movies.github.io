@@ -18,7 +18,26 @@
         $(this).remove();
     }).appendTo('body');
 });
-			
+		function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+	$(document).ready(function() {
+  $('.gallery_pics').click(function(e) {
+    $('.gallery_pics').toggleClass('fullscreen');
+  });
+});	
 		</script>
 <style>
 	body {
@@ -107,6 +126,48 @@ background-color: black; /* For browsers that do not support gradients */
     }
 </script>
 		</div>
+		<div style="position:relative;">
+  <iframe src="https://drive.google.com/file/d/1-z-ApUi1LTkDZnQbhBLS5tws979lqV6z/preview"  width="640px" height="480px" allowfullscreen="allowfullscreen" autoplay frameborder="0">
+  </iframe>
+  <div style="width: 80px; height: 80px; position: absolute; right: 15px; top: 15px;">
+    <img href="Images/icon_png-removebg-preview.png">
+  </div>
+		</div>
+<div class="btn-group" style="width:100%">
+
+<a href="https://sites.google.com/view/hashtag-website/secret-invasion_1">
+  <button style="width:95%; margin-left:10px;">Download</button></a>
+</div>
+
+<div class="example example-contain">
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/mBK7m0X/IMG-20230906-073902.png" alt="IMG-20230906-073902" border="0"></a>
+</div>
+<p>Language: Hindi</p>
+<p>Quality: 1080(HD),720,360</p>
+<p>Download-Language:  Hindi</p>
+<p>Action,Thriller</p>
+
+		<h5>Screenshots:</h5>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+
+	<div class="scroll-container">
+
+<div class="gallery_pics_holder">
+
+  <div class="gallery_pics">
+    <img src="images/before1.jpg" alt="">
+  </div>
+  <!--gallery_header-->
+  <div class="gallery_pics">
+    <img src="images/after1.jpg" width="300px" height="300px" alt="">
+	</div>
+</div>
+	</div>
+		<h2></h2>
+<p>The story involves a subversive, long-term invasion of Earth by the Sk<span id="dots">...</span><span id="more">rulls, a group of alien shapeshifters who have secretly replaced many superheroes in the Marvel Universe with impostors over a period of years, prior to the overt invasion. Marvel's promotional tagline for the event was "Who do you trust?</span></p>
+<button onclick="myFunction()" id="myBtn">Read more</button>
+		
         </body>
     </html>
 </doctype>
@@ -145,13 +206,7 @@ margin-top: 0;
 </head>
 
 <body>
-<div style="position:relative;">
-  <iframe src="https://drive.google.com/file/d/1-z-ApUi1LTkDZnQbhBLS5tws979lqV6z/preview"  width="640px" height="480px" allowfullscreen="allowfullscreen" autoplay frameborder="0">
-  </iframe>
-  <div style="width: 80px; height: 80px; position: absolute; right: 15px; top: 15px;">
-    <img href="Images/icon_png-removebg-preview.png">
-  </div>
-</div>
+
 
 <h2></h2>
 <p></p>
@@ -220,19 +275,7 @@ margin-left:10px;
 }
 </style>
 
-<div class="btn-group" style="width:100%">
 
-<a href="https://sites.google.com/view/hashtag-website/secret-invasion_1">
-  <button style="width:95%; margin-left:10px;">Download</button></a>
-</div>
-
-<div class="example example-contain">
-  <a href="https://imgbb.com/"><img src="https://i.ibb.co/mBK7m0X/IMG-20230906-073902.png" alt="IMG-20230906-073902" border="0"></a>
-</div>
-<p>Language: Hindi</p>
-<p>Quality: 1080(HD),720,360</p>
-<p>Download-Language:  Hindi</p>
-<p>Action,Thriller</p>
  
 
 </body>
@@ -264,23 +307,7 @@ h5 {
 </head>
 <body>
 
-<h5>Screenshots:</h5>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	
 
-	<div class="scroll-container">
-
-<div class="gallery_pics_holder">
-
-  <div class="gallery_pics">
-    <img src="images/before1.jpg" alt="">
-  </div>
-  <!--gallery_header-->
-  <div class="gallery_pics">
-    <img src="images/after1.jpg" width="300px" height="300px" alt="">
-	</div>
-</div>
-	</div>
 </body>
 </html>
 
@@ -341,31 +368,9 @@ h5 {
 	
 
 
-<h2></h2>
-<p>The story involves a subversive, long-term invasion of Earth by the Sk<span id="dots">...</span><span id="more">rulls, a group of alien shapeshifters who have secretly replaced many superheroes in the Marvel Universe with impostors over a period of years, prior to the overt invasion. Marvel's promotional tagline for the event was "Who do you trust?</span></p>
-<button onclick="myFunction()" id="myBtn">Read more</button>
 
 <script>
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
 
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more"; 
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less"; 
-    moreText.style.display = "inline";
-  }
-}
-	$(document).ready(function() {
-  $('.gallery_pics').click(function(e) {
-    $('.gallery_pics').toggleClass('fullscreen');
-  });
-});
 </script>
 
 </body>
