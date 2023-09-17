@@ -347,44 +347,14 @@ body {
     <html>
         <head>
 <script>
-	function getPics() {} //just for this demo
-const imgs = document.querySelectorAll('.gallery img');
-const fullPage = document.querySelector('#fullpage');
-
-imgs.forEach(img => {
-  img.addEventListener('click', function() {
-    fullPage.style.backgroundImage = 'url(' + img.src + ')';
-    fullPage.style.display = 'block';
-  });
-});
+	
 	
 </script>
 
 	<style>
-		#fullpage {
-  display: none;
-  position: absolute;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-size: contain;
-  background-repeat: no-repeat no-repeat;
-  background-position: center center;
-  background-color: black;
-		}
+		
 	</style>
-
-	<body onload="getPics()">
-  <div class="container">
-    <h1>Photo Gallery</h1>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1543517515-d6ff15a98642?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjQ0NDc3fQ&s=493802e93ec426171750ac2291e2867e" /><img src="https://images.unsplash.com/photo-1543517515-d6ff15a98642?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjQ0NDc3fQ&s=493802e93ec426171750ac2291e2867e"
-      /><img src="https://images.unsplash.com/photo-1543517515-d6ff15a98642?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjQ0NDc3fQ&s=493802e93ec426171750ac2291e2867e" />
-    </div>
-  </div>
-  <div id="fullpage" onclick="this.style.display='none';"></div>
+		
 </body>
 	</html>
 </doctype>
