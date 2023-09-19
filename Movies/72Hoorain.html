@@ -345,8 +345,7 @@ $fsmActual.addEventListener("click", closeFSM);
 
     </body>
 	    <script>
-	
-				$('img[data-enlargable]').addClass('img-enlargable').click(function(){
+		    $('img[data-enlargable]').addClass('img-enlargable').click(function(){
     var src = $(this).attr('src');
     $('<div>').css({
         background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
@@ -358,9 +357,9 @@ $fsmActual.addEventListener("click", closeFSM);
         cursor: 'zoom-out'
     }).click(function(){
         $(this).remove();
-    }).appendTo('body');    
-		    
-		</script>
+    }).appendTo('body');
+});
+	    </script>
 		
 	</html>
 </doctype>
