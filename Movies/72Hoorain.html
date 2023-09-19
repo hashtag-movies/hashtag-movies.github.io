@@ -260,77 +260,13 @@ h5 {
 <button onclick="myFunction()" id="myBtn">Read more</button>
 		
         </body>
-    </html>
-</doctype>
-<!doctype html>
-    <html>
-        <head>
-<script>
-			$fsmActual.classList.add('full-screen')
-	}, 1000);
-};
-
-var closeFSM = function(event){
-	var $this = event.currentTarget;
-	
-	$this.style.height = size.height;
-	$this.style.width = size.width;
-	$this.style.top = position.top + 'px';
-	$this.style.left = position.left + 'px';
-	$this.style.margin = '0';
-	$this.classList.remove('full-screen');
-	$this.classList.add('shrinking');
-	
-	setTimeout(function(){
-		while($this.firstChild) $this.removeChild($this.firstChild);
-		var classList = $this.classList;
-		while (classList.length > 0) {
-			 classList.remove(classList.item(0));
-		}
-		$this.style = '';;
-	}, 1000);
-};
-
-for (var i = 0; i < $fsm.length; i++) {
-	$fsm[i].addEventListener("click", openFSM);
-}
-$fsmActual.addEventListener("click", closeFSM);
-	
-</script>
-<style>
-		
-		
-	</style>
-
-	
-
-
-
-  
-</body>
-	</html>
-	</doctype>
 
 
 
 
-
-    <html>
-        <head>
-
-	<style>
-	
-	</style>
-	</head>
-	    <body>
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-  </div>
-
-    </body>
+	    
 	    <script>
-	
-		    $('img[data-enlargable]').addClass('img-enlargable').click(function(){
+		$('img[data-enlargable]').addClass('img-enlargable').click(function(){
     var src = $(this).attr('src');
     $('<div>').css({
         background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
@@ -342,15 +278,7 @@ $fsmActual.addEventListener("click", closeFSM);
         cursor: 'zoom-out'
     }).click(function(){
         $(this).remove();
-    }).appendTo('body');
-});
-		    
-		</script>
-		
-	</html>
+    }).appendTo('body');    
+    </script>
+    </html>
 </doctype>
-
-
-
-
-
