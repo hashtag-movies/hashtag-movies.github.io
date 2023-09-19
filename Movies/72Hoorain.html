@@ -247,28 +247,11 @@ h5 {
 
 
 <div class="scrollmenu1">
-  <div id="fsm_container" class="fsm-container">
-	<div class="fsm apple">
-		
-		<h1 class="modal-content"><img src="https://i.ibb.co/YyDpY4P/MV5-BYTQ2-N2-Fl-NTMt-Mz-U2-ZS00-NTUx-LTk3-Mz-Ut-Nj-Uy-MDJl-N2-I5-ZDQ2-Xk-Ey-Xk-Fqc-Gde-QXVy-MTEy-Mj.jpg" alt="MV5-BYTQ2-N2-Fl-NTMt-Mz-U2-ZS00-NTUx-LTk3-Mz-Ut-Nj-Uy-MDJl-N2-I5-ZDQ2-Xk-Ey-Xk-Fqc-Gde-QXVy-MTEy-Mj" border="0">
+  <img data-enlargable width="100"  src="https://i.ibb.co/mBK7m0X/IMG-20230906-073902.png">
 	</div>
-	<div class="fsm pied">
-		
-		<h1 class="modal-content"><img src="https://i.ibb.co/d0FnRP0/MV5-BMj-A3-Yz-Zl-Nm-Qt-Mj-Q3-NS00-Nz-Nm-LTk2-Zm-Ut-Njgx-Mm-Q4-NWQz-ZDZm-Xk-Ey-Xk-Fqc-Gde-QXVy-MTEy-M.jpg" alt="MV5-BMj-A3-Yz-Zl-Nm-Qt-Mj-Q3-NS00-Nz-Nm-LTk2-Zm-Ut-Njgx-Mm-Q4-NWQz-ZDZm-Xk-Ey-Xk-Fqc-Gde-QXVy-MTEy-M" border="0">
-		</h1>
-	</div>
-	<div class="fsm codepen">
-		
-		<h1 class="modal-content"><img src="https://i.ibb.co/hKyHx9T/MV5-BOTVj-Y2-Yw-NDMt-YWRk-Yy00-MDEx-LWE5-ZDkt-OTJm-NTU5-MTlm-Mzhj-Xk-Ey-Xk-Fqc-Gde-QXVy-MTEy-Mj-M2-N.jpg" alt="MV5-BOTVj-Y2-Yw-NDMt-YWRk-Yy00-MDEx-LWE5-ZDkt-OTJm-NTU5-MTlm-Mzhj-Xk-Ey-Xk-Fqc-Gde-QXVy-MTEy-Mj-M2-N" border="0">
-		</h1>
-	</div>
-	<div class="fsm google">
-		
-		<h1 class="modal-content"><img src="https://i.ibb.co/4sjCzSV/MV5-BMTQ2-Mj-A4-OWEt-Ym-Yy-ZC00-ODlh-LWEz-Nz-Ut-Zm-Jk-NGQy-ZTNj-NTE3-Xk-Ey-Xk-Fqc-Gde-QXVy-MTEy-Mj-M.jpg" alt="MV5-BMTQ2-Mj-A4-OWEt-Ym-Yy-ZC00-ODlh-LWEz-Nz-Ut-Zm-Jk-NGQy-ZTNj-NTE3-Xk-Ey-Xk-Fqc-Gde-QXVy-MTEy-Mj-M" border="0">
-		</h1>
-	</div>
-  </div>
 </div>
+		
+
 	
 
 		<h2></h2>
@@ -335,125 +318,7 @@ $fsmActual.addEventListener("click", closeFSM);
         <head>
 
 	<style>
-	body {
-	width: 100vw;
-	height: 100vh;
-	display: ;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	margin: 0;
-	background-color: ;
-	font-family: 'Roboto', sans-serif;
 	
-	&.no-scroll {
-		overflow: hidden;
-	}
-}
-
-h1 {
-	font-weight: 900;
-	text-transform: uppercase;
-}
-
-.fsm {
-	margin: 10vh 5vw;
-	background-color: blue;
-	height: 100px;
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	color: #f5f5f5;
-	font-size: 1.5rem;
-	border-radius: 10px;
-	transition: 1s;
-	cursor: pointer;
-	
-	.fa {
-		transition: 1s;
-		color: #f5f5f5;
-		font-size: 2.5vw;
-		
-		&:before {
-			color: #f5f5f5;
-		}
-		.img {
-			height: 1000px;
-			width: 1000px;
-		}
-	}
-	
-	.modal-content img {
-		height: 200px;
-		width: 300px;
-		margin: 0;
-	}
-	
-	h1.modal-content {
-		opacity: 0;
-		transition: 1s;
-	}
-	
-	&.apple img {
-		background: linear-gradient(135deg, #83458e 0%,#608dc9 100%);
-		height: 1000px;
-	}
-	&.pied {
-		background: linear-gradient(135deg, #6ecdc7 0%,#c7e4ec 100%);
-	}
-	&.codepen {
-		background: linear-gradient(135deg, #778899 0%,#DCDCDC 100%);
-	}
-	&.google {
-		background: linear-gradient(135deg, #4285f4 0%,#ea4335 100%);
-	}
-	
-	&.growing {
-		h1.modal-content {
-			height: 1000px;
-			margin: 0;
-			opacity: 0;
-			transition-delay: 0.5s;
-		}
-	}
-	
-	&.full-screen {
-		height: 100vh;
-		z-index: 100;
-		margin: 0;
-		border-radius: 0;
-		
-		.fa {
-			font-size: 10vw;
-		}
-		.modal-content img {
-			height: 1000px;
-			width: auto;
-			margin: inital;
-		}
-		h1.modal-content {
-			transition-delay: 0.5s;
-			opacity: 1;
-		}
-	}
-	&.shrinking {
-		h1.modal-content {
-			transition-delay: 0s;
-			transition: 0.5s;
-			opacity: 0;
-			display: block;
-		}
-	}
-	
-	&-container {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-		box-sizing: border-box;
-	}
-					    }
 	</style>
 	</head>
 	    <body>
@@ -464,82 +329,20 @@ h1 {
     </body>
 	    <script>
 	
-		    // JS available on https://github.com/colinlohner/FSM-JS
-
-
-//Setup
-var fsmActual = document.createElement('div');
-fsmActual.setAttribute('id', 'fsm_actual');
-document.body.appendChild(fsmActual);
-var $fsm = document.querySelectorAll('.fsm');;
-var $fsmActual = document.querySelector('#fsm_actual');
-$fsmActual.style.position = "absolute";
-
-var position = {};
-var size = {};
-
-
-//modal action stuffs
-var openFSM = function(event) {
-	var $this = event.currentTarget;
-	position = $this.getBoundingClientRect();
-	size = {
-		width: window.getComputedStyle($this).width,
-		height: window.getComputedStyle($this).height
-	}
-	
-	$fsmActual.style.position = "absolute";
-	$fsmActual.style.top = position.top + 'px';
-	$fsmActual.style.left = position.left + 'px';
-	$fsmActual.style.height = size.height;
-	$fsmActual.style.width = size.width;
-	$fsmActual.style.margin = $this.style.margin;
-	
-	setTimeout(function(){
-		$fsmActual.innerHTML = $this.innerHTML;
-		var classes = $this.classList.value.split(' ');
-		for (var i = 0; i < classes.length; i++) {
-			$fsmActual.classList.add(classes[i]);
-		}
-		$fsmActual.classList.add('growing');
-		$fsmActual.style.height = '100vh';
-		$fsmActual.style.width = '100vw';
-		$fsmActual.style.top = '0';
-		$fsmActual.style.left = '0';
-		$fsmActual.style.margin = '0';
-	}, 1);
-	
-	setTimeout(function(){
-		$fsmActual.classList.remove('growing');
-		$fsmActual.classList.add('full-screen')
-	}, 1000);
-};
-
-var closeFSM = function(event){
-	var $this = event.currentTarget;
-	
-	$this.style.height = size.height;
-	$this.style.width = size.width;
-	$this.style.top = position.top + 'px';
-	$this.style.left = position.left + 'px';
-	$this.style.margin = '0';
-	$this.classList.remove('full-screen');
-	$this.classList.add('shrinking');
-	
-	setTimeout(function(){
-		while($this.firstChild) $this.removeChild($this.firstChild);
-		var classList = $this.classList;
-		while (classList.length > 0) {
-			 classList.remove(classList.item(0));
-		}
-		$this.style = '';;
-	}, 1000);
-};
-
-for (var i = 0; i < $fsm.length; i++) {
-	$fsm[i].addEventListener("click", openFSM);
-}
-$fsmActual.addEventListener("click", closeFSM);
+		    $('img[data-enlargable]').addClass('img-enlargable').click(function(){
+    var src = $(this).attr('src');
+    $('<div>').css({
+        background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
+        backgroundSize: 'contain',
+        width:'100%', height:'100%',
+        position:'fixed',
+        zIndex:'10000',
+        top:'0', left:'0',
+        cursor: 'zoom-out'
+    }).click(function(){
+        $(this).remove();
+    }).appendTo('body');
+});
 		    
 		</script>
 		
