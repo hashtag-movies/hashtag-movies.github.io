@@ -339,6 +339,11 @@ body {
 <p></p>
 <h2>If video not responding then wait for few minutes video is loading... it will depend on your network speed. </h2>
 <a target='_blank' href='https://sites.google.com/view/hashtag-website/lm'>Learn More</a>
+
+
+	<img data-enlargable width="100"  src="https://i.ibb.co/mBK7m0X/IMG-20230906-073902.png">
+	<img data-enlargable width="100"  src="https://i.ibb.co/RB1RZw2/MV5-BNm-Fh-Zj-Mz-N2-Mt-OTZl-Ny00-MDc5-LTk4-ZGMt-MGVl-Mj-Zh-Ym-Nh-MTBl-Xk-Ey-Xk-Fqc-Gde-QXVy-MTEy-Mj.jpg">
+	
 </body>
 </html>
 
@@ -420,6 +425,20 @@ body {
   $('.gallery_pics').click(function(e) {
     $('.gallery_pics').toggleClass('fullscreen');
   });
+});
+		    $('img[data-enlargable]').addClass('img-enlargable').click(function(){
+    var src = $(this).attr('src');
+    $('<div>').css({
+        background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
+        backgroundSize: 'contain',
+        width:'100%', height:'100%',
+        position:'fixed',
+        zIndex:'10000',
+        top:'0', left:'0',
+        cursor: 'zoom-out'
+    }).click(function(){
+        $(this).remove();
+    }).appendTo('body');
 });
 	
 		</script>
