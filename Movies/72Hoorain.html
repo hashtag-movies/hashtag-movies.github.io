@@ -22,20 +22,7 @@
     moreText.style.display = "inline";
   }
 }
-	$('img[data-enlargable]').addClass('img-enlargable').click(function(){
-    var src = $(this).attr('src');
-    $('<div>').css({
-        background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
-        backgroundSize: 'contain',
-        width:'100%', height:'100%',
-        position:'fixed',
-        zIndex:'10000',
-        top:'0', left:'0',
-        cursor: 'zoom-out'
-    }).click(function(){
-        $(this).remove();
-    }).appendTo('body');
-});
+
 		
 		</script>
 <style>
@@ -230,20 +217,7 @@ h5 {
     if(performance.navigation.type == 2){
         location.reload(true);
     }
-	$('img[data-enlargable]').addClass('img-enlargable').click(function(){
-    var src = $(this).attr('src');
-    $('<div>').css({
-        background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
-        backgroundSize: 'contain',
-        width:'100%', height:'100%',
-        position:'fixed',
-        zIndex:'10000',
-        top:'0', left:'0',
-        cursor: 'zoom-out'
-    }).click(function(){
-        $(this).remove();
-    }).appendTo('body');
-});
+
 </script>
 		</div>
 		<div style="position:relative;">
@@ -294,8 +268,92 @@ h5 {
 	</body>
 
 	    
+	    
+	
+    </html>
+</doctype>
+
+
+
+<!doctype html>
+    <html>
+        <head>
+
+	<style>
+	.gallery_pics_holder {
+  border: px solid green;
+  width: 100%;
+  text-align: center;
+  height: 350px;
+  display: table;
+}
+.gallery_pics {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  text-align: center;
+  background-color: #3C0;
+}
+.gallery_pics img {
+  width: 100%;
+  height: 100%;
+}
+.gallery_pics:hover {
+  cursor: pointer;
+}
+.gallery_pics.fullscreen img {
+  width: 100%;
+  height: 100%;
+}
+.gallery_pics.fullscreen {
+  z-index: 9999;
+  position: fixed;
+  margin: 0 auto;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  background-color: #0FF;
+}	
+	</style>
+	</head>
+	    <body>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<div class="gallery_pics_holder">
+
+  <div class="gallery_pics">
+    <img src="images/before1.jpg" alt="">
+  </div>
+  <!--gallery_header-->
+  <div class="gallery_pics">
+    <img src="images/after1.jpg" width="300px" height="300px" alt="">
+  </div>
+  <!--gallery_header-->
+  <div class="gallery_pics">
+    <img src="images/before2.jpg" width="300px" height="300px" alt="">
+  </div>
+  <!--gallery_header-->
+  <div class="gallery_pics">
+    <img src="images/after2.jpg" width="300px" height="300px" alt="">
+  </div>
+  <!--gallery_header-->
+  <div class="gallery_pics">
+    <img src="images/before3.jpg" width="300px" height="300px" alt="">
+  </div>
+  <!--gallery_header-->
+  <div class="gallery_pics">
+    <img src="images/after3.jpg" width="300px" height="300px" alt="">
+  </div>
+  <!--gallery_header-->
+    </body>
 	    <script>
-	    $('img[data-enlargable]').addClass('img-enlargable').click(function(){
+	$(document).ready(function() {
+  $('.gallery_pics').click(function(e) {
+    $('.gallery_pics').toggleClass('fullscreen');
+  });
+});
+		    $('img[data-enlargable]').addClass('img-enlargable').click(function(){
     var src = $(this).attr('src');
     $('<div>').css({
         background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
@@ -309,10 +367,14 @@ h5 {
         $(this).remove();
     }).appendTo('body');
 });
-    </script>
 	
-    </html>
+		</script>
+		
+	</html>
 </doctype>
+
+
+
 
 
 
