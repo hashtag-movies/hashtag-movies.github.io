@@ -124,11 +124,11 @@ button{
 </head>
 <body>
     <div class="background">
-        <div class="shape"><img src="sitelogo.jpg"></div>
-        <div class="shape"><img src="sitelogo.jpg"></div>
+        <div class="shape"><img src="Images/icon_png-removebg-preview.png"></div>
+        <div class="shape"><img src="Images/icon_png-removebg-preview.png"></div>
     </div>
     <form id="registrationform">
-        <h3>Sign up</h3>
+        <h3>Login</h3>
 
         <label for="username">Username</label>
         <input type="text" placeholder="username" id="username" name="username" required maxlength="16">
@@ -191,7 +191,7 @@ button{
         console.log(userCredential.user);
         alert('Successfully Login!');
         console.log('Successfully Login!');
-        window.location.href(index.html)
+        window.location.href(home.html);
         // ...
         })
         .catch((err) => {
