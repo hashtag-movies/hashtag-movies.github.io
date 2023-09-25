@@ -44,7 +44,7 @@ body{
     bottom: 200px;
 }
 form{
-    height: 425px;
+    height: 525px;
     width: 300px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -124,8 +124,8 @@ button{
 </head>
 <body>
     <div class="background">
-        <div class="shape"><img src="sitelogo.jpg"></div>
-        <div class="shape"><img src="sitelogo.jpg"></div>
+        <div class="shape"><img src="Images/icon_png-removebg-preview.png"></div>
+        <div class="shape"><img src="Images/icon_png-removebg-preview.png"></div>
     </div>
     <form id="registrationform">
         <h3>Sign up</h3>
@@ -193,7 +193,7 @@ button{
             }).then(() => {
                 alert('Signup Successful')
                 document.getElementById('registrationform').reset();
-                window.location.href(home.html)
+                window.location.href(home.html);
             }).catch((error) => {
                 if (err.code === AuthErrorCodes.WEAK_PASSWORD) {
     setError("The password is too weak.");
