@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login</title>
+    <title>Sign up</title>
     <style>
       *,
 *:before,
@@ -44,7 +44,7 @@ body{
     bottom: 200px;
 }
 form{
-    height: 525px;
+    height: 425px;
     width: 300px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -140,7 +140,7 @@ button{
         <input type="email" placeholder="Email Address" id="email" name="email" required>
 
 
-        <button id="submit" sendMessage() name="submit" type="submit">Login</button>
+        <button id="submit" sendMessage() name="submit" type="submit">Sign up</button>
     </form>
     
     <script type="module">
@@ -160,8 +160,8 @@ button{
             // Initialize Firebase
         const app = initializeApp(firebaseConfig);
 
-        import { getDatabase, ref, update } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
-        import { getAuth, signInWithEmailAndPassword, AuthErrorCodes } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword, AuthErrorCodes } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
 
 
@@ -185,27 +185,31 @@ button{
         function sendMessage(username, email, password ) {
             const database = getDatabase();
             const auth = getAuth();
-            signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-        // Signed in
-        console.log(userCredential.user);
-        alert('Successfully Login!');
-        console.log('Successfully Login!');
-        window.location.href(index.html)
-        // ...
-        })
-        .catch((err) => {
-        if (
-        err.code === AuthErrorCodes.INVALID_PASSWORD ||
-        err.code === AuthErrorCodes.USER_DELETED
-        ) {
-        setError("The email address or password is incorrect");
-        } else {
-        console.log(err.code);
-        alert("The email address or password is incorrect");
-        }
-        });
-    };
+            createUserWithEmailAndPassword(auth, email, password);
+            set(ref(database, 'users/' + username), {
+                username: username,
+                email: email,
+                password: password
+            }).then(() => {
+                alert('Signup Successful')
+                document.getElementById('registrationform').reset();
+                window.location.href(home.html)
+            }).catch((error) => {
+                if (err.code === AuthErrorCodes.WEAK_PASSWORD) {
+    setError("The password is too weak.");
+    } else if (err.code === AuthErrorCodes.EMAIL_EXISTS) {
+    setError("The email address is already in use.");
+    } else {
+    console.log(err.code);
+    alert(err.code);
+    }
+        const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorMessage);
+    console.log("Error occurred. Try again.");
+        window.alert("Error occurred. Try again.");
+    });
+            }
         
     </script>
 </body>
