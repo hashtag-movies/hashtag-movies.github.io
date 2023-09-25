@@ -168,6 +168,64 @@ background-color: black; /* For browsers that do not support gradients */
   height: 27px;
   background: ;
 }
+
+.carousel-inner video {
+    width: 100%;
+    height: 30%;
+    margin: 0px;
+    border-radius:0px;
+  }
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel .video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel .video.active {
+  opacity: 1;
+}
+
+.carousel .video video {
+  width: 96%;
+  height: auto;
+}
+
+.carousel .image::before,
+.carousel .image::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+}
+
+.carousel .video::before {
+  top: 0;
+  left: 0;
+  width: 96%;
+  height: 80;
+  background: ;
+}
+
+.carousel .video::after {
+  top: 0;
+  left: 0;
+  width: 96%;
+  height: 27px;
+  background: ;
+}
+
+	
+
+
+
+
+	
 {
   text-align: center;
   margin-top: 4em;
