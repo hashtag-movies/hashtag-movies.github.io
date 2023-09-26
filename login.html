@@ -195,7 +195,6 @@ button{
         alert('Successfully Login!');
         console.log('Successfully Login!');
         document.getElementById('registrationform').reset();
-        window.location.href(home.html);
         // ...
         })
         .catch((err) => {
@@ -203,7 +202,7 @@ button{
         err.code === AuthErrorCodes.INVALID_PASSWORD ||
         err.code === AuthErrorCodes.USER_DELETED
         ) {
-        alert("The email address or password is incorrect");
+        window.alert("The email address or password is incorrect");
         } else {
         console.log(err.code);
         }
