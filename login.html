@@ -202,9 +202,9 @@ button{
         err.code === AuthErrorCodes.USER_DELETED
         ) {
         setError("The email address or password is incorrect");
+        alert("The email address or password is incorrect");
         } else {
         console.log(err.code);
-        alert("The email address or password is incorrect");
         }
         });
     };
