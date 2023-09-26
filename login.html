@@ -98,12 +98,6 @@ button{
     font-size: 18px;
     font-weight: 600;
     border-radius: 5px;
-    cursor: pointer;
-}
-.social{
-    margin-top: 30px;
-    display: flex;
-}
 .social div{
     background: red;
     width: 100ppx;
@@ -116,7 +110,6 @@ button{
 .social div:hover{
     background-color: rgba(255,255,255,0.47);
 }
-
 
     </style>
 </head>
@@ -198,7 +191,6 @@ button{
         err.code === AuthErrorCodes.USER_DELETED
         ) {
         setError("The email address or password is incorrect");
-        alert("The email address or password is incorrect");
         } else {
         console.log(err.code);
         }
