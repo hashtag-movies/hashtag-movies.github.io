@@ -201,7 +201,7 @@ button{
                 if (err.code === AuthErrorCodes.WEAK_PASSWORD) {
     setError("The password is too weak.");
     } else if (err.code === AuthErrorCodes.EMAIL_EXISTS) {
-    setError("The email address is already in use.");
+    alert("The email address is already in use.");
     } else {
     console.log(err.code);
     alert(err.code);
