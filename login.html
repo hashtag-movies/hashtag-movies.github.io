@@ -193,6 +193,7 @@ button{
         console.log(userCredential.user);
         alert('Successfully Login!');
         console.log('Successfully Login!');
+        document.getElementById('registrationform').reset();
         window.location.href(home.html);
         // ...
         })
@@ -201,7 +202,7 @@ button{
         err.code === AuthErrorCodes.INVALID_PASSWORD ||
         err.code === AuthErrorCodes.USER_DELETED
         ) {
-        setError("The email address or password is incorrect");
+        alert("The email address or password is incorrect");
         } else {
         console.log(err.code);
         }
