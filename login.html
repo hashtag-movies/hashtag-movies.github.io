@@ -194,6 +194,7 @@ button{
         console.log(userCredential.user);
         alert('Successfully Login!');
         console.log('Successfully Login!');
+        location.href="home.html";
         document.getElementById('registrationform').reset();
         // ...
         })
@@ -210,7 +211,14 @@ button{
         }
         });
     };
-        
-    </script>
+
+        function getData()
+{
+    //gettting the values
+    var username = document.getElementById("username").value;
+    //saving the values in local storage
+    localStorage.setItem("txtValue", username);
+}
+   </script>
 </body>
 </html>
