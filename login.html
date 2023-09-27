@@ -143,7 +143,7 @@ button{
         <input type="email" placeholder="Email Address" id="email" name="email" required>
 
 
-        <button id="submit" sendMessage() name="submit" type="submit">Login</button>
+        <button id="submit" sendMessage() name="submit" type="submit" onclick="getdata()">Login</button>
     </form>
     
     <script type="module">
@@ -217,7 +217,7 @@ button{
     //gettting the values
     var username = document.getElementById("username").value;
     //saving the values in local storage
-    localStorage.setItem("txtValue", username);
+    localStorage.setItem("username", username);
 }
    </script>
 </body>
