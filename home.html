@@ -14,6 +14,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 
+
+document.getElementById("username").innerHTML=localStorage.getItem("username");
+
+
+	
 if($_SERVER['REQUEST_METHOD'] = "POST"){
 } else {
     location.href="index.html"
@@ -750,9 +755,14 @@ height: 100%;
                                 <tr>
                                         <td style="width: 100px;">
                         <div align="left">
-                        <a href="index.html"><img src="Images/icon_png-removebg-preview.png" id="sitelogo"></a>
+                        <img src="Images/icon_png-removebg-preview.png" id="sitelogo">
                         </div>
                                         </td>
+					<td>
+			<span id="username">username</span>
+					</td>
+					</tr>
+				<tr>
                                         <td>
                         <div align="right">
 <input placeholder=" Search...." type="search" list="input" onchange="window.location.href=this.value;" name="txtSearchBox">
