@@ -183,6 +183,7 @@ button{
 
             //send message values(3)
             sendMessage(username, email, password );
+            getData(username);
         }
         //Send Message to Firebase(4)
         function sendMessage(username, email, password ) {
@@ -194,7 +195,7 @@ button{
         console.log(userCredential.user);
         alert('Successfully Login!');
         console.log('Successfully Login!');
-        location.href="home.html" + username;
+        location.href="home.html";
         document.getElementById('registrationform').reset();
         // ...
         })
@@ -212,11 +213,8 @@ button{
         });
     };
 
-        function getData()
+        function getData(username)
 {
-    //gettting the values
-    var username = document.getElementById("username").value;
-    //saving the values in local storage
     localStorage.setItem("username", username);
 }
    </script>
