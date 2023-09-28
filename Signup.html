@@ -34,8 +34,8 @@ body{
         #1845ad,
         #23a2f6
     );
-    left: -25px;
-    top: -70px;
+    left: -35px;
+    top: -120px;
 }
 .shape:last-child{
     background: linear-gradient(
@@ -196,7 +196,7 @@ button{
             }).then(() => {
                 alert('Signup Successful')
                 document.getElementById('registrationform').reset();
-                window.location.href(home.html);
+                location.href="login.html";
             }).catch((error) => {
                 if (err.code === AuthErrorCodes.WEAK_PASSWORD) {
     setError("The password is too weak.");
