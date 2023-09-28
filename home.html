@@ -15,7 +15,10 @@
 <script>
 
 
-document.getElementById("username").innerHTML=localStorage.getItem("username");
+let message = location.hash;
+            message = message.substring(1); 
+            message = decodeURI(message); 
+            username.innerHTML = message;
 
 
 	
@@ -856,7 +859,7 @@ height:200px;}
                         </div>
                                         </td>
 					<td>
-			<p><span id="username">Username</span></p>
+			<p id="username"></p>
 						
 					</td>
 					</tr>
