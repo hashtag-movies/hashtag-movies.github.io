@@ -13,19 +13,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-
-
-let username = location.hash;
-            username = username.substring(1); 
-            username = decodeURI(username); 
-            user.innerHTML = username;
-
-
-	
-if($_SERVER['REQUEST_METHOD'] = "POST"){
-} else {
-    location.href="index.html"
-}
 	
     if(performance.navigation.type == 2){
             location.reload(true);
@@ -73,7 +60,7 @@ body {
   width: 0px;
 }
     input[type=search] {
-        width: 70%;
+        width: 60%;
         padding: 8px 20px 8px 45px;
         border: #ffffff solid 2px;
         font-size: 18px;
@@ -858,16 +845,8 @@ height:200px;}
                         <img src="Images/icon_png-removebg-preview.png" id="sitelogo">
                         </div>
                                         </td>
-					<td>
-			<p id="user"></p>
-						
-					</td>
-					</tr>
-				</table>
-			<table align="center" id="sitelogo">
-				<tr>
                                         <td>
-                        <div align="center">
+                        <div align="right">
 <input placeholder=" Search...." type="search" list="input" onchange="window.location.href=this.value;" name="txtSearchBox">
 <datalist id="input" >
         <option value="Badboy.html">Badboy</option>
