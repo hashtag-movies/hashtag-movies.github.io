@@ -194,10 +194,15 @@ button{
                 email: email,
                 password: password
             }).then(() => {
+                var user = firebase.auth().currentUser; 
+                if (user) {
+                   alert('The email is already in use!');
+                } else {
                 alert('Signup Successful');
                 alert('Please Login to continue to the site!');
                 document.getElementById('registrationform').reset();
                 location.href="login.html";
+                }
             }).catch((error) => {
         const errorCode = error.code;
     const errorMessage = error.message;
