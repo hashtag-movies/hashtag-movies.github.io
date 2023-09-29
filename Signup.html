@@ -164,7 +164,7 @@ button{
         const app = initializeApp(firebaseConfig);
 
         import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-database.js";
-        import { getAuth, createUserWithEmailAndPassword, getCurrentUser, getInstance} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
 
 
@@ -194,15 +194,11 @@ button{
                 email: email,
                 password: password
             }).then(() => {
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser(); 
-                if(user != null) {
                    alert('The email is already in use!');
-                } else {
-                alert('Signup Successful'), 
-                alert('Please Login to continue to the site!'), 
-                document.getElementById('registrationform').reset(), 
+                alert('Signup Successful');
+                alert('Please Login to continue to the site!');
+                document.getElementById('registrationform').reset();
                 location.href="login.html";
-                }
             }).catch((error) => {
         const errorCode = error.code;
     const errorMessage = error.message;
