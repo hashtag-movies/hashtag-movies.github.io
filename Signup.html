@@ -194,14 +194,21 @@ button{
                 email: email,
                 password: password
             }).then(() => {
-                alert('Signup Successful')
+                if (err.code === AuthErrorCodes.WEAK_PASSWORD) {
+    setError('The password is too weak.');
+    } else if (err.code === AuthErrorCodes.EMAIL_EXISTS) {
+    alert('The email address is already in use.');
+    } else {
+                alert('Signup Successful');
+                alert('Please Login to continue to the site!');
                 document.getElementById('registrationform').reset();
                 location.href="login.html";
+       }
             }).catch((error) => {
                 if (err.code === AuthErrorCodes.WEAK_PASSWORD) {
     setError("The password is too weak.");
     } else if (err.code === AuthErrorCodes.EMAIL_EXISTS) {
-    alert("The email address is already in use.");
+    alert('The email address is already in use.');
     } else {
     console.log(err.code);
     alert(err.code);
