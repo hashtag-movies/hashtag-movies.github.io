@@ -321,6 +321,61 @@ body
 
 
 
+
+
+	/* Make the image fully responsive */
+  .carousel-inner img {
+    width: 96%;
+    height: 30%;
+  }
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel .image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel .image.active {
+  opacity: 1;
+}
+
+.carousel .image img {
+  width: 96%;
+  height: auto;
+}
+
+.carousel .image::before,
+.carousel .image::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+}
+
+.carousel .image::before {
+  top: 0;
+  left: 0;
+  width: 96%;
+  height: 80;
+  background: radial-gradient(ellipse at center, transparent 10%, rgba(0,0,0,0.8) 80%);
+}
+
+.carousel .image::after {
+  top: 0;
+  left: 0;
+  width: 96%;
+  height: 270px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.8) 100%);
+}
+img {
+    opacity: 100%;
+    transition: opacity 5s;
+}
 	
 
 	
