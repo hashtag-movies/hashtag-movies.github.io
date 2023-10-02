@@ -303,8 +303,11 @@ body {
     width: 100%;
     max-width: 100%;
     box-shadow: none;
-    background-color: ;
-    position: ;
+    background-color:
+    linear-gradient(red 20%,black 20%) padding-box,
+    linear-gradient(#CD7F32,#000000) border-box;
+    backdrop-filter: blur(10px);
+    position: fixed;
     height: 60px!important;
     overflow: hidden;
     z-index: 10;
@@ -446,8 +449,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 </style>
                 </head>
                 <body>
-		     <div style="position:fixed;z-index:100;height:95px;width:100%;">
-			<div id="header"></div>
+		     <div style="position:fixed;z-index:100;height:80px;width:100%;">
+			<div id="header">
   <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
   <label for="openSidebarMenu" class="sidebarIconToggle">
     <div class="spinner diagonal part-1"></div>
@@ -464,9 +467,14 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
       <li><a href="https://www.linkedin.com/in/plavookac/" target="_blank">Linkedin</a></li>
     </ul>
   </div>
+			</div>
 		<div class="back">
                         <table align="center" id="sitelogo">
                                 <tr>
+					<td>
+					<div style="height:80px;width:80px;">
+						</div>
+					</td>
                                         <td style="width: 100px;">
                         <div align="left">
                         <img src="Images/icon_png-removebg-preview.png" id="sitelogo">
