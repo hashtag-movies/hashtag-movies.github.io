@@ -5,69 +5,6 @@
             Welcome to Hashtag!
         </title>
         <script>
-            img.icon{
-                height: 50px;
-                width: 100px:
-            }
-		
-        </script>
-        <style>
-            body{
-  background:#000;
-}
-
-section.awSlider .carousel{
-  display:table;
-  z-index:2;
-  -moz-box-shadow: 0 0 4px #444;
-	-webkit-box-shadow: 0 0 4px #444;
-	box-shadow: 0 0 15px rgba(1,1,1,.5);
-}
-
-section.awSlider{
-  margin:30px auto;
-  padding:30px;
-  position:relative;
-  display:table;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-section.awSlider:hover > img{
-  -ms-transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
-  opacity:1;
-}
-
-section.awSlider img{
-   pointer-events: none;
-}
-
-section.awSlider > img{
-  position:absolute;
-  top:30px;
-  z-index:1;
-  transition:all .3s;
-  filter: blur(1.8vw);
-  -webkit-filter: blur(2vw);
-  -moz-filter: blur(2vw); 
-  -o-filter: blur(2vw); 
-  -ms-filter: blur(2vw);
-  -ms-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-  opacity:.5;
-}
-		.logo img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-		}
 
 
 
@@ -153,16 +90,10 @@ body {
         </style>
     </head>
     <body>
-        <p>Welcome to Hashtag!</p>
-        <a src="login.html" id="icon"><img src="1566082835119.jpg" id="icon"> </a>
-        <a src="Signup.html" id="icon"><img src="images.jpg" id="icon"> </a>
+        
 
 
 
-
-<div class="logo">
-<img src="Images/icon png.jpg">
-</div>
 
 
 
@@ -179,23 +110,6 @@ body {
         
     </body>
 	<script>
-	$('section.awSlider .carousel').carousel({
-	pause: "hover",
-  interval: 2000
-});
 
-var startImage = $('section.awSlider .item.active > img').attr('src');
-$('section.awSlider').append('<img src="' + startImage + '">');
-
-$('section.awSlider .carousel').on('slid.bs.carousel', function () {
- var bscn = $(this).find('.item.active > img').attr('src');
-	$('section.awSlider > img').attr('src',bscn);
-});
-
-
-/* 
-Philips ambilight tv
-Üzerine gleince duruyor slide
-*/
 	</script>
 </html>
