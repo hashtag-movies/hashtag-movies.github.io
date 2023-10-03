@@ -227,7 +227,7 @@ body
 	right: -130px;
 	@include all-transition(0.3s);
 	color: black;
-
+backgrond-color: black;
 	&:hover, &:focus
 	{
 		transform: translate3d(-130px, 0, 0);
@@ -310,6 +310,7 @@ body {
     height: 60px!important;
     overflow: hidden;
     z-index: 10;
+	backgrond-color: black;
 }
 .main {
     margin: 0 auto;
@@ -339,7 +340,7 @@ body {
 	backgrond-img:linear-gradient(to bottom, black,navy );
     transform: translateX(-250px);
     transition: transform 250ms ease-in-out;
-    
+    backgrond-color: black;
     z-index:100;
     display:block;
 }
@@ -353,7 +354,7 @@ body {
 }
 .sidebarMenuInner li{
     list-style: none;
-    color: black;
+    color: #fff;
     text-transform: uppercase;
     font-weight: bold;
     padding: 20px;
@@ -366,7 +367,7 @@ body {
     color: rgba(255, 255, 255, 0.50);
 }
 .sidebarMenuInner li a{
-    color: black;
+    color: #fff;
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
