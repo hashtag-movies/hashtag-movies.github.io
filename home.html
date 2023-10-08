@@ -21,15 +21,13 @@
         });
 
 
-	<?php
-if (isset($_SESSION['visited_login']) && $_SESSION['visited_login']=="yes") {
-    // output tanks
-} else {
-    echo "go away";
-    die;
+	var value = localStorage.getItem('my_flag');
+if (value != "visited") {
+    window.location = "home.html";
 }
-?>
+localStorage.removeItem("my_flag");
 	
+ 
     if(performance.navigation.type == 2){
             location.reload(true);
     }
