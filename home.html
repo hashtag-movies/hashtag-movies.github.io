@@ -20,6 +20,15 @@
             }
         });
 
+
+	<?php
+if (isset($_SESSION['visited_login']) && $_SESSION['visited_login']=="yes") {
+    // output tanks
+} else {
+    echo "go away";
+    die;
+}
+?>
 	
     if(performance.navigation.type == 2){
             location.reload(true);
