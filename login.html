@@ -197,9 +197,8 @@ button{
         console.log(userCredential.user);
         alert('Successfully Login!');
         console.log('Successfully Login!');
-        <?php
-$_SESSION['visited_login'] = 'yes';
-?>
+        var value = "visited";    // or the date of visit!
+        localStorage.setItem('my_flag', "visited");
         location.href="home.html#" + username;
         document.getElementById('registrationform').reset();
         // ...
