@@ -197,6 +197,9 @@ button{
         console.log(userCredential.user);
         alert('Successfully Login!');
         console.log('Successfully Login!');
+        <?php
+$_SESSION['visited_login'] = 'yes';
+?>
         location.href="home.html#" + username;
         document.getElementById('registrationform').reset();
         // ...
