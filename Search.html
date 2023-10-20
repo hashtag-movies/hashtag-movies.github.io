@@ -56,11 +56,13 @@ input[id=search] {
 
 <body>
 
-<input type="text" list="myUL" id="search" onkeyup="myFunction()" placeholder="Search..">
-<ul id="myUL">
-  <li><a href="login.html">Adele</a></li>
-  <li><a href="login.html">Agnes</a></li>
-
+<input type="text" list="searches" id="search" onkeyup="myFunction()" placeholder="Search..">
+<select id=searches" name="searches">
+	<ul id="myUL">
+  <option><li><a href="login.html">Adele</a></li></option>
+  <option><li><a href="login.html">Agnes</a></li></option>
+  </ul>
+</select>
   <li><a href="login.html">Billy</a></li>
   <li><a href="login.html">Bob</a></li>
 
