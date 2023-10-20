@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+
+input[type=search] {
+        width: 90%;
+        padding: 8px 20px 8px 45px;
+        border: #ffffff solid 2px;
+        font-size: 18px;
+        border-radius: 25px;
+        background-position: 2% 50%;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-color: #070000;
+        transition: 0.5s all ease-in-out;
+        filter: brightness(150%);
+        font-weight: bold;
+        text-align: center;
+	height:40px;
+    }
+
+    input[type=search]:focus,
+    input[type=search]:not(:placeholder-shown) {
+        width: 100%;
+        background-color: #fff;
+        filter: brightness(100%);
+        align-self: center;
+        align-items: center;
+        align-content: center;
+
+    }
+
+</style>
+
+<body>
+
+<input placeholder=" Search...." id="txtSearchBox" type="search" list="input" onchange="window.location.href=this.value;" name="txtSearchBox">
+<datalist id="input" >
+        <option value="Badboy.html">Badboy</option>
+        <option value="Azam.html">Azam</option>
+        <option value="Aseq.html">Aseq</option>
+        <option value="Ajmer92.html">Ajmer 92</option>
+        <option value="Afwaah.html">Afwaah</option>
+        <option value="8A_M_Metro.html">Afwaah</option>
+	<option href="Movies/72Hoorain.html">72 Hoorain</option>
+</datalist>
+
+</body>
+</html>
