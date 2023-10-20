@@ -90,7 +90,7 @@ ul {
 
 li {
 	--y: calc(100% - 2rem);
-	display: grid;
+	display: list;
 	grid-template-columns: minmax(3.75em, auto) 1fr;
 	gap: 0 0.5em;
 	break-inside: avoid;
@@ -115,6 +115,7 @@ li img {
 
 li::before {
 	font-weight: 700;
+	text-align: center;
 	font-size: 4.5em;
 	letter-spacing: -0.125em;
 	line-height: 1;
@@ -145,13 +146,13 @@ li span:last-of-type {
 
 <input type="text" list="searches" id="search" onkeyup="myFunction()" placeholder="Search..">
 	<ul id="myUL">
-  <li><a href="login.html">Adele<img href="Images/icon png.jpg"></a></li>
-  <li><a href="login.html">Agnes</a></li>
-  <li><a href="login.html">Billy</a></li>
-  <li><a href="login.html">Bob</a></li>
-  <li><a href="login.html">Calvin</a></li>
-  <li><a href="login.html">Christina</a></li>
-  <li><a href="login.html">Cindy</a></li>
+  <li><a href="login.html"><img src="Images/icon png.jpg">Adele</a></li>
+  <li><a href="login.html"><img src="Images/icon png.jpg">Agnes</a></li>
+  <li><a href="login.html"><img src="Images/icon png.jpg">Billy</a></li>
+  <li><a href="login.html"><img src="Images/icon png.jpg">Bob</a></li>
+  <li><a href="login.html"><img src="Images/icon png.jpg">Calvin</a></li>
+  <li><a href="login.html"><img src="Images/icon png.jpg">Christina</a></li>
+  <li><a href="login.html"><img src="Images/icon png.jpg">Cindy</a></li>
 </ul>
 </body>
 </html>
