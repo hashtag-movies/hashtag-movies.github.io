@@ -24,7 +24,7 @@ function myFunction() {
 
 <style>
 
-input[type=search] {
+input[id=search] {
         width: 90%;
         padding: 8px 20px 8px 45px;
         border: #ffffff solid 2px;
@@ -41,8 +41,8 @@ input[type=search] {
 	height:40px;
     }
 
-    input[type=search]:focus,
-    input[type=search]:not(:placeholder-shown) {
+    input[id=search]:focus,
+    input[id=search]:not(:placeholder-shown) {
         width: 100%;
         background-color: #fff;
         filter: brightness(100%);
@@ -57,7 +57,7 @@ input[type=search] {
 <body>
 
 <input type="text" list="myUL" id="search" onkeyup="myFunction()" placeholder="Search..">
-
+<datalist>
 <ul id="myUL">
   <li><a href="login.html">Adele</a></li>
   <li><a href="login.html">Agnes</a></li>
@@ -69,6 +69,6 @@ input[type=search] {
   <li><a src="login.html">Christina</a></li>
   <li><a src="login.html">Cindy</a></li>
 </ul>
-
+</datalist>
 </body>
 </html>
