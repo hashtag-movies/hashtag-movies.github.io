@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html>
 
+	<script>
+function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('search');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+	</script>
+
 <style>
 
 input[type=search] {
@@ -35,16 +56,19 @@ input[type=search] {
 
 <body>
 
-<input placeholder=" Search...." id="txtSearchBox" type="search" list="input" onchange="window.location.href=this.value;" name="txtSearchBox">
-<datalist id="input" >
-        <option value="Badboy.html">Badboy</option>
-        <option value="Azam.html">Azam</option>
-        <option value="Aseq.html">Aseq</option>
-        <option value="Ajmer92.html">Ajmer 92</option>
-        <option value="Afwaah.html">Afwaah</option>
-        <option value="8A_M_Metro.html">Afwaah</option>
-	<option href="Movies/72Hoorain.html">72 Hoorain</option>
-</datalist>
+<input type="text" list="myUL" id="search" onkeyup="myFunction()" placeholder="Search..">
+
+<ul id="myUL">
+  <li><a href="login.html">Adele</a></li>
+  <li><a href="login.html">Agnes</a></li>
+
+  <li><a href="login.html">Billy</a></li>
+  <li><a href="login.html">Bob</a></li>
+
+  <li><a src="login.html">Calvin</a></li>
+  <li><a src="login.html">Christina</a></li>
+  <li><a src="login.html">Cindy</a></li>
+</ul>
 
 </body>
 </html>
