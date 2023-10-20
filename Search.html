@@ -8,7 +8,7 @@ function myFunction() {
     input = document.getElementById('search');
     filter = input.value.toUpperCase();
     ul = document.getElementById("myUL");
-    li = ol.getElementsByTagName('li');
+    li = ul.getElementsByTagName('li');
 
     // Loop through all list items, and hide those who don't match the search query
     for (i = 0; i < li.length; i++) {
@@ -57,7 +57,7 @@ input[id=search] {
 <body>
 
 <input type="text" list="myUL" id="search" onkeyup="myFunction()" placeholder="Search..">
-<ol id="myUL">
+<ul id="myUL">
   <li><a href="login.html">Adele</a></li>
   <li><a href="login.html">Agnes</a></li>
 
@@ -67,6 +67,6 @@ input[id=search] {
   <li><a href="login.html">Calvin</a></li>
   <li><a href="login.html">Christina</a></li>
   <li><a href="login.html">Cindy</a></li>
-</ol>
+</ul>
 </body>
 </html>
