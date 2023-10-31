@@ -36,6 +36,15 @@ localStorage.removeItem("my_flag");
 	
 </script>
 <style>
+	video {
+  --video-width: 426;
+  --video-height: 240;
+  aspect-ratio: var(--video-width) / var(--video-height);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+	}
+	
 body {
 -ms-overflow-style: none; 
   scrollbar-width: 0; 
