@@ -702,6 +702,10 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 
 
 		<script>
+			// interval is in milliseconds. 1000 = 1 second -> so 1000 * 10 = 10 seconds
+$('.carousel').carousel({
+  interval: 1000 * 10
+});
 			var slide = document.getElementsByClassName("slide");
         var indicator = document.getElementById("indicator");
         var dots = document.getElementsByClassName("dots");
