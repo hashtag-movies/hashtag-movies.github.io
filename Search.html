@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+		setTimeout(function(){
+    $.mobile.changePage("login.html",{transition:"slide"});
+},1000);
+	</script>
+	
 	<script>
 function myFunction() {
     // Declare variables
@@ -102,7 +109,7 @@ a:hover {
 
 <input type="text" list="searches" id="search" onkeyup="myFunction()" placeholder="Search..">
 	<ul id="myUL">
-  <li><a href="login.html"><img src="https://i.ibb.co/qRPtfvX/Untitled-design-4.jpg">Loki</a></li>
+  <li><a onclick="setTimeout()"><img src="https://i.ibb.co/qRPtfvX/Untitled-design-4.jpg" onclick="setTimeout()" >Loki</a></li>
 		<li style="text-decoration:none"><a href="login.html"><img src="https://i.ibb.co/qRPtfvX/Untitled-design-4.jpg">Adele</a></li>
 		<li><a href="login.html"><img src="https://i.ibb.co/qRPtfvX/Untitled-design-4.jpg">Adele</a></li>
 </ul>
