@@ -98,7 +98,7 @@ var count = 1;
 var items = slideList.querySelectorAll("li").length;
 var prev = document.getElementById("prev");
 var next = document.getElementById("next");
-var interval = 10000;
+var interval = 100000;
 window.addEventListener('resize', function() {
   sliderWidth = slider.offsetWidth;
 });
@@ -137,7 +137,7 @@ prev.addEventListener("click", function() {
 
 setInterval(function() {
   nextSlide()
-}, 500000);
+}, 50000);
 
 };
 
