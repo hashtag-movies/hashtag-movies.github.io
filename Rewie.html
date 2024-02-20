@@ -513,6 +513,46 @@ font-weight: 300;
    <div class="swiper-pagination"></div>
   </div>
    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js'></script>
   </body>
+  <script>
+    var colors = [
+      '--dark-green',
+      '--light-brown',
+     
+      '--light-red',
+      '--light-teal',
+      '--light-gray',
+    ];
+
+
+    var swiperverticle = new Swiper('.swiper-container.verticle-animation', {
+      speed: 600,
+      parallax: true,
+      direction: 'vertical',
+         mousewheel: true,
+
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+
+    });
+
+     swiperverticle.on('slideChange', function () {
+      var index = this.activeIndex;
+
+      // $('.halfbox').css({background: 'var('+colors[index % colors.length]+')'});
+
+      $('.team-info .team-info-item').removeClass('active').eq(this.activeIndex).addClass('active')
+      });
+  </script>
 
 </html>
