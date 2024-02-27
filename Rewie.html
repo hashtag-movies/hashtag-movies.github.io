@@ -581,6 +581,19 @@ Distributed by: Toho Co., Ltd., Warner Bros., Warner Bros. Pictures
 
       $('.team-info .team-info-item').removeClass('active').eq(this.activeIndex).addClass('active')
       });
+
+
+    
+    gsap.registerPlugin(ScrollTrigger);
+
+
+  ScrollTrigger.create({
+    trigger: videoElem,
+    onEnter: () => videoElem.play(),
+    onEnterBack: () => videoElem.play(),
+    onLeave: () => videoElem.pause(),
+    onLeaveBack: () => videoElem.pause(),
+  });
   </script>
   
 </html>
