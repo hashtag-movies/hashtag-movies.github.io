@@ -480,6 +480,15 @@ background-color: black; /* For browsers that do not support gradients */
 
     </body>
 	    <script>
+
+$("#select").select2({
+   tags: true,
+// dropdownParent: $('#modal), // if select in modal
+   theme: "bootstrap",
+});
+
+
+		    
 	$(document).ready(function() {
   $('.gallery_pics').click(function(e) {
     $('.gallery_pics').toggleClass('fullscreen');
