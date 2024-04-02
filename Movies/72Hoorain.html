@@ -42,7 +42,15 @@
 
 
 	
-
+.select-btn {
+  max-width: 150px;
+  width: 100%;
+  margin: auto;
+}
+select {
+  padding: 0.8em 0.5em;
+  width: 100%;
+}
 
 
 	
@@ -354,7 +362,12 @@ background-color: black; /* For browsers that do not support gradients */
     </body>
 	    <script>
 
-
+;(function($){
+	$('select').change(function(){
+		var getValue = $(this).val();
+		window.open(getValue, '_blank');
+	})
+}(jQuery));
 
 		    
 	$(document).ready(function() {
