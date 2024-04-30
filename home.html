@@ -652,7 +652,7 @@ background: rgba(255, 255, 255, 0.2);
 <div style="height:px;width:100%;">
 						</div>
 
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000">
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval="1000000">
   <div id="carouselHero" class="carousel slide carouselHero" data-ride="carousel">
   
 	<div class="carousel-inner">
@@ -883,16 +883,13 @@ background: rgba(255, 255, 255, 0.2);
 
 
 		<script>
-			// interval is in milliseconds. 200000 = 200 second -> so 200000 * 20 = 200 seconds
-$('.carousel').carousel({
-  interval: 200000 * 20;
-})
+			
 			var slide = document.getElementsByClassName("slide");
         var indicator = document.getElementById("indicator");
         var dots = document.getElementsByClassName("dots");
         var autoplay = document.getElementsByClassName("container")[0].getAttribute("data-autoplay");
         var l = slide.length;
-        var interval = 1000000;
+        
         var set;
 
         window.onload = function () {
