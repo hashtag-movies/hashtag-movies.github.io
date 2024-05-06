@@ -544,12 +544,16 @@ scale: 1.1;
 <img src="img_5.jpg" alt="image">
 
 		    </div>
-		    <button ondblclick="myFunction()">Double-click me</button>
-		    <a id="href"></a>
+		    <a id='golink' href='gosomewhere.html'>
 		    <script>
-			    function myFunction() {
-  document.getElementById("href").innerHTML = "https://github.com/hashtag-movies/hashtag-movies.github.io/edit/main/Movies/Dune%20part%202.html";
-			    }
+			    jQuery(function($) {
+    $('#golink').click(function() {
+        return false;
+    }).dblclick(function() {
+        window.location = this.href;
+        return false;
+    });
+});
 		    </script>
     </body>
 	    <script>
