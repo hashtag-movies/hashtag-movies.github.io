@@ -517,7 +517,14 @@ width: 100%;
 scale: 1.1;
 	  }
 
-
+.toptexts2 {
+       animation: fadeEffect 3s; /* fading effect takes 3s */
+    }
+    
+    @keyframes fadeEffect { /* from 0 to full opacity */
+       from {opacity: 0;}
+       to {opacity: 1;}
+    }
 	</style>
 	</head>
 	    <body>
@@ -544,8 +551,24 @@ scale: 1.1;
 <img src="img_5.jpg" alt="image">
 
 		    </div>
-		    [url=https://ibb.co/Rv862QS][img]https://i.ibb.co/6nQtYDZ/MV5-BMDQ0-Njgy-N2-Yt-NWVi-NS00-Yj-A3-LTkx-NDkt-Yz-Fk-ZTEx-ZGMx-ZDkx-Xk-Ey-Xk-Fqc-Gde-QXVy-ODE5-Nz-E3.jpg[/img][/url]
+		     <div class="toptexts2" id="toptexts2">
+     <div>Hi!</div>
+     <div>↓ go down ↓</div>
+		  </div>
 		    <script>
+window.addEventListener("scroll", function() {showFunction()});
+
+    function showFunction() {
+        if (document.body.scrollTop > 900 || document.documentElement.scrollTop > 900) {
+            document.getElementById("toptexts2").style.display = "block";
+        } else {
+            document.getElementById("toptexts2").style.display = "none";
+        }
+    }
+
+
+
+			    
 			    jQuery(function($) {
     $('#golink').click(function() {
         return false;
