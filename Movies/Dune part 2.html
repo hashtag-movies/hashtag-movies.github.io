@@ -556,6 +556,7 @@ scale: 1.1;
      <div>Hi!</div>
      <div>↓ go down ↓</div>
 		  </div>
+	    </body>
 		    <script>
 window.addEventListener("scroll", function() {showFunction()});
 
@@ -570,18 +571,8 @@ window.addEventListener("scroll", function() {showFunction()});
 
 
 			    
-			    jQuery(function($) {
-    $('#golink').click(function() {
-        return false;
-    }).dblclick(function() {
-        window.location = this.href;
-        return false;
-    });
-});
-		    </script>
-    </body>
-	    <script>
-
+			    
+		    
 ;(function($){
 	$('select').change(function(){
 		var getValue = $(this).val();
