@@ -517,15 +517,7 @@ width: 100%;
 scale: 1.1;
 	  }
 
-.toptexts2 {
-       animation: fadeEffect 3s; /* fading effect takes 3s */
-    
-}
-    
-    @keyframes fadeEffect { /* from 0 to full opacity */
-       from {opacity: 0;}
-       to {opacity: 1;}
-    }
+
 	</style>
 	</head>
 	    <body>
@@ -552,21 +544,10 @@ scale: 1.1;
 <img src="img_5.jpg" alt="image">
 
 		    </div>
-		     <div class="toptexts2" id="toptexts2" >
-     <div style="color: #ffffff;">Hi!</div>
-     <div>↓ go down ↓</div>
-		  </div>
+		     
 	    </body>
 		    <script>
-window.addEventListener("scroll", function() {showFunction()});
 
-    function showFunction() {
-        if (document.body.scrollTop > 900 || document.documentElement.scrollTop > 900) {
-            document.getElementById("toptexts2").style.display = "block";
-        } else {
-            document.getElementById("toptexts2").style.display = "none";
-        }
-    }
 
 
 
