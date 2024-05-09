@@ -383,160 +383,22 @@ gap: var(--size-5);
 
 
 		
-	@import "https://unpkg.com/open-props" layer(design.system);
 
-@layer demo {
-  fieldset {
-    grid-template-columns: 
-      var(--col-1, 1fr) 
-      var(--col-2, 1fr) 
-      var(--col-3, 1fr) 
-      var(--col-4, 1fr) 
-      var(--col-5, 1fr)
-    ;
-    
-    @media (prefers-reduced-motion: no-preference) {
-      transition: grid-template-columns 2s var(--ease-spring-5);
-    }
-    
-    &:has(label:nth-child(1) > input:checked) {
-      --col-1: 5fr;
-      --col-2: 3fr;
-    }
-    &:has(label:nth-child(2) > input:checked) {
-      --col-1: 2fr;
-      --col-2: 5fr;
-      --col-3: 2fr;
-    }
-    &:has(label:nth-child(3) > input:checked) {
-      --col-2: 2fr;
-      --col-3: 5fr;
-      --col-4: 2fr;
-    }
-    &:has(label:nth-child(4) > input:checked) {
-      --col-3: 2fr;
-      --col-4: 5fr;
-      --col-5: 2fr;
-    }
-    &:has(label:nth-child(5) > input:checked) {
-      --col-4: 3fr;
-      --col-5: 5fr;
-    }
-    
-    > label {
-      background-image: var(--_img);
-      background-position: center;
-      background-size: auto 125%;
-    }
-  }
-}
-
-@layer demo.support {
-  html.fieldset {
-    background: var(--gradient-9);
-    block-size: 100%;
-  }
   
-  body.fieldset {
-    min-block-size: 100%;
-    display: grid;
-    place-content: center;
-    padding: var(--size-2);
-    gap: var(--size-2);
-  }
-  
-  fieldset {
-    inline-size: 100vw;
-    
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-rows: 30vh;
-    gap: var(--size-3);
-    border: none;
-    
-    > label {
-      cursor: pointer;
-      border-radius: var(--radius-4);
-      
-      &:focus-within {
-        outline: 1px solid green;
-        outline-offset: 5px;
-      }
-      
-      > input {
-        opacity: 0;
-      }
-    }
-  }
-}
-		lable.img {
-	width:1000px;
-}
+
+
+
+		
 
 
 
 
 
-		.gallery{
-
-display: flex;
-
-width: 30%;
-
-height: 250px;
-
-gap: 2px;
-}
 
 
 
-.gallery > img{
 
-width: 15%;
-
-height: 250 px;
-
-aspect-ratio: 1/1;
-
-object-fit: cover;
-
-border: 2px solid white;
-
-border-radius: 5px;
-
-transition: all ease 0.5s;
-
-}
-
-
-
-.gallery > img:hover{
-
-width: 100%;
-scale: 1.1;
-	  }
-
-h6 {
-	color: white;
-        font-family: myfont;
-	display:inline-block;
-	font-size: 20px;
-	maxlength: 20;
-}
-
-
-		* {
-  box-sizing: border-box;
-}
-
-body, html {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: orange;
-}
+		
 
 .wrapper {
   display: flex;
@@ -625,29 +487,7 @@ body, html {
 	</style>
 	</head>
 	    <body>
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<fieldset>
- <label style="--_img: url(https://i.ibb.co/6HpNnQg/MV5-BMDQ0-Njgy-N2-Yt-NWVi-NS00-Yj-A3-LTkx-NDkt-Yz-Fk-ZTEx-ZGMx-ZDkx-Xk-Ey-Xk-Fqc-Gde-QXVy-ODE5-Nz-E3.jpg)"> 
-    <a id='golink' href='gosomewhere.html'>
-	    <input type="radio" name="images" value="Fiddle Leaf">
-	 
- </label>  
-</fieldset>
-
-
-		    <div class="gallery">
-
-<a href="https://hashtag-movies.github.io/Movies/Dune%20part%201.html" ><img src="img_1.jpg" alt="image"></a>
-
-<img src="img_4.jpg" alt="image">
-
-<img src="img_3.jpg" alt="image">
-
-***<img src="img_2.webp" alt="image">
-
-<img src="img_5.jpg" alt="image">
-
-		    </div>
+	    
 
 
 
