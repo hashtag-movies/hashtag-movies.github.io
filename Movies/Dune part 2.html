@@ -492,7 +492,32 @@ body #user-button .u-icons a {
   height: 30px;
   text-decoration: none;
 }
-
+body #user-button .u-icons a div {
+  padding: 0.5rem;
+  transition: 0s;
+}
+body #user-button .u-icons a[href="https://twitter.com/zed_dash"] {
+  position: relative;
+}
+body #user-button .u-icons a[href="https://twitter.com/zed_dash"]:before {
+  content: "Middle Click";
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  white-space: pre;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.25s ease-in;
+  background: #fffc;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+body #user-button .u-icons a[href="https://twitter.com/zed_dash"].show:before {
+  opacity: 1;
+  transition: 0.25s ease-out;
+}
 
 	</style>
 	</head>
