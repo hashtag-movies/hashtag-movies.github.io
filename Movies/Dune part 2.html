@@ -272,7 +272,26 @@ gap: var(--size-5);
 
 
 
-    
+    #carouselHero .bg {  
+  object-fit: cover;
+  object-position: center;
+  overflow: visible;
+  height:400px;
+}
+
+#carouselHero .bg:before {
+  content: '';
+  display: none;
+		position: absolute;
+  background-image: 
+    linear-gradient(
+      to bottom,
+      #0000,#0000,#000000
+    );
+  width: 106%;
+  top: 0;
+  height: 400px;
+	}
 </style>
         </head>
         <body bgcolor="black">
