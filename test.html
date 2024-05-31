@@ -2,73 +2,127 @@
 	<html>
 		<head>
 		<style>
-			/* The side navigation menu */
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+		.showLeft {
+  background-color: white !important;
+  border: 1px solid white !important;
+  text-shadow: white !important;
+  color: black !important;
+  padding: 10px;
 }
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+.icons li {
+  background: none repeat scroll 0 0 black;
+  height: 7px;
+  width: 7px;
+  line-height: 0;
+  list-style: none outside none;
+  margin-right: 15px;
+  margin-top: 3px;
+  vertical-align: top;
+  border-radius: 50%;
+  pointer-events: none;
 }
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
+.btn-left {
+  left: 0.4em;
 }
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+.btn-right {
+  right: 0.4em;
+}
+.btn-left,
+.btn-right {
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  top: 0.24em;
+}
+.dropbtn {
+  background-color: #4caf50;
+  position: fixed;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #3e8e41;
+}
+.dropdown {
+  position: absolute;
+  display: inline-block;
+  right: 0.4em;
+}
+.dropdown-content {
+  display: none;
+  position: relative;
+  margin-top: 60px;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+.dropdown a:hover {
+  background-color: #f1f1f1;
 }
+
+.show {
+  display: block;
+}
+	
 			</style>
 		</head>
 		<body>
-	<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+	<div class="header">
+
+  <!-- three dot menu -->
+  <div class="dropdown">
+    <!-- three dots -->
+    <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown()">
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <!-- menu -->
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#home">Open</a>
+      <a href="#about">Edit</a>
+    </div>
+  </div>
+
 </div>
+<script>
+	function changeLanguage(language) {
+  var element = document.getElementById("url");
+  element.value = language;
+  element.innerHTML = language;
+}
 
-<!-- Use any element to open the sidenav -->
-<span onclick="openNav()">open</span>
+function showDropdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
-<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-<div id="main">
-  ...
-</div>	
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
+
+</script>
 </body>
+		
 	</html>
 </doctype>
