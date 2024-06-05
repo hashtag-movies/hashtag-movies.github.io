@@ -829,4 +829,120 @@ background-image: linear-gradient(360deg, #2d3436 0%, #000000 74%);
   color: black;
   padding: 12px 16px;
   text-decoration: none;
-  display: blo
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #0000;
+	
+}
+
+.show {
+  display: block;
+}
+		.header {
+			margin-top: -10%;
+			margin-right:1%;
+			width: 100%;
+		}
+		h8 {
+		color: white;
+			font-size: 30px;
+			font-family: mynewfont;
+			margin-left:10px;
+		}
+		.dropdown-content img {
+				height: 170px;
+				width: 90%;
+			border-radius: 10px;
+			margin-left: 10%;
+			pading: 0px;
+			}
+		
+		
+</style>
+
+	</head>
+
+    
+<body>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="header">
+
+  <!-- three dot menu -->
+  <div class="dropdown">
+    <!-- three dots -->
+    <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown()">
+   
+	   <h8>Episodes:</h8> 
+    </ul>
+    <!-- menu -->
+    <div id="myDropdown" class="dropdown-content">
+<a href="https://imgbb.com/"><span style="vertical-align:middle; font-size: 100px; font-family: jerseyfont; position: absolute; margin-right:90%; color: white ">1</span><img style="vertical-align:middle;  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%)"  src="https://i.ibb.co/DrfKZ6h/streamingwars-loki-blogroll-1700009821295.jpg" ></a>
+<a href="https://ibb.co/mCK514W"><span style="vertical-align:middle; font-size: 100px; font-family: jerseyfont; position: absolute; margin-right:90%; color: white">2</span><img style="vertical-align:middle"  src="https://i.ibb.co/DrfKZ6h/streamingwars-loki-blogroll-1700009821295.jpg" ></a>
+<a href="https://ibb.co/6WRSGSR"><span style="vertical-align:middle; font-size: 100px; font-family: jerseyfont; position: absolute; margin-right:90%; color: white">3</span><img style="vertical-align:middle"  src="https://i.ibb.co/DrfKZ6h/streamingwars-loki-blogroll-1700009821295.jpg"  ></a>
+<a href="https://ibb.co/6WRSGSR"><span style="vertical-align:middle; font-size: 100px; font-family: jerseyfont; position: absolute; color: white; margin-right:90%">4</span><img style="vertical-align:middle" src="https://i.ibb.co/DrfKZ6h/streamingwars-loki-blogroll-1700009821295.jpg" ></a>
+<a href="https://ibb.co/6WRSGSR"><span style="vertical-align:middle; font-size: 100px; font-family: jerseyfont; position: absolute; color: white; margin-right:90%">5</span><img style="vertical-align:middle" src="https://i.ibb.co/DrfKZ6h/streamingwars-loki-blogroll-1700009821295.jpg" ></a>
+<a href="https://ibb.co/6WRSGSR"><span style="vertical-align:middle; font-size: 100px; font-family: jerseyfont; position: absolute; color: white; margin-right:90%">6</span><img style="vertical-align:middle" src="https://i.ibb.co/DrfKZ6h/streamingwars-loki-blogroll-1700009821295.jpg" ></a>
+	    
+	    
+    </div>
+	  
+  </div>
+
+</div>
+
+
+	    </body>
+		    <script>
+	
+
+
+
+
+
+
+			    function changeLanguage(language) {
+  var element = document.getElementById("url");
+  element.value = language;
+  element.innerHTML = language;
+}
+
+function showDropdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
+
+
+
+	
+		</script>
+		
+	</html>
+      </doctype>
