@@ -3,87 +3,95 @@
 		<head>
 			
 		<style>
-		.showLeft {
-  background-color: white !important;
-  border: 1px solid white !important;
-  text-shadow: white !important;
-  color: black !important;
-  padding: 10px;
+html,body{
+  background-color: #000;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
-.icons li {
-  background: none repeat scroll 0 0 black;
-  height: 7px;
-  width: 7px;
-  line-height: 0;
-  list-style: none outside none;
-  margin-right: 15px;
-  margin-top: 3px;
-  vertical-align: top;
-  border-radius: 50%;
-  pointer-events: none;
-}
-.btn-left {
-  left: 0%;
-}
-.btn-right {
-  right: 50%;
-}
-.btn-left,
-.btn-right {
-  position: absolute;
-  top: 0.24em;
-}
-.dropbtn {
-  background-color: #4caf50;
-  position: fixed;
-  color: white;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-.dropbtn:hover,
-.dropbtn:focus {
-  background-color: #3e8e41;
-}
-.dropdown {
-  position: absolute;
-  display: block;
-  right: 50%;
-}
-.dropdown-content {
-  display: none;
-  position: relative;
-  margin-top: 60px;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+.arrow{
+  position:relative;
+  width:30px;
+  height: 30px;
+  cursor:pointer;
+/*   border:solid 1px white; */
+  transition:0.5s;
+  overflow:hidden;
 }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+.arrow:hover{
+/*  animation:borderAni 5s cubic-bezier(0, 0.6, 1, 0.4); */
+      border:solid 2px white; 
+    border-radius:50%;
+}
+.arrow:after{
+  position:absolute;
+  display:block;
+  content:"";
+  color:white;
+  width: 20px;
+  height: 15px;
+/*   border:solid 1px;  */
+  top:-1px;
+  border-bottom:solid 2px;
+  transform:translatex(4px);
 }
 
-.dropdown a:hover {
-  background-color: #f1f1f1;
+.arrow:before{
+  position:absolute;
+  display:block;
+  content:"";
+  color:white;
+  width: 8px;
+  height: 8px;
+/*   border:solid 1px;  */
+  border-top:solid 2px;
+  border-left:solid 2px;
+  top:50%;
+  left:2px;
+  transform-origin:0% 0%;
+  transform:rotatez(-45deg);
+
+}
+.arrow:hover:before{
+ animation: aniArrow01 1s cubic-bezier(0, 0.6, 1, 0.4) infinite 0.5s;
 }
 
-.show {
-  display: block;
+.arrow:hover:after{
+ animation: aniArrow02 1s cubic-bezier(0, 0.6, 1, 0.4) infinite 0.5s;
 }
-	header {
-		margin-right: 50%;
-		
-	}
-			.dropdown-content img {
-				height: 100px;
-				
-			}
 
+
+@keyframes aniArrow01 {
+  0% {
+    transform:rotatez(-45deg) translateY(30px) translateX(30px);
+  }
+  100% {
+    transform: rotatez(-45deg) translateY(-35px) translateX(-35px);
+  }
+}
+
+
+@keyframes aniArrow02 {
+  0% {
+    transform:translateX(45px);
+  }
+  100% {
+    transform:translateX(-44px);
+  }
+}
+
+@keyframes borderAni{
+   0% {
+    border:solid 2px white;
+  }
+  100% {    
+    border:solid 2px white; 
+    border-radius:50%;
+  }
+}
 
 
 
@@ -92,50 +100,11 @@
 			</style>
 		</head>
 		<body>
-	<div class="header">
+	<div class="arrow"></div>
 
-  <!-- three dot menu -->
-  <div class="dropdown">
-    <!-- three dots -->
-    <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown()">
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <!-- menu -->
-    <div id="myDropdown" class="dropdown-content">
-	    <a href="https://imgbb.com/"><img src="https://i.ibb.co/Wz2djfb/MV5-BMjcy-Ym-Jl-NWUt-Yj-U3-ZS00-ZDNm-LThj-OTYt-Zj-Nh-N2-Vj-MDFi-NWE0-Xk-Ey-Xk-Fqc-Gde-QXVy-MTUz-MTg2.jpg" alt="MV5-BMjcy-Ym-Jl-NWUt-Yj-U3-ZS00-ZDNm-LThj-OTYt-Zj-Nh-N2-Vj-MDFi-NWE0-Xk-Ey-Xk-Fqc-Gde-QXVy-MTUz-MTg2" border="0"></a>
-<a href="https://ibb.co/MVDgrqj"><img src="https://i.ibb.co/1qf01Hp/kevin-hart-rock-dwayne-johnson-movies-ranked.jpg" alt="kevin-hart-rock-dwayne-johnson-movies-ranked" border="0"></a>
-<a href="https://ibb.co/KF34T76"><img src="https://i.ibb.co/GcbYzk7/271516-animal.jpg" alt="271516-animal" border="0"></a>
-
-    </div>
-  </div>
-
-</div>
+<!-- <span class="arrowAni">up</span> -->
 <script>
-	function changeLanguage(language) {
-  var element = document.getElementById("url");
-  element.value = language;
-  element.innerHTML = language;
-}
-
-function showDropdown() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches(".dropbtn")) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-      }
-    }
-  }
-};
+	
 
 </script>
 </body>
