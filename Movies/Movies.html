@@ -22,7 +22,27 @@
   object-fit: cover;
 	border-radius: 10px;
 }
-
+body {
+-ms-overflow-style: none; 
+  scrollbar-width: 0; 
+  overflow-x: scroll; 
+  background: transparent;	
+	backgroind-color: black;
+	}
+	body::-webkit-scrollbar {
+  display: none;
+	}
+        img[id="sitelogo"] {
+        height: 40px;
+        width: 40px;
+		animation: shine 2s infinite;
+	
+    }
+        table[id="sitelogo"] {
+            width: 95%;
+            height: 60px;
+            
+	      }
 
         
       </style>
@@ -38,6 +58,7 @@
     <div class="spinner horizontal"></div>
     <div class="spinner diagonal part-2"></div>
   </label>
+				
   <div id="sidebarMenu">
     <ul class="sidebarMenuInner">
       <li>Hashtag <span>Web for Flix</span></li>
