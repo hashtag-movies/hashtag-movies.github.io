@@ -130,6 +130,19 @@ body {
 	background-color: black;
 }
 
+	      .image-grid {
+	margin: 2em;
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: 150px;
+	grid-auto-flow: dense;
+}
+.image-grid img {
+	width: 100%;
+  height: 100%;
+  object-fit: cover;
+	 }
       </style>
     </head>
 	  
@@ -172,18 +185,10 @@ body {
 
 </div>
 	    </div>
-			<div class="bg">
-		     
-      <div class="image-grid">
+			<divdiv class="image-grid">
 	<div><img src="https://picsum.photos/id/80/300/200"></div>
 	<div><img src="https://picsum.photos/id/11/300/200"></div>
-	      <div><img src="https://i.ibb.co/x1F5YgN/24309.webp" alt="24309" border="0"></div>
-  <div><img src="https://i.ibb.co/x1F5YgN/24309.webp" alt="24309" border="0"></div>
-  <div><img src="https://i.ibb.co/x1F5YgN/24309.webp" alt="24309" border="0"></div>
-  <div><img src="https://i.ibb.co/x1F5YgN/24309.webp" alt="24309" border="0"></div>
-	<div><img src="https://i.ibb.co/x1F5YgN/24309.webp" alt="24309" border="0"></div>
-      </div>
-			</div>
+			</divdiv>
   
     
     </body>
