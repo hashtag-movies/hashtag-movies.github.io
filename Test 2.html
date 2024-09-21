@@ -90,7 +90,8 @@ a, a:visited, a:active {
     font-size: 2rem;
     border: 3px solid goldenrod;
     border-radius: 10px;
-    background-color: #444;
+  background-color: rgba(255, 255, 255, 0.4);
+           backdrop-filter: blur(10px);
 }
 
 .previous-button:focus, .next-button:focus {
@@ -157,7 +158,7 @@ a, a:visited, a:active {
 }
 
 .carousel__cell.selected::before {
-    color: black;
+    color: tan;
 }
 
 .carousel__cell:nth-child(1) { transform: rotateX(  0deg) translateZ(288px); }
