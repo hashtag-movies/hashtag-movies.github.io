@@ -288,258 +288,11 @@ a {
 	transition: all $time;
 	-webkit-transition: all $time;
 }
-body
-{
-	margin: 0;
-  font-family: 'Muli', sans-serif;
-}
-.menu {
-
-	font-weight: 100;
-	background: black;
-	width: 150px;
-	height: 50%;
-	border-radius: 10px;
-	border-radius:10px;
-	padding-left: 50px;
-	position: fixed;
-	z-index: 100;
-	-webkit-box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
-	box-shadow: -3px 0px 5px 0px rgba(0,0,0,0.2);
-	right: -130px;
-	@include all-transition(0.3s);
-	color: black;
-backgrond-color: black;
-	&:hover, &:focus
-	
-	}
-	{
-		transform: translate3d(-130px, 0, 0);
-		animation-timing-function: 1s ease-in;
-	}
-	.title
-	{
-		top:50%;
-		@include vertical-align(absolute);
-		transform: rotate(270deg);
-		left: 10px;
-		font-weight: 800;
-		font-size: 25px;
-
-	}
-	.nav
-	{
-		@include vertical-align(absolute);
-    font-weight: 100;
-
-		li
-		{
-				padding-bottom: 30px;
-				list-style-type: none;
-
-				a
-				{
-					display: block;
-					text-decoration: none;
-					color: inherit;
-					@include all-transition(0.3s);
-
-					&:hover
-					{
-						color: none;
-					}
-				}
-		}
 
 
-	}
 
-
-}
-.intro
-{
-	position: absolute;
-	top:30%;
-	margin: 100 auto;left:0;right:0;
-	font-size: 45px;
-	text-align: center;
-   font-style: italic;
-
-}
 	
 
-
-
-
-@import url('https://fonts.googleapis.com/css?family=Varela+Round');
-html, body {
-    overflow-x: hidden;
-    height: ;
-}
-body {
-    background: #fff;
-    padding: 0;
-    margin: 0;
-    font-family: 'Varela Round', sans-serif;
-}
-.header {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    height:100%;
-    max-width: 100%;
-    box-shadow: none;
-    background: blur(50px);
-    backdrop-filter: blur(50px);
-    position: fixed;
-    height: 60px!important;
-    overflow: hidden;
-    z-index: 10;
-	
-}
-.main {
-    margin: 0 auto;
-    display: block;
-    height: 10%;
-    margin-top: 60px;
-}
-.mainInner{
-    display: table;
-    height:  ;
-    width: 100%;
-    text-align: center;
-}
-.mainInner div{
-    display:table-cell;
-    vertical-align: middle;
-    font-size: 3em;
-    font-weight: bold;
-    letter-spacing: 1.25px;
-}
-#sidebarMenu {
-    background-size:100px 100px;
-	border-left-radius: 100px;
-    position: fixed;
-    left: 1;
-    width: 50%;
-    margin-top: 60px;
-	
-    transform: translateX(-250px);
-    transition: transform 250ms ease-in-out;
-    backgrond-color:;
-    z-index:100;
-    display:block;
-	border-radius:0 0 200px 200px;
-	
-}
-.sidebarMenuInner{
-    height:100%;
-    margin:0;
-    padding:0;
-    Backdrop-filter: blur(15px);
-
-background: rgba(255, 255, 255, 0.2);
-}
-.sidebarMenuInner li{
-    list-style: none;
-    height:100%;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 20px;
-    cursor: pointer;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-}
-.sidebarMenuInner li span{
-    display: block;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.50);
-}
-.sidebarMenuInner li a{
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-}
-input[type="checkbox"]:checked ~ #sidebarMenu {
-    transform: translateX(0);
-}
-
-input[type=checkbox] {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    display: none;
-}
-.sidebarIconToggle {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    cursor: pointer;
-    position: absolute;
-    z-index: 99;
-    height: ;
-    width: 100%;
-    top: 22px;
-    left: 15px;
-    height: 22px;
-    width: 22px;
-}
-.spinner {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: relative;
-    height: 3px;
-    width: 100%;
-    background-color: #fff;
-}
-.horizontal {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: relative;
-    float: left;
-    margin-top: 3px;
-}
-.diagonal.part-1 {
-    position: relative;
-    transition: all 0.3s;
-    box-sizing: border-box;
-    float: left;
-}
-.diagonal.part-2 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    position: relative;
-    float: left;
-    margin-top: 3px;
-}
-input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    opacity: 0;
-}
-input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    transform: rotate(135deg);
-    margin-top: 8px;
-}
-input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
-    transition: all 0.3s;
-    box-sizing: border-box;
-    transform: rotate(-135deg);
-    margin-top: -9px;
-	    }
-
-
-.sidebarMenuInner {
-
-  
-	background-size: 0px;
-	Backdrop-filter: blur(15px);
-
-background: rgba(255, 255, 255, 0.2);
-	}
-	
 
 
 
@@ -583,10 +336,35 @@ background: rgba(255, 255, 255, 0.2);
 	
 </style>
                 </head>
-                <body>
+               
 		<div class="up">
 		     <div style="position:fixed;z-index:100;height:60px;width:100%;">
-			<div id="header">
+			
+			     <head>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+
+  <body>
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><span></span></label>
+    <label for="active" class="close"></label>
+    <div class="wrapper">
+      <ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">Gallery</a></li>
+<li><a href="#">Feedback</a></li>
+</ul>
+</div>
+
+			     
+			     
+			     
+			     
+			     <div id="header">
   <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
   <label for="openSidebarMenu" class="sidebarIconToggle">
     <div class="spinner diagonal part-1"></div>
