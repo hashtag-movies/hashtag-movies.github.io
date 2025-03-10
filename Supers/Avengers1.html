@@ -557,7 +557,19 @@ var x = setInterval(function() {
   // Output the result in an element with id="demo"
   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
-    
+
+let res = document.getElementById('demo');
+
+        function GFG_Fun() {
+            let img = document.createElement('img');
+            img.src =
+'https://media.geeksforgeeks.org/wp-content/uploads/20190529122828/bs21.png';
+            document.getElementById('demo').appendChild(img);
+            res.innerHTML = "Image Element Added.";
+
+
+		
+	
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
