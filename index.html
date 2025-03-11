@@ -23,7 +23,6 @@
             z-index: -1;
         }
 
-        /* Background Sliding Animation */
         .background-slider .slides {
             display: flex;
             width: 500%;
@@ -93,9 +92,9 @@
         .loading-bar {
             width: 0%;
             height: 100%;
-            background-image: linear-gradient(to right, white 0%, brown 100%);
+            background-image: linear-gradient(to right, white 0%, red 100%);
             border-radius: 5px;
-            animation: loadProgress 32.8s linear forwards;
+            animation: loadProgress 35s linear forwards;
         }
 
         @keyframes loadProgress {
@@ -128,6 +127,7 @@
                 transform: scale(1.2);
             }
         }
+
     </style>
     <script>
         // Random Redirect Time (between 30-39 seconds)
@@ -139,11 +139,23 @@
 
             setTimeout(() => {
                 window.location.href = "home.html"; // Change to your actual next page
-            }, 3300);
+            }, 2500);
         }, randomTime);
+
+        // Function to play music automatically
+        function playMusic() {
+            let audio = document.getElementById("bgMusic");
+            audio.volume = 0.5; // Set volume (0.0 - 1.0)
+            audio.play().catch(error => {
+                console.log("Autoplay failed, user interaction required:", error);
+            });
+        }
+
+        // Start music on user interaction (fix for some browsers)
+        document.addEventListener("click", playMusic);
     </script>
 </head>
-<body>
+<body onload="playMusic()">
 
     <!-- Background Poster Slider -->
     <div class="background-slider">
@@ -166,6 +178,12 @@
 
     <!-- Page Transition -->
     <div class="page-transition" id="pageTransition"></div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-epic.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
 </body>
 </html>
