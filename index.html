@@ -10,36 +10,40 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #121212;
+            background-color: #121212; /* Dark background for contrast */
             margin: 0;
         }
 
         .animated-image {
-            width: 200px; /* Adjust size as needed */
+            width: 250px; /* Adjust as needed */
             opacity: 0;
-            transform: scale(0);
-            animation: zoomBounce 1.5s ease-out forwards;
+            transform: scale(0.3) rotate(-20deg);
+            filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.2));
+            animation: zoomRotateFade 1.8s ease-out forwards;
         }
 
-        @keyframes zoomBounce {
+        @keyframes zoomRotateFade {
             0% {
                 opacity: 0;
-                transform: scale(0);
+                transform: scale(0.3) rotate(-20deg);
+                filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0));
             }
             50% {
                 opacity: 1;
-                transform: scale(1.1);
+                transform: scale(1.1) rotate(5deg);
+                filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.5));
             }
             100% {
                 opacity: 1;
-                transform: scale(1);
+                transform: scale(1) rotate(0deg);
+                filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.3));
             }
         }
     </style>
 </head>
 <body>
 
-    <img src="https://i.ibb.co/N6C9CdRD/20250308-230145-removebg-preview.png" alt="Animated Image" class="animated-image">
+    <img src="your-image.png" alt="Animated Image" class="animated-image">
 
 </body>
 </html>
