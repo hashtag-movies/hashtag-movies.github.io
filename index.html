@@ -38,8 +38,7 @@
     </div>
 
     <script>
-        let startX = 0;
-        let endX = 0;
+        let startX = 0, endX = 0;
 
         document.addEventListener("touchstart", function(event) {
             startX = event.touches[0].clientX;
@@ -48,8 +47,8 @@
         document.addEventListener("touchend", function(event) {
             endX = event.changedTouches[0].clientX;
 
-            if (endX - startX > 100) { // Detect right swipe
-                window.location.href = "Webseries/Aa aaa.html"; // Redirect to next page
+            if (endX - startX > 100) { // Right swipe
+                window.location.href = "Aa aaa.html";
             }
         });
     </script>
