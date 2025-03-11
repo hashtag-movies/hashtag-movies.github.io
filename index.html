@@ -71,30 +71,36 @@
             }
         }
 
-        /* Loader at the bottom */
-        .loader-container {
+        
+        /* Loading Bar */
+        .loading-bar-container {
             position: absolute;
             bottom: 30px;
             left: 50%;
+            width: 50%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
             transform: translateX(-50%);
+            overflow: hidden;
+        }
+
+        .loading-bar {
+            width: 0%;
+            height: 100%;
+            background: #00ffcc;
+            border-radius: 5px;
+            animation: loadProgress 33s linear forwards;
+        }
+
+        @keyframes loadProgress {
+            0% { width: 0%; }
+            100% { width: 100%; }
         }
 
 
-    .loader {
-      width: 0%;
-      height: 4px;
-      background-color: #ffffff;
-      position: absolute;
-      bottom: 20px;
-      left: 0;
-      animation: progress 3s ease-in-out infinite;
-  }
 
-  @keyframes progress {
-      0% { width: 0%; }
-      50% { width: 80%; }
-      100% { width: 100%; opacity: 0; }
-  }
+
     
 
     </style>
@@ -123,8 +129,8 @@
     <img src="https://i.ibb.co/N6C9CdRD/20250308-230145-removebg-preview.png" alt="Animated Image" class="animated-image">
 
     <!-- Loader at the bottom -->
-    <div class="loader-container">
-        <div class="loader"></div>
+    <div class="loading-bar-container">
+        <div class="loading-bar"></div>
     </div>
 
 </body>
