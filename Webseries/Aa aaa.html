@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <title>Hashtag</title>
+
+    <!-- W3CSS & Bootstrap -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hide scrollbar */
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            overflow-x: hidden;
+            background-color: black;
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Logo styles */
+        img#sitelogo {
+            height: 45px;
+            width: 45px;
+        }
+
+        /* Search Bar */
+        input[type="search"] {
+            width: 200px;
+            padding: 8px 20px;
+            border: 2px solid #ffffff;
+            font-size: 18px;
+            border-radius: 25px;
+            background-color: transparent;
+            transition: 0.5s ease-in-out;
+            font-weight: bold;
+            text-align: center;
+        }
+        input[type="search"]:focus {
+            width: 80%;
+            background-color: #fff;
+        }
+
+        /* Button Styles */
+        .btn {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 12px 30px;
+            font-size: 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 50%;
+            display: block;
+            margin: 20px auto;
+        }
+        .btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive iframe */
+        iframe {
+            width: 95%;
+            height: 35%;
+            margin: 10px auto;
+            border-radius: 5px;
+            display: block;
+        }
+
+        /* Scrollable Images */
+        .scrollmenu1 {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px;
+        }
+        .scrollmenu1 img {
+            height: 100px;
+            margin-right: 5px;
+        }
+
+        /* Section Titles */
+        h5 {
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Fullscreen Image Viewer */
+        img[data-enlargable] {
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+        }
+        img[data-enlargable]:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo & Search -->
+    <table align="center" id="sitelogo">
+        <tr>
+            <td>
+                <a href="https://hashtag-movies.github.io/home.html">
+                    <img src="https://i.ibb.co/wJNwjQ4/SAVE-20240302-212936-removebg-preview.png" id="sitelogo">
+                </a>
+            </td>
+            <td>
+                <a href="https://hashtag-movies.github.io/Search2.html">
+                    <img src="https://i.ibb.co/mJ0nZzt/search-9-xxl.png" style="width: 40px;">
+                </a>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Video Section -->
+    <iframe src="https://drive.google.com/file/d/1-e0gIPFKYTHL_oKg5hPdev8MKSB1lvuu/preview" allowfullscreen></iframe>
+
+    <!-- Download Button -->
+    <a href="https://drive.usercontent.google.com/download?id=1-e0gIPFKYTHL_oKg5hPdev8MKSB1lvuu&export=download">
+        <button class="btn"><i class="fa fa-download"></i> Download</button>
+    </a>
+
+    <h5>Screenshots:</h5>
+    <div class="scrollmenu1">
+        <img data-enlargable src="https://i.ibb.co/x7KWw07/Screenshot-2024-06-05-11-12-28-654-com-google-android-apps-docs.jpg">
+        <img data-enlargable src="https://i.ibb.co/SQwSwFz/Screenshot-2024-06-05-11-12-46-732-com-google-android-apps-docs.jpg">
+        <img data-enlargable src="https://i.ibb.co/6gMjVjs/Screenshot-2024-06-05-11-13-44-932-com-google-android-apps-docs.jpg">
+    </div>
+
+    <h5>Trailer:</h5>
+    <iframe width="932" height="431" src="https://www.youtube.com/embed/QS_T_yU0fm4" allowfullscreen></iframe>
+
+    <!-- JavaScript Optimizations -->
+    <script>
+        // Prevent page caching
+        if (performance.getEntriesByType("navigation")[0].type === "reload") {
+            location.reload();
+        }
+
+        // Fullscreen Image Viewer
+        document.querySelectorAll('img[data-enlargable]').forEach(img => {
+            img.addEventListener('click', function() {
+                let src = this.getAttribute('src');
+                let overlay = document.createElement('div');
+                overlay.style.cssText = `
+                    background: rgba(0,0,0,0.8) url(${src}) no-repeat center;
+                    background-size: contain;
+                    width: 100%;
+                    height: 100%;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    z-index: 10000;
+                    cursor: zoom-out;
+                `;
+                overlay.addEventListener('click', function() {
+                    this.remove();
+                });
+                document.body.appendChild(overlay);
+            });
+        });
+    </script>
+
+</body>
+  </html>
+  
