@@ -19,9 +19,9 @@
         /* Background images sliding animation */
         .background-slider .slides {
             display: flex;
-            width: 700%; /* Adjust based on the number of images */
+            width: 600%; /* Adjust based on the number of images */
             height: 100%;
-            animation: slideBackground 40s infinite linear;
+            animation: slideBackground 15s infinite linear;
         }
 
         .background-slider img {
@@ -43,7 +43,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) scale(0.3) rotate(-20deg);
-            width: 200px; /* Adjust as needed */
+            width: 250px; /* Adjust as needed */
             opacity: 0;
             filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.3));
             animation: zoomRotateFade 2s ease-out forwards;
@@ -67,7 +67,35 @@
             }
         }
 
+        /* Loader at the bottom */
+        .loader-container {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            border-top: 5px solid #ffffff;
+            border-radius: 50%;
+            animation: spinLoader 1s linear infinite;
+        }
+
+        @keyframes spinLoader {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
     </style>
+    <script>
+        // Redirect to another page after a random time between 30 to 39 seconds
+        setTimeout(function () {
+            window.location.href = "next-page.html"; // Change to your actual next page URL
+        }, Math.floor(Math.random() * (39000 - 30000 + 1)) + 30000); // Random between 30,000ms and 39,000ms
+    </script>
 </head>
 <body>
 
@@ -77,12 +105,8 @@
             <img src="https://i.ibb.co/v6mxQkpn/images-1-9.jpg" alt="Superhero Poster 1">
             <img src="https://i.ibb.co/LzK4qDQY/511728-p10989225-p-v8-ak.jpg" alt="Superhero Poster 2">
             <img src="https://i.ibb.co/S4s27QbS/images-1-8.jpg" alt="Superhero Poster 3">
-<img src="https://i.ibb.co/zHQbD7cV/images-1-10.jpg" alt="Superhero Poster 4">
+            <img src="https://i.ibb.co/zHQbD7cV/images-1-10.jpg" alt="Superhero Poster 4">
 <img src="https://i.ibb.co/spDXp9XT/3307ca0df325da35692128a6703a4bff5a5cf8c60bb719f221cadd6c03834358.jpg" alt="Superhero Poster 5">
-<img src="https://i.ibb.co/gLCpLw4h/images-1-11.jpg" alt="Superhero Poster 6">
-
-
-
             
         </div>
     </div>
@@ -90,5 +114,11 @@
     <!-- Main Animated Image -->
     <img src="https://i.ibb.co/N6C9CdRD/20250308-230145-removebg-preview.png" alt="Animated Image" class="animated-image">
 
+    <!-- Loader at the bottom -->
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+
 </body>
 </html>
+
