@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 2</title>
+    <title>Swipe Back</title>
     <style>
         body {
             display: flex;
@@ -27,7 +27,23 @@
 <body>
     <div class="container">
         <h1>Page 2</h1>
-        <p>You have successfully swiped to the next page!</p>
+        <p>Swipe left to go back to the first page.</p>
     </div>
+
+    <script>
+        let startX = 0, endX = 0;
+
+        document.addEventListener("touchstart", function(event) {
+            startX = event.touches[0].clientX;
+        });
+
+        document.addEventListener("touchend", function(event) {
+            endX = event.changedTouches[0].clientX;
+
+            if (startX - endX > 100) { // Left swipe
+                window.location.href = "index.html";
+            }
+        });
+    </script>
 </body>
 </html>
