@@ -19,6 +19,7 @@
             height: 100vh;
             text-align: center;
             background-color: #f4f4f4;
+            overflow: hidden;
         }
 
         .container {
@@ -28,6 +29,17 @@
             background: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        @keyframes slideOut {
+            from { transform: translateX(0); }
+            to { transform: translateX(100%); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
         }
     </style>
 </head>
@@ -38,17 +50,20 @@
     </div>
 
     <script>
-        let startX = 0, endX = 0;
+        let startX = 0;
 
         document.addEventListener("touchstart", function(event) {
             startX = event.touches[0].clientX;
         });
 
         document.addEventListener("touchend", function(event) {
-            endX = event.changedTouches[0].clientX;
+            let endX = event.changedTouches[0].clientX;
 
             if (endX - startX > 100) { // Right swipe
-                window.location.href = "Webseries/Aa aaa.html";
+                document.querySelector('.container').style.animation = 'slideOut 0.5s ease-in-out forwards';
+                setTimeout(() => {
+                    window.location.href = "page2.html";
+                }, 500);
             }
         });
     </script>
