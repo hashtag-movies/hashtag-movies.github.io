@@ -289,21 +289,21 @@ gap: var(--size-5);
 
 
 
-    #carouselHero .bg {  
+    #carouselHero .carousel-item img {  
   object-fit: cover;
   object-position: center;
   overflow: visible;
   height:450px;
 }
 
-#carouselHero .bg:before {
+#carouselHero .carousel-item:before {
   content: '';
   display: block;
 		position: absolute;
   background-image: 
     linear-gradient(
       to bottom,
-      #000000,#000000
+      #0000,#000000
     );
 	background-repeat: no-repeat;
   width: 106%;
@@ -420,7 +420,7 @@ margin-left: 4px;
 		<div id="carouselHero" class="bg carouselHero" >
   
 		<div class="screen">
-		<div class="bg">
+		<div class="carousel-item">
 			
             <table align="center" id="sitelogo">
                 <tr>
