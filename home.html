@@ -838,6 +838,27 @@ input[type="checkbox"]{
 
 
 		<script>
+    let startX = 0;
+
+        document.addEventListener("touchstart", function(event) {
+            startX = event.touches[0].clientX;
+        });
+
+        document.addEventListener("touchend", function(event) {
+            let endX = event.changedTouches[0].clientX;
+
+            if (startX - endX > 100) { // Left swipe
+                document.querySelector('.container').style.animation = 'slideOut 0.5s ease-in-out forwards';
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 500);
+            }
+        });
+
+
+
+
+
 			
 			var slide = document.getElementsByClassName("slide");
         var indicator = document.getElementById("indicator");
