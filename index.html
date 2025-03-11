@@ -3,69 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swipe to Next Page</title>
+    <title>Animated Entrance</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
         body {
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
-            text-align: center;
-            background-color: #f4f4f4;
-            overflow: hidden;
+            background-color: #121212;
+            margin: 0;
         }
 
-        .container {
-            width: 90%;
-            max-width: 600px;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            animation: slideIn 0.5s ease-in-out;
+        .animated-image {
+            width: 200px; /* Adjust size as needed */
+            opacity: 0;
+            transform: scale(0);
+            animation: zoomBounce 1.5s ease-out forwards;
         }
 
-        @keyframes slideOut {
-            from { transform: translateX(0); }
-            to { transform: translateX(100%); }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(0); }
+        @keyframes zoomBounce {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Page 1</h1>
-        <p>Swipe right to go to the next page.</p>
-    </div>
 
-    <script>
-        let startX = 0;
+    <img src="your-image.png" alt="Animated Image" class="animated-image">
 
-        document.addEventListener("touchstart", function(event) {
-            startX = event.touches[0].clientX;
-        });
-
-        document.addEventListener("touchend", function(event) {
-            let endX = event.changedTouches[0].clientX;
-
-            if (endX - startX > 100) { // Right swipe
-                document.querySelector('.container').style.animation = 'slideOut 0.5s ease-in-out forwards';
-                setTimeout(() => {
-                    window.location.href = "Slide.html";
-                }, 500);
-            }
-        });
-    </script>
 </body>
 </html>
