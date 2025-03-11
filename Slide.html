@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swipe Back</title>
+    <title>Swipe to Previous Page</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
         body {
             display: flex;
             align-items: center;
@@ -12,6 +19,7 @@
             height: 100vh;
             text-align: center;
             background-color: #e3f2fd;
+            overflow: hidden;
         }
 
         .container {
@@ -21,27 +29,41 @@
             background: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        @keyframes slideOut {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Page 2</h1>
-        <p>Swipe left to go back to the first page.</p>
+        <p>Swipe left to go back to the previous page.</p>
     </div>
 
     <script>
-        let startX = 0, endX = 0;
+        let startX = 0;
 
         document.addEventListener("touchstart", function(event) {
             startX = event.touches[0].clientX;
         });
 
         document.addEventListener("touchend", function(event) {
-            endX = event.changedTouches[0].clientX;
+            let endX = event.changedTouches[0].clientX;
 
             if (startX - endX > 100) { // Left swipe
-                window.location.href = "index.html";
+                document.querySelector('.container').style.animation = 'slideOut 0.5s ease-in-out forwards';
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 500);
             }
         });
     </script>
