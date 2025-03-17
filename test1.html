@@ -1,1563 +1,195 @@
-<doctype! html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Hashtag-Movies</title>
 
-<html>
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
-<head>             
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-	<meta name="viewport" content="width=device-width, user-scalable=no">
-
-	
-
-<title>Hashtag-Movies</title>
-
-
-
-<meta charset="utf-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-
-
-
-    txtSearchBox.addEventListener("keyup", function (event) {
-
-            if (event.keyCode == 13) {
-
-                location.href = "login.html";
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fix for undefined search box
+            let txtSearchBox = document.getElementById("txtSearchBox");
+            if (txtSearchBox) {
+                txtSearchBox.addEventListener("keyup", function (event) {
+                    if (event.keyCode === 13) {
+                        location.href = "login.html";
+                    }
+                });
             }
 
+            // Check if user has visited before
+            let value = localStorage.getItem('my_flag');
+            if (value !== "visited") {
+                window.location = "home.html";
+            }
+            localStorage.removeItem("my_flag");
+
+            // Prevent cache reload issues
+            if (performance.navigation.type === 2) {
+                location.reload(true);
+            }
+        });
+    </script>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Carousel Styling */
+        .carousel-inner img {
+            width: 95%;
+            height: auto;
+            border-radius: 10px;
+            margin-left: 8px;
+        }
+
+        /* Custom Video Styling */
+        video {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        /* Hide Scrollbars */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Search Box */
+        input[type=search] {
+            width: 90%;
+            padding: 8px 20px;
+            border: 2px solid white;
+            font-size: 18px;
+            border-radius: 25px;
+            text-align: center;
+            height: 40px;
+            transition: 0.5s all ease-in-out;
+        }
+
+        input[type=search]:focus {
+            width: 100%;
+            background-color: white;
+            color: black;
+        }
+
+        /* Logo Animation */
+        img[id="sitelogo"] {
+            height: 40px;
+            width: 40px;
+            animation: shine 2s infinite;
+        }
+
+        /* Page Transition Animation */
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0;
+            transform: scale(1);
+            z-index: 100;
+            display: none;
+            animation: zoomFadeOut 2.5s ease-in-out forwards;
+        }
+
+        @keyframes zoomFadeOut {
+            0% {
+                opacity: 0;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page Transition -->
+    <div class="page-transition" id="pageTransition"></div>
+
+    <!-- Site Logo -->
+    <div style="text-align: center; padding: 20px;">
+        <img src="Images/icon_png-removebg-preview.png" id="sitelogo">
+    </div>
+
+    <!-- Search Bar -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <input type="search" id="txtSearchBox" placeholder="Search movies...">
+    </div>
+
+    <!-- Video Carousel -->
+    <div id="carouselHero" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <video autoplay muted loop poster="https://i.ibb.co/kgy0JRX/Go-Online-Tools-image-downloader-1.jpg">
+                    <source src="Trailers/Godzilla x Kong _ The New Empire _ Official Trailer (2).mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="carousel-item">
+                <video autoplay muted loop poster="https://i.ibb.co/QDjwKP1/Go-Online-Tools-image-downloader.jpg">
+                    <source src="Trailers/GANAPATH Official Hindi Trailer.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselHero" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#carouselHero" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+    <!-- Latest Movies Section -->
+    <h2 class="text-center mt-4">Latest Movies</h2>
+    <div class="d-flex overflow-auto">
+        <img src="https://i.ibb.co/LtQq35m/images-3.jpg" class="m-2" style="width: 150px; border-radius: 10px;">
+        <img src="https://i.ibb.co/NTkcWQN/images-4.jpg" class="m-2" style="width: 150px; border-radius: 10px;">
+        <img src="https://i.ibb.co/6ZcQ5JC/images-6.jpg" class="m-2" style="width: 150px; border-radius: 10px;">
+    </div>
+
+    <!-- JavaScript for Smooth Page Transitions -->
+    <script>
+        let startX = 0;
+
+        document.addEventListener("touchstart", function(event) {
+            startX = event.touches[0].clientX;
         });
 
-
-
-
-
-	var value = localStorage.getItem('my_flag');
-
-if (value != "visited") {
-
-    window.location = "home.html";
-
-}
-
-localStorage.removeItem("my_flag");
-
-	
-
- 
-
-    if(performance.navigation.type == 2){
-
-            location.reload(true);
-
-    }
-
-
-
-
-
-	
-
-</script>
-
-<style>
-
-
-
-p {
-
-	margin-left:6px;
-
-	font-size: 18;
-
-	color: #ffffff;
-
-}
-
-	h {
-
-	margin-left:6px;
-
-	font-size: 18;
-
-	color: #ffffff;
-
-	}
-
-
-
-
-
-	
-
-
-
-.carousel-inner img { 
-
-	width:95%; 
-
-	height:18%; 
-
-	border-radius: 10px;
-
-	margin-left:8px;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-.carousel-fade {
-
-    .carousel-inner {
-
-        .item {
-
-            transition-property: opacity;
-
-        }
-
-        
-
-        .item,
-
-        .active.left,
-
-        .active.right {
-
-            opacity: 0;
-
-        }
-
-
-
-        .active,
-
-        .next.left,
-
-        .prev.right {
-
-            opacity: 1;
-
-        }
-
-
-
-        .next,
-
-        .prev,
-
-        .active.left,
-
-        .active.right {
-
-            left: 0;
-
-            transform: translate3d(0, 0, 0);
-
-        }
-
-    }
-
-
-
-    .carousel-control {
-
-        z-index: 2;
-
-    }
-
-}
-
-
-
-
-
-	
-
-
-
-
-
-	
-
-	
-
-	video {
-
-  --video-width: 426;
-
-  --video-height: 240;
-
-  aspect-ratio: var(--video-width) / var(--video-height);
-
-  width: 100%;
-
-  height: auto;
-
-  object-fit: cover;
-
-		controls: loop;
-
-	}
-
-	
-
-body {
-
--ms-overflow-style: none; 
-
-  scrollbar-width: 0; 
-
-  overflow-x: scroll; 
-
-  background: transparent;	
-
-	backgroind-color: black;
-
-	}
-
-	body::-webkit-scrollbar {
-
-  display: none;
-
-	}
-
-        img[id="sitelogo"] {
-
-        height: 40px;
-
-        width: 40px;
-
-		animation: shine 2s infinite;
-
-	
-
-    }
-
-        table[id="sitelogo"] {
-
-            width: 95%;
-
-            height: 60px;
-
-            
-
-        }
-
-        .disable-scrollbars::-webkit-scrollbar {
-
-  background: transparent; /* Chrome/Safari/Webkit */
-
-  width: 0px;
-
-}
-
-	::-webkit-scrollbar {
-
-  background: transparent; /* Chrome/Safari/Webkit */
-
-  width: 0px;
-
-}
-
-    input[type=search] {
-
-        width: 90%;
-
-        padding: 8px 20px 8px 45px;
-
-        border: #ffffff solid 2px;
-
-        font-size: 18px;
-
-        border-radius: 25px;
-
-        background-position: 2% 50%;
-
-        background-repeat: no-repeat;
-
-        background-size: 30px;
-
-        background-color: #0000;
-
-        transition: 0.5s all ease-in-out;
-
-        filter: brightness(150%);
-
-        font-weight: bold;
-
-        text-align: center;
-
-	height:40px;
-
-    }
-
-
-
-    input[type=search]:focus,
-
-    input[type=search]:not(:placeholder-shown) {
-
-        width: 100%;
-
-        background-color: #fff;
-
-        filter: brightness(100%);
-
-        align-self: center;
-
-        align-items: center;
-
-        align-content: center;
-
-
-
-    }
-
-	div.back {
-
-		
-
-background-color: black; /* For browsers that do not support gradients */
-
-  	background-color: black;
-
-		height:60px;
-
-
-
-  background-repeat: no-repeat;
-
-  background-size: 100% 150%;
-
-		background-position: center;
-
-		}
-
-	div.up {
-
-
-
-	}
-
-	div.scrollmenu1 {
-
-          
-
-          overflow: auto;
-
-          white-space: nowrap;
-
-        }
-
-  
-
-        div.scrollmenu1 a {
-
-          display: inline-block;
-
-          color: white;
-
-          text-align: center;
-
-          padding: 14px;
-
-          text-decoration: none;
-
-        }
-
-  
-
-        div.scrollmenu1 a:hover {
-
-          background-color: ;
-
-		}
-
-  
-
-	  div.karan {
-
-
-
-		  background-image:linear-gradient(to bottom, black,black ) ;
-
-	
-
-
-
-  object-fit: con;
-
-}
-
-.bgbollywood {
-
-  
-
- background-repeat: no-repeat;
-
- background-size: 100% 100%;
-
- 
-
-}
-
-div.scrollmenu a {
-
-  display: inline-block;
-
-  color: white;
-
-  text-align: center;
-
-  padding: 4px;
-
-  text-decoration: none;
-
-}
-
-
-
-div.scrollmenu a:hover {
-
-  background-color: ;
-
-}
-
-div.scrollmenu {
-
-  background-color: ;
-
-  overflow: auto;
-
-  white-space: nowrap;
-
-	margin-left:9px;
-
-}
-
-.scrollmenu img {
-
-  width: 100%;
-
-  height:25%;
-
-	padding: 0%;
-
-
-
-  border:3px solid #0000;
-
-  border-radius:10px;
-
-  background:linear-gradient(#CD7F32,#000000) border-box;
-
-    
-
-}
-
-a {
-
-  width: 35%;
-
-  ht:140px;
-
-	padding: 0%;
-
-	  }
-
-	.example {
-
-  margin: 1em 0;
-
-  text-align: center;
-
-}
-
-
-
-.foot img {
-
-  width: 20%;
-
-  height: 5%;
-
-  justify-content: center;
-
-  margin-left: 27.5%;
-
-}
-
-
-
-.foot-cover img {
-
-  object-fit: cover;
-
-}
-
-
-
-.foot-contain img {
-
-  object-fit: con;
-
-}
-
-.bghollywood {
-
- background-image:
-
-            linear-gradient(to bottom, #000,#000 );
-
- background-repeat: no-repeat;
-
- background-size: 100% 10%;
-
- width: 20px;
-
-	
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-  @mixin vertical-align($position) {
-
-  position:$position;
-
-  top: 50%;
-
-  -webkit-transform: translateY(-50%);
-
-  -ms-transform: translateY(-50%);
-
-  transform: translateY(-50%);
-
-}
-
-
-
-@mixin all-transition($time)
-
-{
-
-	transition: all $time;
-
-	-webkit-transition: all $time;
-
-}
-
-
-
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	#carouselHero .carousel-item video {  
-
-  object-fit: cover;
-
-  object-position: center;
-
-  overflow: hidden;
-
-  height:250px;
-
-}
-
-
-
-#carouselHero .carousel-item:before {
-
-  content: '';
-
-  display: block;
-
-  position: absolute;
-
-  background-image: 
-
-    linear-gradient(
-
-      to bottom,
-
-      #000000,#0000,#000000
-
-    );
-
-  width: 106%;
-
-  top: 0;
-
-  height: 250px;
-
-	}
-
-	
-
-	.lang img{
-
-		width: 24%;
-
-		border-radius: 10px;
-
-		border:3px solid #0000;
-
-		background:linear-gradient(#CD7F32,#000000) border-box;
-
-		
-
-	}
-
-	.lang {
-
-		margin-tight:1%;
-
-	margin-left:1%;
-
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.head {
-
-	margin-right: 100%;
-background-color: #000000;
-}
-
-	*{
-
-  margin: 0;
-
-  padding: 0;
-
-  box-sizing: border-box;
-
-  font-family: 'Lato', sans-serif;
-
-  font-family: 'Oswald', sans-serif;
-
-}
-
-.wrapper{
-
-  position: fixed;
-
-  top: 0;
-
-  /*left: -100%;*/
-
-  right: -100%;
-
-  height: 100%;
-
-  width: 100%;
-
-  background: #000;
-
-  /*background: linear-gradient(90deg, #f92c78, #4114a1);*/
-
-  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
-
- /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);*/
-
-  transition: all 0.6s ease-in-out;
-
-}
-
-#active:checked ~ .wrapper{
-
-  /*left: 0;*/
-
-  right:0;
-
-}
-
-.menu-btn{
-
-  position: absolute;
-
-  z-index: 2;
-
-  left: 10px;
-
-  /*left: 20px; */
-
-  top: 8px;
-
-  height: 50px;
-
-  width: 50px;
-
-  text-align: center;
-
-  line-height: 50px;
-
-  border-radius: 0%;
-
-  font-size: 20px;
-
-  cursor: pointer;
-	
-line-color: #fff;
-  /*color: #fff;*/
-
-  /*background: linear-gradient(90deg, #f92c78, #4114a1);*/
-
-  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
-
- /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%); */
-
-  transition: all 0.3s ease-in-out;
-
-}
-
-.menu-btn span,
-
-.menu-btn:before,
-
-.menu-btn:after{
-
-	content: "";
-
-	position: absolute;
-
-	top: calc(50% - 1px);
-
-	right: 30%;
-
-	width: 40%;
-
-	border-bottom: 2px solid #000;
-
-	transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
-
-}
-
-.menu-btn:before{
-
-  transform: translateY(-8px);
-
-}
-
-.menu-btn:after{
-
-  transform: translateY(8px);
-
-}
-
-
-
-
-
-.close {
-
-	z-index: 1;
-
-	width: 100%;
-
-	height: 100%;
-
-	pointer-events: none;
-
-	transition: background .6s;
-
-}
-
-
-
-/* closing animation */
-
-#active:checked + .menu-btn span {
-
-	transform: scaleX(0);
-
-}
-
-#active:checked + .menu-btn:before {
-
-	transform: rotate(45deg);
-
-  border-color: #fff;
-
-}
-
-#active:checked + .menu-btn:after {
-
-	transform: rotate(-45deg);
-
-  border-color: #fff;
-
-}
-
-.wrapper ul{
-
-  position: absolute;
-
-  top: 60%;
-
-  left: 50%;
-
-  height: 90%;
-
-  transform: translate(-50%, -50%);
-
-  list-style: none;
-
-  text-align: center;
-
-}
-
-.wrapper ul li{
-
-  height: 10%;
-
-  margin: 15px 0;
-
-}
-
-.wrapper ul li a{
-
-  text-decoration: none;
-
-  font-size: 30px;
-
-  font-weight: 500;
-
-  padding: 5px 30px;
-
-  color: #fff;
-
-  border-radius: 500px;
-
-  position: absolute;
-
-  line-height: 50px;
-
-  margin: 5px 30px;
-
-  opacity: 0;
-
-  transition: all 0.3s ease;
-
-  transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
-
-}
-
-.wrapper ul li a:after{
-
-  position: absolute;
-
-  content: "";
-
-  background: #fff;
-
-   /*background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);*/
-
-  /*background: linear-gradient(375deg, #1cc7d0, #2ede98);*/
-
-  width: 100%;
-
-  height: 100%;
-
-  left: 0;
-
-  top: 0;
-
-  border-radius: 500px;
-
-  transform: scaleY(0);
-
-  z-index: -1;
-
-  transition: transform 0.3s ease;
-
-}
-
-.wrapper ul li a:hover:after{
-
-  transform: scaleY(1);
-
-}
-
-.wrapper ul li a:hover{
-
-  color: #1a73e8;
-
-}
-
-input[type="checkbox"]{
-
-  display: none;
-
-}
-
-.content{
-
-  position: absolute;
-
-  top: 50%;
-
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-
-  z-index: -1;
-
-  text-align: center;
-
-  width: 100%;
-
-  color: #202020;
-
-}
-
-.content .title{
-
-  font-size: 40px;
-
-  font-weight: 700;
-
-}
-
-.content p{
-
-  font-size: 35px;
-
-  font-weight: 600;
-
-}
-
-
-
-#active:checked ~ .wrapper ul li a{
-
-  opacity: 1;
-
-}
-
-.wrapper ul li a{
-
-  transition: opacity 1.2s, transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-
-  transform: translateX(100px);
-
-}
-
-#active:checked ~ .wrapper ul li a{
-
-	transform: none;
-
-	transition-timing-function: ease, cubic-bezier(.1,1.3,.3,1); /* easeOutBackを緩めた感じ */
-
-   transition-delay: .6s;
-
-  transform: translateX(-100px);
-
-}
-.up {
-	background-image: linear-gradient(to bottom, #C4A484 , #000000 , #000);
-	background-size: 100% 20%;
-	background-repeat: no-repeat;
-	
-}
-	
-
-</style>
-
-                </head>
-
-               
-
-		<div class="up">
-
-		     <div style="position:fixed;z-index:100;height:60px;width:100%;">
-
-			
-
-<head>
-
-  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-
- <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-  </head>
-
-
-
-  <body>
-
-    <input type="checkbox" id="active">
-
-    <label for="active" class="menu-btn"><span></span></label>
-
-    <label for="active" class="close"></label>
-
-    <div class="wrapper">
-
-      <ul>
-
-<li><a href="#">Home</a></li>
-
-<li><a href="#">About</a></li>
-
-<li><a href="#">Services</a></li>
-
-<li><a href="#">Gallery</a></li>
-
-<li><a href="#">Feedback</a></li>
-
-</ul>
-
-    </div>
-
-			     
-
-			     
-
-			     
-
-			     
-
-			     
-
-			</div>
-
-		 <table align="center" id="sitelogo">
-
-                                <tr>
-
-					<td>
-
-					<div style="height:60px;width:40px;">
-
-						</div>
-
-					</td>
-
-                                        <td style="width: 80px;">
-
-                        <div align="center">
-
-                        <img src="Images/icon_png-removebg-preview.png" id="sitelogo">
-
-                        </div>
-
-                                        </td>
-
-                                        <td>
-
-                        <div align="right">
-
-<a href="Search.html"><img src="https://i.ibb.co/mJ0nZzt/search-9-xxl.png" id="sitelogo" alt="search-9-xxl" border="0"></a>
-
-                   
-
-			     
-
-				   
-
-                        </div>
-
-						                  </td>
-
-				</tr>
-
-  
-
-				
-
-                </table>
-
-
-
-
-
-
-
-
-
-
-
-			
-
-
-
-		
-
-
-
-
-
-
-
-
-
-	
-
-
-
-<meta charset="utf-8"/>
-
-<meta http-equiv="X-UA-Compatible" content=="IE=edge"/>
-
-<meta name="google" value="notranslate"/>
-
-<title>Side Menu</title>
-
-
-
-<link rel="stylesheet" type="text/css" href="css/menu.css">
-
-<link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
-
-
-
-
-  
-
-
-
-  
-
-		
-
-            		
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div style="height:px;width:100%;">
-
-						</div>
-
-
-
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval="1000000">
-
-  <div id="carouselHero" class="carousel slide carouselHero" data-ride="carousel">
-
-  
-
-	<div class="carousel-inner">
-
-    <div data-idle="2000" class="carousel-item active">
-
-	      <a href="">
-
-		<video autoplay="autoplay" muted="muted"  width="100%" poster="https://i.ibb.co/kgy0JRX/Go-Online-Tools-image-downloader-1.jpg">
-
-		<source src="Trailers/Godzilla x Kong _ The New Empire _ Official Trailer (2).mp4">
-
-		</video>
-
-	    </a>
-
-  </div>
-
-	  <div class="carousel-item">
-
-		  
-
-	    <a href="">
-
-		<video autoplay="autoplay" muted="muted"  width="100%" poster="https://i.ibb.co/QDjwKP1/Go-Online-Tools-image-downloader.jpg">
-
-		<source src="Trailers/GANAPATH Official Hindi Trailer _ Amitabh B, Tiger S, Kriti S _ Vikas B, Jackky B  _ 20th Oct' 23.mp4">
-
-		</video>
-
-	    </a>
-
-    </div>
-
-	  <div class="carousel-item">
-
-	  <a href="">
-
-		<video autoplay="autoplay" muted="muted"  width="100%" poster="https://i.ibb.co/dLgFcbm/images-47.jpg">
-
-		<source src="Trailers/LEO - Official Trailer _ Thalapathy Vijay _ Lokesh Kanagaraj _ Anirudh Ravichander.mp4">
-
-		</video>
-
-	    </a>
-
-  </div>
-
-	  <div class="carousel-item">
-
-	  <a href="">
-
-		<video autoplay="autoplay" muted="muted"  width="100%" poster="https://i.ibb.co/QMPJNhN/images-52.jpg">
-
-		<source src="Trailers/Marvel Studios’ Loki Season 2 _ Mid-Season Trailer.mp4">
-
-		</video>
-
-	    </a>
-
-	  </div>
-
-	  <div class="carousel-item">
-
-	  <a href="">
-
-		<video autoplay="autoplay" muted="muted"  width="100%" poster="https://i.ibb.co/g3kf8jk/images-49.jpg">
-
-		<source src="">
-
-		</video>
-
-	    </a>
-
-	  </div>
-
-	  
-
-    
-
-  </div>
-
-  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-
-    <span class="sr-only">Previous</span>
-
-  </a>
-
-  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-
-    <span class="sr-only">Next</span>
-
-  </a>
-
-</div>
-
-
-
-</div>
-
-		     </div>
-
-<div class="karan">
-
-<div class="lang">
-
-<a href="https://ibb.co/hHHcfzT"><img src="https://i.ibb.co/7VVQ4m0/Adobe-Express-20240708-1437050-1.png" alt="Adobe-Express-20240708-1437050-1" border="0"></a>
-
-<a href="https://ibb.co/DDvCzTP"><img src="https://i.ibb.co/qMcs7VL/Adobe-Express-20240708-1546550-1.png" alt="Adobe-Express-20240708-1546550-1" border="0"></a>
-
-<a href="https://ibb.co/8Km43Zh"><img src="https://i.ibb.co/PmrzpHS/Adobe-Express-20240708-1554080-1.png" alt="Adobe-Express-20240708-1554080-1" border="0"></a>
-
-<a href="https://ibb.co/DRM0rjX"><img src="https://i.ibb.co/G5MzHrw/Adobe-Express-20240708-1557300-1.png" alt="Adobe-Express-20240708-1557300-1" border="0"></a>
-
-</div>
-
-			
-
-        
-
-        <h>LATEST MOVIES</h>
-
-        
-
-            <div class="scrollmenu">
-
-        <br><a href="https://imgbb.com/"><img src="https://i.ibb.co/LtQq35m/images-3.jpg" alt="images-3" border="0"></a>
-
-<a href="https://ibb.co/z6LqPj2"><img src="https://i.ibb.co/NTkcWQN/images-4.jpg" alt="images-4" border="0"></a>
-
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/6ZcQ5JC/images-6.jpg" alt="images-6" border="0"></a>
-
-<a href="https://hashtag-movies.github.io/Movies/Dune part 2.html"><img src="https://i.ibb.co/Xk93sQL/MV5-BN2-Qy-ZGU4-ZDct-OWMz-My00-NTc5-LThl-OGQt-ODhm-NDI1-Nm-Y5-Yz-Aw-Xk-Ey-Xk-Fqc-Gde-QXVy-MDM2-NDM2.jpg" border="0"></a>
-
-		    <a href="https://hashtag-movies.github.io/Movies/Fighter.html"><img src="https://i.ibb.co/M9yZMpd/MV5-BMDgx-YTI1-ODMt-NGFh-NC00-ZWRk-LWE4-Yjkt-ZGI5-NTlm-Njdm-MDYx-Xk-Ey-Xk-Fqc-Gde-QXVy-MTUz-NTgz-Nz.jpg" border="0"></a>
-
-		    
-
-		     </div>
-
-        <p style="font-family:Arial;font-size:18px;color:#FFFFFF">UPCOMING MOVIES</p>
-
-        <div class="scrollmenu">
-
-        
-
-        <br>
-
-        </div>
-
-        <div class="bgbollywood">
-
-        <div class="example example-contain">
-
-            </div>
-
-        <div class="scrollmenu">
-
-        <br>    
-
-	
-
-	
-
-	</div>
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="mb-5">
-
-	<div id="carousel-1" class="carousel slide carousel-fade" data-ride="carousel">
-
-       
-
-		<ol class="carousel-indicators">
-
-			<li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-
-			<li data-target="#carousel-1" data-slide-to="1"></li>
-
-			<li data-target="#carousel-1" data-slide-to="2"></li>
-
-			<li data-target="#carousel-1" data-slide-to="3"></li>
-
-		</ol>
-
-       <p> Overview </p>
-
-        <div class="carousel-inner" role="listbox">
-
-
-
-          <div class="carousel-item active">
-
-           <a href="https://hashtag-movies.github.io/Rewie.html"> <img   class="d-block img-fluid" src="https://i.ibb.co/dpT72Lt/Adobe-Express-20240219-2122290-1.png" alt="slide" height="100px" border-radius="100px"></a>
-
-            <div class="carousel-caption d-none d-md-block">
-
-              <h3>1 Lorem ipsum dolor</h3>
-
-              <p>two and more carousel in one page example...</p>
-
-            </div>
-
-          </div>
-
-          
-
-          <div class="carousel-item">
-
-            <img  height="10%" border-radius="10%" class="d-block img-fluid" src="https://picsum.photos/1600/400/?image=676" alt="Slide">
-
-            <div class="carousel-caption d-none d-md-block">
-
-              <h3>2 Lorem ipsum dolor</h3>
-
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing...</p>
-
-            </div>
-
-          </div>
-
-          
-
-          <div class="carousel-item">
-
-            <img height="300px" border-radius="10%" class="d-block img-fluid" src="https://picsum.photos/1600/400/?image=686" alt="Slide">
-
-            <div class="carousel-caption d-none d-md-block">
-
-              <h3>3 Lorem ipsum dolor</h3>
-
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing...</p>
-
-            </div>
-
-          </div>
-
-          
-
-          <div class="carousel-item">
-
-            <img height="300px" border-radius="10%" class="d-block img-fluid" src="https://picsum.photos/1600/400/?image=696" alt="Slide">
-
-            <div class="carousel-caption d-none d-md-block">
-
-              <h3>4 Lorem ipsum dolor</h3>
-
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing...</p>
-
-            </div>
-
-          </div>
-
-
-
-        </div><!-- e carousel-inner -->
-
-        
-
-        <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev">
-
-          <span class="carousel-control-pev-icon" aria-hidden="true"></span>
-
-          <span class="sr-only">prev</span>
-
-        </a>
-
-        
-
-        <a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next">
-
-          <span class="carousel-control-nxt-icon" aria-hidden="true"></span>
-
-          <span class="sr-only">next</span>
-
-        </a>
-
-        
-
-	</div><!-- e carousel -->
-
-
-
-</section><!-- e section -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-
-
-
-
-
-
-
-		
-
-                <p style="font-family:Arial;font-size:18px;color:#FFFFFF">LATEST WEBSERIES</p>
-
-        <div class="scrollmenu">
-
-        <br><a href="https://ibb.co/svvThGM"><img src="https://i.ibb.co/277zwQf/images-51.jpg" alt="images-51" border="0"></a>
-
-<a href="https://ibb.co/rp89V8V"><img src="https://i.ibb.co/Zg49040/images-50.jpg" alt="images-50" border="0"></a>
-
-    <a href="https://ibb.co/MgTGmgS"><img src="https://i.ibb.co/3TXMnTd/MV5-BZjcy-OTk2-Ym-Qt-MTI3-NS00-MTM3-LWIy-ZDgt-ZGJk-MDk1-Ym-E2-ZDEw-Xk-Ey-Xk-Fqc-Gde-QXVy-Mz-Q2-MDI5.jpg" alt="MV5-BZjcy-OTk2-Ym-Qt-MTI3-NS00-MTM3-LWIy-ZDgt-ZGJk-MDk1-Ym-E2-ZDEw-Xk-Ey-Xk-Fqc-Gde-QXVy-Mz-Q2-MDI5" border="0"></a>    
-
-        </div>
-
-            <div>
-
-        <p>UPCOMING WEBSERIES</p>
-
-        <div class="scrollmenu">
-
-        <br><a href="https://imgbb.com/"><img src="https://i.ibb.co/x8xS7z5/MV5-BNTc4-NDU4-NDkt-Y2-E1-YS00-Nm-E0-LThk-NTUt-ZGIz-Mz-Q3-ZDE4-MGYw-Xk-Ey-Xk-Fqc-Gde-QXVy-MDM2-NDM2.jpg" alt="MV5-BNTc4-
+        document.addEventListener("touchend", function(event) {
+            let endX = event.changedTouches[0].clientX;
+
+            if (startX - endX > 100) { // Left swipe
+                document.getElementById("pageTransition").style.display = "block";
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 500);
+            }
+        });
+
+        // Redirect animation
+        setTimeout(() => {
+            document.getElementById("pageTransition").style.display = "block";
+            setTimeout(() => {
+                window.location.href = "home.html";
+            }, 2500);
+        }, 30000);
+    </script>
+
+</body>
+</html>
