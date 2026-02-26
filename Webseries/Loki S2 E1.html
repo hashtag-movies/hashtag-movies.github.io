@@ -517,13 +517,30 @@ margin-top: 10px;
 		<div style="position:relative;">
  <div class="play">
  <a class="video-play-button">
-	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-		 viewBox="0 0 104 104" enable-background="new 0 0 104 104" xml:space="preserve">
-	<path fill="none" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" d="M26,35h52L52,81L26,35z"/>
-	<circle class="video-play-circle" fill="none" stroke="#DA3D25" stroke="#C08552" stroke-width="4" stroke-miterlimit="10" cx="52" cy="52" r="50"/>
-	</svg>
-	<span class="video-play-outline"></span>
-</a>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 104">
+
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+       <stop offset="100%" stop-color="#C08552"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Play Icon -->
+  <path fill="none" stroke="#FFFFFF" stroke-width="4"
+        d="M26,35h52L52,81L26,35z"/>
+
+  <!-- Circle with Gradient Stroke -->
+  <circle class="video-play-circle"
+          fill="none"
+          stroke="url(#circleGradient)"
+          stroke-width="4"
+          cx="52" cy="52" r="50"/>
+
+</svg>
+<span class="video-play-outline"></span>
+ </a>
  </div>
 			<div style="width: 80px; height: 80px; position: absolute; right: 5px; top: 15px;">
     <img href="https://i.ibb.co/5nqkrLb/IMG-20240329-223904.png">
