@@ -1,55 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-#page-container { 
-  overflow: hidden; 
-  width: 100vw; 
-  height: 100vh; 
-  position: relative; 
-}
-.page { 
-  width: 100%; 
-  height: 100%; 
-  position: absolute; 
-  transition: transform 0.5s ease-in-out; /* Smooth slide effect */
-}
-.slide-out-left { transform: translateX(-100%); }
-.slide-out-right { transform: translateX(100%); }
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Pages</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div id="page-container">
-  <div class="page active">Current Page Content</div>
-</div>
-
-
+    <!-- The outer container, visible area -->
+    <div class="page-wrapper">
+        <!-- The inner container holding both pages -->
+        <div class="pages-container" id="pages-container">
+            <!-- Page A -->
+            <div class="page page-a" id="page-a">
+                <h1>Page A</h1>
+                <!-- Button on the right side of Page A -->
+                <button class="slide-button right-btn" onclick="goToPageB()">Go to Page B</button>
+            </div>
+            <!-- Page B -->
+            <div class="page page-b" id="page-b">
+                <h1>Page B</h1>
+                 <!-- Button on the left side of Page B -->
+                <button class="slide-button left-btn" onclick="goToPageA()">Go to Page A</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
-    <script>
-        let touchStartX = 0;
-
-document.addEventListener('touchstart', e => {
-  touchStartX = e.changedTouches[0].screenX;
-}, false);
-
-document.addEventListener('touchend', e => {
-  let touchEndX = e.changedTouches[0].screenX;
-  handleSwipe(touchStartX, touchEndX);
-}, false);
-
-function handleSwipe(start, end) {
-  const threshold = 50; // Minimum distance to trigger swipe
-  if (start - end > threshold) {
-    console.log("Swiped Left: Open Next Page");
-    window.location.href = "next-page.html"; // Action for sliding left
-  } else if (end - start > threshold) {
-    console.log("Swiped Right: Go Back");
-    window.history.back(); // Action for sliding right
-  }
-}
-
-        
-    </script>
 </html>
