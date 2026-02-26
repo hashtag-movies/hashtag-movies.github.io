@@ -2,45 +2,16 @@
 <html>
 <head>
 <style>
-body{
-    background:black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+body {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
 }
 
-.pill-button{
-    display:flex;
-    width:260px;
-    height:70px;
-    border-radius:50px;
-    overflow:hidden;
-    box-shadow:0 0 20px rgba(255,255,255,0.6);
-    font-family:Arial, sans-serif;
-    cursor:pointer;
+/* Class added via JS when swipe is detected */
+.page-exit-active {
+    transform: translateX(100%);
+    opacity: 0;
 }
 
-.left{
-    flex:1;
-    background:linear-gradient(90deg,#6ec6ff,#2196f3);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.right{
-    flex:1;
-    background:linear-gradient(90deg,#ff9800,#f44336);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.icon{
-    color:white;
-    font-size:28px;
-}
 </style>
 </head>
 <body>
@@ -50,4 +21,29 @@ body{
 </div>
 
 </body>
+    <script>
+        let touchstartX = 0;
+let touchendX = 0;
+const swipeArea = document.getElementById('swipe-area');
+
+swipeArea.addEventListener('touchstart', e => {
+    touchstartX = e.changedTouches[0].screenX;
+});
+
+swipeArea.addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    // Detect swipe from left to right (threshold of 100px)
+    if (touchendX - touchstartX > 100) {
+        document.body.classList.add('page-exit-active');
+        setTimeout(() => {
+            window.location.href = 'new-page.html'; // Redirect to new page
+        }, 400); // Match this to your CSS transition time
+    }
+}
+        
+    </script>
 </html>
