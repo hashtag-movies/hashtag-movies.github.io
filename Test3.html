@@ -4,7 +4,21 @@
     
 </head>
     <style>
+.viewport { width: 100vw; height: 100vh; overflow: hidden; }
+.slider { display: flex; width: 200vw; transition: transform 0.5s ease-out; }
+.page { width: 100vw; height: 100vh; position: relative; }
+#pageA { background: lightblue; }
+#pageB { background: lightcoral; }
 
+/* Buttons */
+.drag-btn {
+  width: 100px; height: 50px; background: #333; color: white;
+  position: absolute; top: 50%; cursor: grab; display: flex;
+  align-items: center; justify-content: center;
+}
+.right { right: 20px; }
+.left { left: 20px; }
+        
 
     </style>
 <body>
