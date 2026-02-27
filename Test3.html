@@ -37,7 +37,39 @@
   </div>
 </div>
     <script>
- 
+ const slider = document.getElementById('slider');
+const btnA = document.getElementById('btnA');
+const btnB = document.getElementById('btnB');
+
+function setupDrag(btn, direction) {
+  let startX;
+  
+  btn.onmousedown = (e) => {
+    startX = e.clientX;
+    document.onmousemove = (moveEvent) => {
+      let diff = moveEvent.clientX - startX;
+      // If Page A button is dragged left more than 100px
+      if (direction === 'left' && diff < -100) {
+        slider.style.transform = 'translateX(-100vw)';
+        stopDrag();
+      }
+      // If Page B button is dragged right more than 100px
+      if (direction === 'right' && diff > 100) {
+        slider.style.transform = 'translateX(0)';
+        stopDrag();
+      }
+    };
+  };
+
+  function stopDrag() {
+    document.onmousemove = null;
+  }
+  document.onmouseup = stopDrag;
+}
+
+setupDrag(btnA, 'left');
+setupDrag(btnB, 'right');
+
         
     </script>
     
