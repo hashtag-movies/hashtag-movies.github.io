@@ -68,46 +68,12 @@ body{
 </head>
 <body>
 
-<div class="container" id="slider">
-
-  <!-- PAGE A -->
-  <div class="page pageA">
-    Page A
-    <div class="drag-btn right-btn" id="toB">⇦</div>
-  </div>
-
-  <!-- PAGE B -->
-  <div class="page pageB">
-    Page B
-    <div class="drag-btn left-btn" id="toA">⇨</div>
-  </div>
-
-</div>
+<div class="drag-btn left-btn" id="toA">⇨</div>
 
 <script>
-
-let slider = document.getElementById("slider");
 let startX = 0;
 let isDragging = false;
 
-// PAGE A → PAGE B
-let toB = document.getElementById("toB");
-
-toB.addEventListener("touchstart", e=>{
-  startX = e.touches[0].clientX;
-  isDragging = true;
-});
-
-toB.addEventListener("touchmove", e=>{
-  if(!isDragging) return;
-  let moveX = e.touches[0].clientX;
-  if(startX - moveX > 50){
-    slider.style.transform = "translateX(-100%)";
-    isDragging = false;
-  }
-});
-
-// PAGE B → PAGE A
 let toA = document.getElementById("toA");
 
 toA.addEventListener("touchstart", e=>{
@@ -118,13 +84,11 @@ toA.addEventListener("touchstart", e=>{
 toA.addEventListener("touchmove", e=>{
   if(!isDragging) return;
   let moveX = e.touches[0].clientX;
+  
   if(moveX - startX > 50){
-    slider.style.transform = "translateX(0)";
-    isDragging = false;
+    window.location.href = "index.html";
   }
 });
-
 </script>
-
 </body>
 </html>
