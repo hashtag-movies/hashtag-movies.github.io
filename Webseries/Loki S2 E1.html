@@ -648,7 +648,47 @@ margin-top: 10px;
 
 	    
 	    <script>
+let btn = document.getElementById("dragBtn");
+let startX = 0;
+let dragging = false;
 
+function start(e){
+  dragging = true;
+  startX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+}
+
+function move(e){
+  if(!dragging) return;
+
+  let currentX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+  let diff = startX - currentX;
+
+  if(diff > 0){
+    btn.style.width = 30+ diff + "px";
+  }
+
+  if(diff > 100){
+    window.location.href = "Test3.html";
+  }
+}
+
+function end(){
+  dragging = false;
+  btn.style.width = "30px";
+}
+
+btn.addEventListener("mousedown", start);
+btn.addEventListener("mousemove", move);
+btn.addEventListener("mouseup", end);
+
+btn.addEventListener("touchstart", start);
+btn.addEventListener("touchmove", move);
+btn.addEventListener("touchend", end);
+			
+
+
+
+			
 // Set the date we're counting down to
 var countDownDate = new Date("Jan 5, 2030 15:37:25").getTime();
 
