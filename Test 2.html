@@ -26,17 +26,25 @@ body{
   right:0;
   top:50%;
   transform:translateY(-50%);
-  width:40px;
-  height:60px;
-  background: white;
+  width:90px;
+  height:110px;
+  background:white;
   border-radius:60px 0 0 60px;
   display:flex;
   align-items:center;
   justify-content:center;
   cursor:grab;
-  transition:width 0.2s ease;
+  transition:width 0.2s ease, box-shadow 0.2s ease;
+  box-shadow:-5px 0 15px rgba(0,0,0,0.2);
 }
 
+.drag-btn img{
+  width:40px;
+  height:40px;
+  object-fit:contain;
+  pointer-events:none;
+}
+  
 .drag-btn.stretch{
   width:120px;
 }
@@ -47,9 +55,9 @@ body{
 
 <div class="page">
   Page A
-  <div class="drag-btn" id="dragBtn"> • </div>
-</div>
-
+  <div class="drag-btn" id="dragBtn">
+  <img src="swipe-icon.png" alt="Swipe">
+  </div>
 <script>
 
 let btn = document.getElementById("dragBtn");
