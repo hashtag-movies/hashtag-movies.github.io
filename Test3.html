@@ -89,6 +89,23 @@ body {
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js">
+        // script.js
+const pagesContainer = document.getElementById('pages-container');
+
+// Function to slide to Page B
+function goToPageB() {
+    // Move the container 100% of the viewport width to the left
+    pagesContainer.style.transform = 'translateX(-100vw)';
+}
+
+// Function to slide back to Page A
+function goToPageA() {
+    // Move the container back to its original position
+    pagesContainer.style.transform = 'translateX(0)';
+}
+        
+    </script>
+    
 </body>
 </html>
