@@ -8,87 +8,84 @@ body{
   margin:0;
   overflow:hidden;
   font-family:Arial;
-}
-
-/* Container */
-.container{
-  display:flex;
-  width:200%;
-  height:100vh;
-  transition: transform 0.5s ease;
-}
-
-/* Pages */
-.page{
-  width:100%;
-  height:100vh;
-  flex-shrink:0;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:30px;
-  color:white;
-  position:relative;
-}
-
-.pageA{
-  background:#4A90E2;
-}
-
-.pageB{
   background:#E94E77;
 }
 
-/* Drag Buttons */
+.page{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  font-size:30px;
+  position:relative;
+}
+
 .drag-btn{
   position:absolute;
+  left:0;
   top:50%;
   transform:translateY(-50%);
   width:60px;
   height:120px;
   background:white;
-  border-radius:30px;
+  border-radius:0 30px 30px 0;
   display:flex;
-  justify-content:center;
   align-items:center;
-  font-weight:bold;
-  cursor:pointer;
-  user-select:none;
-}
-
-.right-btn{
-  right:10px;
-}
-
-.left-btn{
-  left:10px;
+  justify-content:center;
+  cursor:grab;
+  transition:width 0.2s ease;
 }
 
 </style>
 </head>
 <body>
 
-<div class="drag-btn left-btn" id="toA">⇨</div>
+<div class="page">
+  Page B
+  <div class="drag-btn" id="dragBtn">⇨</div>
+</div>
 
 <script>
+
+let btn = document.getElementById("dragBtn");
 let startX = 0;
-let isDragging = false;
+let dragging = false;
 
-let toA = document.getElementById("toA");
+function start(e){
+  dragging = true;
+  startX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+}
 
-toA.addEventListener("touchstart", e=>{
-  startX = e.touches[0].clientX;
-  isDragging = true;
-});
+function move(e){
+  if(!dragging) return;
 
-toA.addEventListener("touchmove", e=>{
-  if(!isDragging) return;
-  let moveX = e.touches[0].clientX;
-  
-  if(moveX - startX > 50){
+  let currentX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+  let diff = currentX - startX;
+
+  if(diff > 0){
+    btn.style.width = 60 + diff + "px";
+  }
+
+  if(diff > 150){
     window.location.href = "Test 2.html";
   }
-});
+}
+
+function end(){
+  dragging = false;
+  btn.style.width = "60px";
+}
+
+btn.addEventListener("mousedown", start);
+btn.addEventListener("mousemove", move);
+btn.addEventListener("mouseup", end);
+
+btn.addEventListener("touchstart", start);
+btn.addEventListener("touchmove", move);
+btn.addEventListener("touchend", end);
+
 </script>
+
 </body>
 </html>
