@@ -2,6 +2,98 @@
   <html>
     <head>
       <style>
+        * {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Verdana, sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  background-color: #512d33;
+  background: linear-gradient(#512d33, #264063, #512d33, #a79519);
+}
+
+section {
+  position: relative;
+  transform-style: inherit;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* PARALLAX SECTIONS*/
+#hero-1::before {
+  background-image: url("https://i.ibb.co/y83L6QJ/frank-oberle-Xfj32jn-XCYw-unsplash.jpg");
+  background-size: cover;
+  z-index: -1;
+}
+
+#hero-2::before {
+  background-image: url("https://i.ibb.co/mvyDk8G/nick-scheerbart-8-DMuvdp-vso-unsplash.jpg");
+  background-size: cover;
+  transform: translateZ(-1px) scale(2);
+  z-index: -2;
+}
+
+#hero-3::before {
+  background-image: url("https://i.ibb.co/GFpJpgw/v2osk-JE01-L3h-B0-GQ-unsplash.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -3;
+}
+
+section.hero > .container {
+  padding: 40vh 0;
+  text-align: center;
+  font-size: 5rem;
+  color: whitesmoke;
+  opacity: 0.8;
+  font-weight: 900;
+}
+
+section.hero > .container > span {
+  font-size: 3.4rem;
+  font-weight: 100;
+  opacity: 0.6;
+}
+
+/* CONTENT SECTIONS*/
+section.content {
+  text-align: center;
+}
+section.content > .container {
+  font-size: 2.4rem;
+  color: white;
+  padding: 25vh 0;
+  opacity: 0.6;
+}
+#content-2 {
+  padding: 0;
+}
+#content-2 > .container {
+  padding: 90vh 0 0 0;
+        }
         
       </style>
     </head>
