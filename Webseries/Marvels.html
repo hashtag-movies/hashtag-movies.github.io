@@ -11,13 +11,16 @@
 *:before {
   box-sizing: border-box;
 }
-
+*{
+  scroll-behavior: smooth;
+  transition: all 0.3s ease;
+}
 
         
 html {
   color-scheme: light only;
+  scroll-behavior: smooth;
 }
-
 body {
   display: grid;
   place-items: center;
@@ -25,9 +28,21 @@ body {
   font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
     Helvetica, Arial, sans-serif, system-ui;
   margin:0;
+  
+  -webkit-overflow-scrolling: touch;
+  
 }
 
+main{
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
 
+article{
+  scroll-snap-align: start;
+  height: 100vh;
+}
 
 .bear-link {
   color: white;
