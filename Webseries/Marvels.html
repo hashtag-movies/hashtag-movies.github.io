@@ -251,6 +251,29 @@ a:hover {
   }
 }
 
+        .drag-btn{
+  position:absolute;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  width:50px;
+  height:50px;
+  background:#00;
+  border-radius:0 60px 60px 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:grab;
+  transition:width 0.2s ease, box-shadow 0.2s ease;
+}
+
+.drag-btn img{
+  width:50px;
+  height:50px;
+  object-fit:contain;
+  pointer-events:none;
+}
+
         
       </style>
     </head>
@@ -407,9 +430,53 @@ a:hover {
         </div>
       </article>
     </main>
+
+      <div class="page">
+  Page A
+
+  <div class="drag-btn" id="dragBtn">
+    <img src="https://i.ibb.co/R4bnbdpJ/Loki.png">
+  </div>
+
+      </div>
     </body>
     <script>
-      
+      let btn = document.getElementById("dragBtn");
+let startX = 0;
+let dragging = false;
+
+function start(e){
+  dragging = true;
+  startX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+}
+
+function move(e){
+  if(!dragging) return;
+
+  let currentX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+  let diff = currentX - startX;
+
+  if(diff > 0){
+    btn.style.width = 50 + diff + "px";
+  }
+
+  if(diff > 100){
+    window.location.href = "Test3.html";
+  }
+}
+
+function end(){
+  dragging = false;
+  btn.style.width = "50px";
+}
+
+btn.addEventListener("mousedown", start);
+btn.addEventListener("mousemove", move);
+btn.addEventListener("mouseup", end);
+
+btn.addEventListener("touchstart", start);
+btn.addEventListener("touchmove", move);
+btn.addEventListener("touchend", end);
     </script>
   </html>
 </doctype>
