@@ -431,19 +431,22 @@ a:hover {
       </article>
     </main>
 
-      <div class="page">
-  Page A
-
-  <div class="drag-btn" id="dragBtn">
-    <img src="https://i.ibb.co/R4bnbdpJ/Loki.png">
-  </div>
-
+      <div class="drag-btn" id="dragBtn">
+    <img id="btnLogo">
       </div>
     </body>
     <script>
       let btn = document.getElementById("dragBtn");
 let startX = 0;
 let dragging = false;
+
+// Load previous page logo
+let logo = localStorage.getItem("previousLogo");
+if(logo){
+  document.getElementById("btnLogo").src = logo;
+}else{
+  document.getElementById("btnLogo").src = "https://i.ibb.co/R4bnbdpJ/Loki.png";
+}
 
 function start(e){
   dragging = true;
@@ -461,7 +464,7 @@ function move(e){
   }
 
   if(diff > 100){
-    window.location.href = "Test3.html";
+    window.history.back();
   }
 }
 
@@ -477,6 +480,7 @@ btn.addEventListener("mouseup", end);
 btn.addEventListener("touchstart", start);
 btn.addEventListener("touchmove", move);
 btn.addEventListener("touchend", end);
+
     </script>
   </html>
 </doctype>
