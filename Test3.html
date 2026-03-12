@@ -1,91 +1,280 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Hashtag</title>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <style>
 
-body{
-  margin:0;
-  overflow:hidden;
-  font-family:Arial;
-  background:#E94E77;
+html{
+scroll-behavior:smooth;
 }
 
-.page{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  font-size:30px;
-  position:relative;
+body{
+background:black;
+overflow-x:hidden;
+-ms-overflow-style:none;
+scrollbar-width:none;
+}
+
+body::-webkit-scrollbar{
+display:none;
+}
+
+img#sitelogo{
+height:45px;
+width:45px;
+}
+
+table#sitelogo{
+width:95%;
+height:95px;
+}
+
+input[type=search]{
+width:200px;
+padding:8px 20px 8px 45px;
+border:#ffffff solid 2px;
+font-size:18px;
+border-radius:25px;
+background-color:transparent;
+color:white;
+}
+
+input[type=search]:focus{
+width:80%;
+background:white;
+color:black;
+}
+
+iframe{
+width:95%;
+height:35%;
+margin-left:10px;
+margin-top:10px;
+border-radius:5px;
+}
+
+h5{
+color:white;
+font-size:30px;
+margin-left:10px;
+}
+
+h6{
+font-size:25px;
+background:linear-gradient(to right,#765341,#000000);
+-webkit-text-fill-color:transparent;
+-webkit-background-clip:text;
+}
+
+.scrollmenu1{
+overflow:auto;
+white-space:nowrap;
+}
+
+.scrollmenu1 img{
+height:100px;
+padding:2px;
+}
+
+.bg{
+background-image:url('https://i.ibb.co/BHp3gzR/MV5-BY2-Q0-Mz-My-ZTIt-OWFm-Yi00-Yz-Y4-LTkx-MTEt-Zj-E1-Yjdh-ZGM3-MDI5-Xk-Ey-Xk-Fqc-Gde-QXVy-Mz-Uw-NDI.jpg');
+background-size:100% 100%;
+background-repeat:no-repeat;
+}
+
+.btn{
+background:transparent;
+border:2px solid white;
+color:white;
+padding:12px 30px;
+font-size:20px;
+border-radius:30px;
+}
+
+.slider{
+margin:60px auto;
+height:360px;
+width:240px;
+perspective:1000px;
+}
+
+.slide{
+position:absolute;
+height:280px;
+width:240px;
+background:black;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.slide img{
+width:100%;
+height:100%;
+border-radius:10px;
 }
 
 .drag-btn{
-  position:absolute;
-  left:0;
-  top:50%;
-  transform:translateY(-50%);
-  width:60px;
-  height:120px;
-  background:white;
-  border-radius:0 30px 30px 0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:grab;
-  transition:width 0.2s ease;
+position:fixed;
+right:0;
+top:50%;
+transform:translateY(-50%);
+width:50px;
+height:50px;
+background:transparent;
+border-radius:60px 0 0 60px;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:grab;
+transition:width .2s ease;
 }
 
+.drag-btn img{
+width:50px;
+height:50px;
+object-fit:contain;
+pointer-events:none;
+}
+
+  .mainlogo img{
+width:0px;
+height:0px;
+  }
 </style>
+
 </head>
+
 <body>
 
-<div class="page">
-  Page B
-  <div class="drag-btn" id="dragBtn">⇨</div>
+<div class="bg">
+
+<table align="center" id="sitelogo">
+<tr>
+
+<td style="width:100px">
+<a href="https://hashtag-movies.github.io/home.html">
+<img src="https://i.ibb.co/wJNwjQ4/SAVE-20240302-212936-removebg-preview.png" id="sitelogo">
+</a>
+</td>
+
+<td style="width:100px" align="right">
+<a href="https://hashtag-movies.github.io/Search2.html">
+<img src="https://i.ibb.co/mJ0nZzt/search-9-xxl.png" style="width:40px;">
+</a>
+</td>
+
+</tr>
+</table>
+
+
+<div align="center">
+
+<a href="https://drive.google.com/file/d/10mYh0ygbo-MCe4fUWG_Sl69hqiwXbP8b/view?usp=sharing">
+<button class="btn"><i class="fa fa-download"></i> Download</button>
+</a>
+
+<h style="color:white;font-size:30px;">Loki Season 2</h>
+<h2 style="color:gray;">Language: Hindi | Action • Fantasy • Sci-fi</h2>
+
 </div>
 
-<script>
+</div>
 
-let btn = document.getElementById("dragBtn");
-let startX = 0;
-let dragging = false;
+<hr>
+
+<h5>Screenshots:</h5>
+
+<div class="scrollmenu1">
+
+<img src="https://i.ibb.co/x7KWw07/Screenshot-2024-06-05-11-12-28-654-com-google-android-apps-docs.jpg">
+<img src="https://i.ibb.co/SQwSwFz/Screenshot-2024-06-05-11-12-46-732-com-google-android-apps-docs.jpg">
+<img src="https://i.ibb.co/6gMjVjs/Screenshot-2024-06-05-11-13-44-932-com-google-android-apps-docs.jpg">
+<img src="https://i.ibb.co/pWcMhMC/Screenshot-2024-06-05-11-14-26-643-com-google-android-apps-docs.jpg">
+<img src="https://i.ibb.co/LNH1Mr3/Screenshot-2024-06-05-11-15-06-793-com-google-android-apps-docs.jpg">
+<img src="https://i.ibb.co/wBnCFck/Screenshot-2024-06-05-11-17-10-930-com-google-android-apps-docs.jpg">
+
+</div>
+
+<h5>Trailer:</h5>
+
+<iframe src="https://www.youtube.com/embed/QS_T_yU0fm4" allowfullscreen></iframe>
+
+<h5>Seasons:</h5>
+
+<div class="slider">
+
+<div class="slide">
+<img src="https://i.ibb.co/hHyvwfs/MV5-BNTkw-OTE1-ZDYt-ODQ3-Yy00-YTYw-LTg0-YWQt-Ym-Vk-Nm-Fj-NGZl-Ym-Ri-Xk-Ey-Xk-Fqc-Gde-QXVy-NTc4-Mjcz.jpg">
+</div>
+
+<div class="slide" id="demo"></div>
+
+</div>
+
+
+<div class="drag-btn" id="dragBtn">
+<img src="https://i.ibb.co/whMY7B70/IMG-20260227-203548.jpg">
+</div>
+<img class="mainlogo" id="mainLogo" src="https://i.ibb.co/R4bnbdpJ/Loki.png">
+  
+
+<script>
+localStorage.setItem("previousLogo", document.getElementById("mainLogo").src);
+
+let btn=document.getElementById("dragBtn");
+let startX=0;
+let dragging=false;
 
 function start(e){
-  dragging = true;
-  startX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+dragging=true;
+startX=e.type.includes("mouse")?e.clientX:e.touches[0].clientX;
 }
 
 function move(e){
-  if(!dragging) return;
 
-  let currentX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
-  let diff = currentX - startX;
+if(!dragging) return;
 
-  if(diff > 0){
-    btn.style.width = 60 + diff + "px";
-  }
+let currentX=e.type.includes("mouse")?e.clientX:e.touches[0].clientX;
+let diff=startX-currentX;
 
-  if(diff > 150){
-    window.location.href = "Test 2.html";
-  }
+if(diff>0){
+btn.style.width=30+diff+"px";
+}
+
+if(diff>100){
+window.location.href="Marvels.html";
+}
+
 }
 
 function end(){
-  dragging = false;
-  btn.style.width = "60px";
+dragging=false;
+btn.style.width="30px";
 }
 
-btn.addEventListener("mousedown", start);
-btn.addEventListener("mousemove", move);
-btn.addEventListener("mouseup", end);
+btn.addEventListener("mousedown",start);
+btn.addEventListener("mousemove",move);
+btn.addEventListener("mouseup",end);
 
-btn.addEventListener("touchstart", start);
-btn.addEventListener("touchmove", move);
-btn.addEventListener("touchend", end);
+btn.addEventListener("touchstart",start);
+btn.addEventListener("touchmove",move);
+btn.addEventListener("touchend",end);
 
 </script>
-
+  
 </body>
 </html>
