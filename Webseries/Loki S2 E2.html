@@ -302,7 +302,7 @@ gap: var(--size-5);
       #0000,#0000,#000000
     );
   width: 106%;
-  top: 0;
+  top: 10px;
   height: 400px;
 	}
 
@@ -404,9 +404,112 @@ margin-left: 4px;
 }
 
 
+
+
+
+
+
+
+
+
+
+.video-play-button {
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin: -52px 0 0 -52px;
+	margin-top: 70px;
+	margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.video-play-outline {
+  display: block;
+  width: 92px;
+  height: 92px;
+  border: #FFF 4px solid;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  opacity: .7;
+  transition:all .5s;
+}
+
+.video-play-circle {
+  stroke-dasharray: 315;
+  stroke-dashoffset: 315;
+  transition: stroke-dashoffset .5s;
+}
+
+.video-play-button svg {
+  display: block;
+  transform: rotate(-90deg);
+  transition: transform .3s;
+}
+
+.video-play-button:hover .video-play-circle {
+  stroke-dashoffset: 0;
+}
+
+.video-play-button:active .video-play-outline {
+  transform: scale(1.5);
+  opacity: 0;
+}
+
+.video-play-button:active svg {
+  transform: rotate(-90deg) scale(.95);
+}
+	.play {
+		width: 95%;
+  height:35%;
+margin-left: 10px;
+margin-top: 10px;
+	}
+	upper {
+		width: 100%;
+		height: 100%;
+	}
+
+	.drag-btn{
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  width:50px;
+  height:50px;
+  background: #00;
+  border-radius:60px 0 0 60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:grab;
+  transition:width 0.2s ease, box-shadow 0.2s ease;
+  
+}
+
+.drag-btn img{
+  width:50px;
+  height:50px;
+  object-fit:contain;
+  pointer-events:none;
+}
+  
+.drag-btn.stretch{
+  width:120px;
+}
+	.mainlogo img{
+		width: 0px;
+		height:0px;
+	}
 </style>
         </head>
         <body bgcolor="black">
+			<upper>
 		<div id="carouselHero" class="bg carouselHero" >
   
 		<div class="screen">
@@ -417,7 +520,7 @@ margin-left: 4px;
                     <td style="width: 100px;">
             <div align="left" position="absolute">
                 <a href="https://hashtag-movies.github.io/home.html"><img src="https://i.ibb.co/wJNwjQ4/SAVE-20240302-212936-removebg-preview.png" id="sitelogo">
-		<h6>Hashtag</h6></a>
+		<h6></h6></a>
 	   
 	    </div>
 		
@@ -434,28 +537,45 @@ margin-left: 4px;
                 </tr>
         </table>
 		
-<script>
-    if(performance.navigation.type == 2){
-        location.reload(true);
-    }
 
-</script>
 		
 			
 		
 		<div style="position:relative;">
- 
- <iframe src="https://drive.google.com/file/d/1-e0gIPFKYTHL_oKg5hPdev8MKSB1lvuu/preview"  width="640" height="480" allowfullscreen="allowfullscreen" autoplay frameborder="0">
- </iframe>
+ <div class="play">
+ <a href="https://drive.google.com/file/d/10mYh0ygbo-MCe4fUWG_Sl69hqiwXbP8b/view?usp=sharing" class="video-play-button">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 104">
+
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+       <stop offset="100%" stop-color="#C08552"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Play Icon -->
+  <path fill="none" stroke="#FFFFFF" stroke-width="4"
+        d="M26,35h52L52,81L26,35z"/>
+
+  <!-- Circle with Gradient Stroke -->
+  <circle class="video-play-circle"
+          fill="none"
+          stroke="url(#circleGradient)"
+          stroke-width="4"
+          cx="52" cy="52" r="50"/>
+
+</svg>
+<span class="video-play-outline"></span>
+ </a>
+ </div>
 			<div style="width: 80px; height: 80px; position: absolute; right: 5px; top: 15px;">
     <img href="https://i.ibb.co/5nqkrLb/IMG-20240329-223904.png">
   </div>
 		</div>
-		
-<a href="https://drive.usercontent.google.com/download?id=1-e0gIPFKYTHL_oKg5hPdev8MKSB1lvuu&export=download&authuser=0"><button class="btn" style="width:50%"><i class="fa fa-download"></i> Download</button></a>
-			
 
-	
+        <a href="https://drive.usercontent.google.com/download?id=1-e0gIPFKYTHL_oKg5hPdev8MKSB1lvuu&export=download&authuser=0"><button class="btn" style="width:50%"><i class="fa fa-download"></i> Download</button></a>
+	    
 
     <div align="center">
 <div class="noclass">
@@ -476,7 +596,8 @@ margin-left: 4px;
 		</div>
 		</div>
 		</div>
-<hr />
+			</upper>
+<hr/>
 
 
 
@@ -514,15 +635,102 @@ margin-left: 4px;
         <div class="slide" > <a href="https://ibb.co/y5XJ7S0"><img src="https://i.ibb.co/hHyvwfs/MV5-BNTkw-OTE1-ZDYt-ODQ3-Yy00-YTYw-LTg0-YWQt-Ym-Vk-Nm-Fj-NGZl-Ym-Ri-Xk-Ey-Xk-Fqc-Gde-QXVy-NTc4-Mjcz.jpg"></a>
     
 	</div>
-	<div class="slide" >      
-        
+	<div class="slide"  id="demo"  >      
+      
 	      </div>
      </div>
+
+			<div class="drag-btn" id="dragBtn">
+<img src="https://i.ibb.co/whMY7B70/IMG-20260227-203548.jpg" alt="IMG-20260227-203548" border-radius="10px">		</div>
+			<img class="mainlogo" id="mainLogo" src="https://i.ibb.co/R4bnbdpJ/Loki.png">
+			
 	</body>
 
 	    
 	    <script>
-	
+localStorage.setItem("previousLogo", document.getElementById("mainLogo").src);
+
+
+			
+let btn = document.getElementById("dragBtn");
+let startX = 0;
+let dragging = false;
+
+function start(e){
+  dragging = true;
+  startX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+}
+
+function move(e){
+  if(!dragging) return;
+
+  let currentX = e.type.includes("mouse") ? e.clientX : e.touches[0].clientX;
+  let diff = startX - currentX;
+
+  if(diff > 0){
+    btn.style.width = 30+ diff + "px";
+  }
+
+  if(diff > 100){
+    window.location.href = "Marvels.html";
+  }
+}
+
+function end(){
+  dragging = false;
+  btn.style.width = "30px";
+}
+
+btn.addEventListener("mousedown", start);
+btn.addEventListener("mousemove", move);
+btn.addEventListener("mouseup", end);
+
+btn.addEventListener("touchstart", start);
+btn.addEventListener("touchmove", move);
+btn.addEventListener("touchend", end);
+			
+
+
+
+			
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2030 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+	    
+
+
+
+
+
+
+
+
+		    
 
 			    
 /*! Elastic Slider (c) 2014 // Taron Mehrabyan // Ruben Sargsyan
@@ -879,6 +1087,32 @@ background-image: linear-gradient(360deg, #2d3436 0%, #000000 74%);
 
 
 
+<div class="header">
+
+  <!-- three dot menu -->
+  <div class="dropdown">
+    <!-- three dots -->
+    <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown()">
+   
+	   <h8>Episodes:</h8> 
+    </ul>
+    <!-- menu -->
+    <div id="myDropdown" class="dropdown-content">
+<a href="https://imgbb.com/"><span style="vertical-align:middle; font-size: 100px; font-family: jerseyfont; position: absolute; margin-right:90%; color: white ">1</span><img style="vertical-align:middle;  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%)"  src="https://i.ibb.co/DrfKZ6h/streamingwars-loki-blogroll-1700009821295.jpg" ></a>
+<a href="https://ibb.co/mCK514W"><span style="vertical-align:middle; font-size: 100px; font-family: jerseyfont; position: absolute; margin-right:90%; color: white">2</span><img style="vertical-align:middle"  src="https://i.ibb.co/DrfKZ6h/streamingwars-loki-blogroll-1700009821295.jpg" ></a>
+<a href="https://ibb.co/6WRSGSR"><span style="vertical-align:middle; font-size: 100px; font-family: jerseyfont; position: absolute; margin-right:90%; color: white">3</span><img style="vertical-align:middle"  src="https://i.ibb.co/DrfKZ6h/streamingwars-loki-blogroll-1700009821295.jpg"  ></a>
+<a href="https://ibb.co/6WRSGSR"><span style="vertical-align:middle; font-size: 100px; font-family: jerseyfont; position: absolute; color: white; margin-right:90%">4</span><img style="vertical-align:middle" src="https://i.ibb.co/DrfKZ6h/streamingwars-loki-blogroll-1700009821295.jpg" ></a>
+<a href="https://ibb.co/6WRSGSR"><span style="vertical-align:middle; font-size: 100px; font-family: jerseyfont; position: absolute; color: white; margin-right:90%">5</span><img style="vertical-align:middle" src="https://i.ibb.co/DrfKZ6h/streamingwars-loki-blogroll-1700009821295.jpg" ></a>
+<a href="https://ibb.co/6WRSGSR"><span style="vertical-align:middle; font-size: 100px; font-family: jerseyfont; position: absolute; color: white; margin-right:90%">6</span><img style="vertical-align:middle" src="https://i.ibb.co/DrfKZ6h/streamingwars-loki-blogroll-1700009821295.jpg" ></a>
+	    
+	    
+    </div>
+	  
+  </div>
+
+</div>
+
 
 	    </body>
 		    <script>
@@ -890,274 +1124,3 @@ background-image: linear-gradient(360deg, #2d3436 0%, #000000 74%);
 
 
 			    
-
-
-
-	
-		</script>
-		
-	</html>
-
-
-
-
-
-
-
-
-<doctype html>
-  <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <style>
-      * { box-sizing: border-box; }
-
-
-
-a, a:visited, a:active {
-    color: inherit;
-}
-
-
-
-
-
-
-
-
-
-.carousel {
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 130px 0;
-}
-
-.carousel__scene {
-    position: relative;
-    width: 510px;
-    height: 460px;
-    max-width: 95vw;
-    padding-top: 150px;
-    perspective: 100px;
-    /*overflow: hidden;*/
-}
-
-.carousel__controls {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    position: absolute;
-    right: 15px;
-}
-
-.previous-button, .next-button {
-    margin: 5px 0;
-    padding: 5px;
-    border-radius: 100px;
-  border: none;
-    
-    font-weight: bold;
-    font-size: 2rem;
-  background: none;
-    outline: none;
-}
-
-.previous-button:focus, .next-button:focus {
-    outline: none;
-    
-  filter: drop-shadow (0 0 6px 3px goldenrod);
-}
-      .button {
-        border-radius: 100px;
-      }
-
-.carousel__list {
-    width: 100%;
-    height: 160px;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    transform: translateZ(-288px);
-    transform-style: preserve-3d;
-    transition: transform 1s;
-    list-style: none;
-    counter-reset: list-counter;
-}
-
-.carousel__cell {
-    position: absolute;
-    width: 490px;
-    height: 140px;
-    max-width: calc(95vw - 20px);
-    left: 10px;
-    top: 10px;
-    border: 2px solid white;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    transition: transform 1s, opacity 1s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    counter-increment: list-counter;
-  background-image: url('https://i.ibb.co/YDs4ds1/64d573e703db6-removebg-preview.png');
-  background-size: 350px;
-  background-color: rgba(255, 255, 255, 0.4);
-           backdrop-filter: blur(10px);
-            background-repeat: no-repeat;
-    
-}
-
-.carousel__cell::before {
-    
-    color: white;
-    text-shadow: 2px 2px black;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-}
-
-.carousel__cell.selected {
-    color: #9ecaed;
-    border-color: #C4A484;
-  box-shadow:0 0 10px #C4A484;
-    border-width: 5px;
-    /*filter: none;*/
-}
-
-.carousel__cell.selected::before {
-    color: tan;
-  font-size: 0px;
-}
- img {
-  height: 40px;
-}
-.carousel__cell:nth-child(1) { transform: rotateX(  0deg) translateZ(288px); }
-.carousel__cell:nth-child(2) { transform: rotateX( 40deg) translateZ(288px); }
-.carousel__cell:nth-child(3) { transform: rotateX( 80deg) translateZ(288px); }
-.carousel__cell:nth-child(4) { transform: rotateX(120deg) translateZ(288px); }
-.carousel__cell:nth-child(5) { transform: rotateX(160deg) translateZ(288px); }
-.carousel__cell:nth-child(6) { transform: rotateX(200deg) translateZ(288px); }
-.carousel__cell:nth-child(7) { transform: rotateX(240deg) translateZ(288px); }
-.carousel__cell:nth-child(8) { transform: rotateX(280deg) translateZ(288px); }
-.carousel__cell:nth-child(9) { transform: rotateX(320deg) translateZ(288px); }
-  
-    </style>
-  </head>
-<body>
-  <!-- Inspired by: https://3dtransforms.desandro.com/carousel -->
-
-<div class="carousel">
-    <div class="carousel__scene">
-        <ol class="carousel__list">
-            <!-- Source: https://www.billboard.com/articles/news/hot-100-turns-60/8468142/hot-100-all-time-biggest-hits-songs-list -->
-            <li class="carousel__cell"><span class="song__title">Eposode 1</span><span class="song__year"><a href="https://i.ibb.co/xhDP7SW/IMG-20240922-164729-removebg-preview.png"><img src="https://i.ibb.co/xhDP7SW/IMG-20240922-164729-removebg-preview.png" ></a></span><span class="song__artist">Chubby Checker</span></li>
-            <li class="carousel__cell"><span class="song__title">Smooth</span><span class="song__year">1999</span><span class="song__artist">Santana Feat. Rob Thomas</span></li>
-            <li class="carousel__cell"><span class="song__title">Mack the Knife</span><span class="song__year">1959</span><span class="song__artist">Bobby Darin</span></li>
-            <li class="carousel__cell"><span class="song__title">Uptown Funk!</span><span class="song__year">2015</span><span class="song__artist">Mark Ronson Feat. Bruno Mars</span></li>
-            <li class="carousel__cell"><span class="song__title">How Do I Live</span><span class="song__year">1997</span><span class="song__artist">Leann Rimes</span></li>
-            <li class="carousel__cell"><span class="song__title">Party Rock Anthem</span><span class="song__year">2011</span><span class="song__artist">LMFAO Feat. Lauren Bennett &amp; GoonRock</span></li>
-            <li class="carousel__cell"><span class="song__title">I Gotta Feeling</span><span class="song__year">2009</span><span class="song__artist">The Black Eyed Peas</span></li>
-            <li class="carousel__cell"><span class="song__title">Macarena (Bayside Boys Mix)</span><span class="song__year">1996</span><span class="song__artist">Los Del Rio</span></li>
-            <li class="carousel__cell"><span class="song__title">Shape of You</span><span class="song__year">2017</span><span class="song__artist">Ed Sheeran</span></li>
-            <li class="carousel__cell"><span class="song__title">Physical</span><span class="song__year">1981</span><span class="song__artist">Olivia Newton-John</span></li>
-            <li class="carousel__cell"><span class="song__title">You Light Up My Life</span><span class="song__year">1977</span><span class="song__artist">Debby Boone</span></li>
-            <li class="carousel__cell"><span class="song__title">Hey Jude</span><span class="song__year">1968</span><span class="song__artist">The Beatles</span></li>
-            <li class="carousel__cell"><span class="song__title">Closer</span><span class="song__year">2016</span><span class="song__artist">The Chainsmokers Feat. Halsey</span></li>
-            <li class="carousel__cell"><span class="song__title">We Belong Together</span><span class="song__year">2005</span><span class="song__artist">Mariah Carey</span></li>
-            <li class="carousel__cell"><span class="song__title">Un-Break My Heart</span><span class="song__year">1996</span><span class="song__artist">Toni Braxton</span></li>
-            <li class="carousel__cell"><span class="song__title">Yeah!</span><span class="song__year">2004</span><span class="song__artist">Usher Feat. Lil Jon &amp; Ludacris</span></li>
-            <li class="carousel__cell"><span class="song__title">Bette Davis Eyes</span><span class="song__year">1981</span><span class="song__artist">Kim Carnes</span></li>
-            <li class="carousel__cell"><span class="song__title">Endless Love</span><span class="song__year">1981</span><span class="song__artist">Diana Ross &amp; Lionel Richie</span></li>
-            <li class="carousel__cell"><span class="song__title">Tonight&rsquo;s the Night (Gonna Be Alright)</span><span class="song__year">1976</span><span class="song__artist">Rod Stewart</span></li>
-            <li class="carousel__cell"><span class="song__title">You Were Meant for Me/Foolish Games</span><span class="song__year">1997</span><span class="song__artist">Jewel</span></li>
-            <li class="carousel__cell"><span class="song__title">(Everything I Do) I Do It for You</span><span class="song__year">1991</span><span class="song__artist">Bryan Adams</span></li>
-            <li class="carousel__cell"><span class="song__title">I&rsquo;ll Make Love to You</span><span class="song__year">1994</span><span class="song__artist">Boyz II Men</span></li>
-            <li class="carousel__cell"><span class="song__title">The Theme From &ldquo;A Summer Place&rdquo;</span><span class="song__year">1960</span><span class="song__artist">Percy Faith &amp; His Orchestra</span></li>
-            </ol>
-    </div>
-    <div class="carousel__controls">
-        <button class="previous-button"><img src="https://i.ibb.co/1LptvNG/angle-circle-up.png" ></button>
-        <button class="next-button"><img src="https://i.ibb.co/vm1qJfC/angle-circle-down.png" ></button>
-    </div>
-</div>
-                                                                                                                          
-</body>
-  <script>
-    const carousel = document.querySelector('.carousel__list');
-const cells = carousel.querySelectorAll('.carousel__cell');
-
-const cellWidth = carousel.offsetWidth;
-const cellHeight = carousel.offsetHeight;
-const cellSize = cellHeight;
-const cellCount = 23;
-
-const radius = Math.round((cellSize / 2) / Math.tan(Math.PI / cellCount));
-const theta = 360 / cellCount;
-
-var selectedIndex = 0;
-
-function rotateCarousel() {
-    const angle = theta * selectedIndex * -1;
-    carousel.style.transform = 'translateZ(' + -radius + 'px) ' + 'rotateX(' + -angle + 'deg)';
-    
-    const cellIndex = selectedIndex < 0 ? (cellCount - ((selectedIndex * -1) % cellCount)) : (selectedIndex % cellCount);
-    
-    const cells = document.querySelectorAll('.carousel__cell');
-    cells.forEach((cell, index) => {
-        if(cellIndex === index) {
-            if(!cell.classList.contains('selected'))
-                cell.classList.add('selected');
-        }
-        else {
-            if(cell.classList.contains('selected')) {
-                cell.classList.remove('selected');
-            }
-        }
-    });
-}
-
-function selectPrev() {
-    selectedIndex--;
-    rotateCarousel();    
-}
-
-function selectNext() {
-    selectedIndex++;
-    rotateCarousel();    
-}
-
-var prevButton = document.querySelector('.previous-button');
-prevButton.addEventListener('click', selectPrev);
-
-var nextButton = document.querySelector('.next-button');
-nextButton.addEventListener('click', selectNext);
-
-function initCarousel() {    
-    for(let i = 0; i < cells.length; i++) {
-        const cell = cells[i];
-        const cellAngle = theta * i;
-        cell.style.transform = 'rotateX(' + -cellAngle + 'deg) translateZ(' + radius + 'px)';
-    }
-
-    rotateCarousel();
-}
-
-initCarousel();
-                          
-  </script>
-  </html>
-</doctype>
-
-
-
-
-
-
